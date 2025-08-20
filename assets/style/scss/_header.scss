@@ -21,6 +21,9 @@ header.home-header {
                     transition: 0.25s;
                 }
 
+
+                a:active,
+                a:focus,
                 a:hover {
                     color: $Primary-color;
                 }
@@ -32,6 +35,8 @@ header.home-header {
                 transition: 0.25s;
             }
 
+            li:active,
+            li:focus,
             li:hover {
                 color: $Primary-color;
             }
@@ -45,6 +50,8 @@ header.home-header {
                 font-size: 1.2em;
             }
 
+            a:active,
+            a:focus,
             a:hover {
                 background-color: rgba(0, 0, 0, 0.123)
             }
@@ -142,6 +149,10 @@ header.home-header {
                 cursor: pointer;
             }
 
+            li:active,
+            a:active,
+            li:focus,
+            a:focus,
             li:hover,
             a:hover {
                 color: $Primary-color;
@@ -155,12 +166,15 @@ header.home-header {
 
             ul {
                 padding: 0px;
+
                 li,
                 a {
                     font-weight: 100;
                     opacity: 50%;
                 }
 
+                a:active,
+                a:focus,
                 a:hover {
                     opacity: 80%;
                     color: $header-text;
@@ -186,6 +200,8 @@ header.home-header {
             background-color: rgba(0, 0, 0, 0);
         }
 
+        button:active,
+        button:focus,
         button:hover {
             color: $header-text;
             transform: scale(1.1);
@@ -206,6 +222,8 @@ header.home-header {
             transition: width 1000ms;
         }
 
+        button:active:before,
+        button:focus::before,
         button:hover::before {
             width: 250%;
         }

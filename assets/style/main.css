@@ -55,6 +55,8 @@ header.home-header div.right ul li a {
   color: white;
   transition: 0.25s;
 }
+header.home-header div.right ul li a:active,
+header.home-header div.right ul li a:focus,
 header.home-header div.right ul li a:hover {
   color: #E53935;
 }
@@ -63,6 +65,8 @@ header.home-header div.right ul li.dropdown-toggle {
   cursor: pointer;
   transition: 0.25s;
 }
+header.home-header div.right ul li:active,
+header.home-header div.right ul li:focus,
 header.home-header div.right ul li:hover {
   color: #E53935;
 }
@@ -73,6 +77,8 @@ header.home-header div.right ul.dropdown-menu li {
   margin-right: 0px;
   font-size: 1.2em;
 }
+header.home-header div.right ul.dropdown-menu a:active,
+header.home-header div.right ul.dropdown-menu a:focus,
 header.home-header div.right ul.dropdown-menu a:hover {
   background-color: rgba(0, 0, 0, 0.123);
 }
@@ -152,6 +158,10 @@ header.home-header div.burger-box ul li a {
 header.home-header div.burger-box ul li.dropdown-toggle {
   cursor: pointer;
 }
+header.home-header div.burger-box ul li:active,
+header.home-header div.burger-box ul a:active,
+header.home-header div.burger-box ul li:focus,
+header.home-header div.burger-box ul a:focus,
 header.home-header div.burger-box ul li:hover,
 header.home-header div.burger-box ul a:hover {
   color: #E53935;
@@ -169,6 +179,8 @@ header.home-header div.burger-box div.dropdown-box ul a {
   font-weight: 100;
   opacity: 50%;
 }
+header.home-header div.burger-box div.dropdown-box ul a:active,
+header.home-header div.burger-box div.dropdown-box ul a:focus,
 header.home-header div.burger-box div.dropdown-box ul a:hover {
   opacity: 80%;
   color: white;
@@ -188,6 +200,8 @@ header.home-header .login-btn .button {
   outline: 2px solid white;
   background-color: rgba(0, 0, 0, 0);
 }
+header.home-header .login-btn button:active,
+header.home-header .login-btn button:focus,
 header.home-header .login-btn button:hover {
   color: white;
   transform: scale(1.1);
@@ -206,6 +220,8 @@ header.home-header .login-btn button::before {
   z-index: -1;
   transition: width 1000ms;
 }
+header.home-header .login-btn button:active:before,
+header.home-header .login-btn button:focus::before,
 header.home-header .login-btn button:hover::before {
   width: 250%;
 }
