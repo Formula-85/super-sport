@@ -1,19 +1,16 @@
 @font-face {
   font-family: Vazir;
-  src: url("Vazir.eot");
-  src: url("Vazir.eot?#iefix") format("embedded-opentype"), url("Vazir.woff") format("woff"), url("Vazir.ttf") format("truetype");
+  src: url("../font/Vazir.eot") format("embedded-opentype"), url("../font/Vazir.woff") format("woff"), url("../font/Vazir.woff2") format("woff2"), url("../font/Vazir.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: Vazir;
-  src: url("Vazir-Bold.eot");
-  src: url("Vazir-Bold.eot?#iefix") format("embedded-opentype"), url("Vazir-Bold.woff") format("woff"), url("Vazir-Bold.ttf") format("truetype");
+  src: url("../font/Vazir-Bold.eot") format("embedded-opentype"), url("../font/Vazir-Bold.woff") format("woff"), url("../font/Vazir-Bold.woff2") format("woff2"), url("../font/Vazir-Bold.ttf") format("truetype");
   font-weight: bold;
 }
 @font-face {
   font-family: Vazir;
-  src: url("Vazir-Light.eot");
-  src: url("Vazir-Light.eot?#iefix") format("embedded-opentype"), url("Vazir-Light.woff") format("woff"), url("Vazir-Light.ttf") format("truetype");
+  src: url("../font/Vazir-Light.eot") format("embedded-opentype"), url("../font/Vazir-Light.woff") format("woff"), url("../font/Vazir-Light.woff2") format("woff2"), url("../font/Vazir-Light.ttf") format("truetype");
   font-weight: 300;
 }
 * {
@@ -122,6 +119,15 @@ header.home-header div.burger .burger input:checked ~ span:nth-of-type(3) {
   top: 28px;
   left: 5px;
 }
+header.home-header div.burger-box {
+  top: 0;
+  right: -50%;
+  position: absolute;
+  background-color: rgb(22.8, 22.8, 22.8);
+  width: 50vw;
+  height: 100vh;
+  transition: 1s;
+}
 header.home-header .login-btn .button {
   padding: 1em 2em;
   border: none;
@@ -176,5 +182,11 @@ header.home-header .login-btn button:hover::before {
   }
   header.home-header div.right img {
     width: 20%;
+  }
+}
+@media screen and (max-width: 576px) {
+  header.home-header div.burger-box {
+    right: -75%;
+    width: 75vw;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -1,32 +1,40 @@
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1400px) {}
 
-}
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {}
 
-}
-@media screen and (max-width: 992px){
-    header.home-header{
+@media screen and (max-width: 992px) {
+    header.home-header {
         font-size: 0.9rem;
-        div.right{
-            img{
+
+        div.right {
+            img {
                 width: 12%;
             }
-            ul{
+
+            ul {
                 padding: 0px;
             }
         }
     }
 }
-@media screen and (max-width: 768px){
-    header.home-header{
+
+@media screen and (max-width: 768px) {
+    header.home-header {
         padding: 5px 0px;
-        div.right{
-            img{
+
+        div.right {
+            img {
                 width: 20%;
             }
         }
     }
 }
-@media screen and (max-width: 576px){
 
+@media screen and (max-width: 576px) {
+    header.home-header {
+        div.burger-box {
+            right: -75%;
+            width: 75vw;
+        }
+    }
 }

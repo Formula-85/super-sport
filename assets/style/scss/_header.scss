@@ -112,6 +112,17 @@ header.home-header {
         }
     }
 
+    div.burger-box {
+        top: 0;
+        right: -50%;
+        position: absolute;
+        background-color: darken($color: $header-color, $amount: 4);
+        width: 50vw;
+        height: 100vh;
+        transition: 1s;
+    }
+
+
     .login-btn {
         .button {
             padding: 1em 2em;
