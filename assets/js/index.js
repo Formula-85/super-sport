@@ -32,3 +32,16 @@ burgerDropdown.addEventListener("click", () => {
         burgerDropdownBox.style.height = burgerDropdownBox.scrollHeight + "px"
     }
 })
+
+
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // جلوگیری از رفتن فوری به لینک
+
+    const href = this.href;
+
+    setTimeout(() => {
+      window.location.href = href; // بعد از تاخیر برو به لینک
+    }, 700); // ۵۰۰ میلی‌ثانیه تاخیر
+  });
+});
