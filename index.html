@@ -1,17 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Sport</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="./assets/style/mian.css">
+    <link rel="stylesheet" href="./assets/style/main.css">
 </head>
+
 <body>
-    
-    
+    <header class="home-header">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <div class="right d-flex align-items-center">
+                <img src="./assets/img/logo sport.svg" alt="logo sport" class="logo img-fluid">
+                <ul class="d-md-flex d-none">
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">محصولات</li>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">کیف ورزشی</a></li>
+                        <li><a class="dropdown-item" href="#">لباس ورزشی</a></li>
+                        <li><a class="dropdown-item" href="#">دستکش ورزشی</a></li>
+                        <li><a class="dropdown-item" href="#">دستگاه های ورزشی</a></li>
+                        <li><a class="dropdown-item" href="#">غیره</a></li>
+                    </ul>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">بلاگ</a></li>
+                </ul>
+            </div>
+            <a class="left login-btn d-md-inline-block d-none" href="#">
+                <button class="button">ورود / عضویت</button>
+            </a>
+            <div class="burger d-md-none">
+                <label class="burger" for="burger">
+                    <input type="checkbox" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </nav>
+        <div class="burger-box d-md-none" id="burger-box">
+            <ul class="text-center">
+                <li><a href="#">صفحه اصلی</a></li>
+                <hr>
+                <li class="dropdown-toggle" id="burger-dropdown">محصولات</li>
+                <div class="dropdown-box" id="burger-dropdown-box">
+                    <ul>
+                        <li><a href="#">کیف ورزشی</a></li>
+                        <hr>
+                        <li><a href="#">لباس ورزشی</a></li>
+                        <hr>
+                        <li><a href="#">دستکش ورزشی</a></li>
+                        <hr>
+                        <li><a href="#">دستگاه های ورزشی</a></li>
+                        <hr>
+                        <li><a href="#">غیره</a></li>
+                    </ul>
+                </div>
+                <hr>
+                <li><a href="#">درباره ما</a></li>
+                <hr>
+                <li><a href="#">بلاگ</a></li>
+                <hr>
+                <a class="login-btn" href="#">
+                    <button class="button">ورود / عضویت</button>
+                </a>
+            </ul>
+        </div>
+    </header>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
