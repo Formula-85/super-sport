@@ -9,6 +9,8 @@ header.home-header {
         }
 
         ul {
+            margin: 0px;
+
             li {
                 margin-right: 25px;
                 font-size: 1.2em;
@@ -120,8 +122,52 @@ header.home-header {
         width: 50vw;
         height: 100vh;
         transition: 1s;
-    }
 
+        ul {
+            margin-top: 20px;
+            padding: 0px 40px;
+
+            li {
+                color: $header-text;
+                transition: 0.5s;
+                font-size: 1em;
+
+                a {
+                    color: $header-text;
+                    transition: 0.5s;
+                }
+            }
+
+            li.dropdown-toggle {
+                cursor: pointer;
+            }
+
+            li:hover,
+            a:hover {
+                color: $Primary-color;
+            }
+        }
+
+        div.dropdown-box {
+            height: 0px;
+            overflow: hidden;
+            transition: 1s;
+
+            ul {
+                padding: 0px;
+                li,
+                a {
+                    font-weight: 100;
+                    opacity: 50%;
+                }
+
+                a:hover {
+                    opacity: 80%;
+                    color: $header-text;
+                }
+            }
+        }
+    }
 
     .login-btn {
         .button {
