@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Sport</title>
     <link rel="icon" type="image/x-icon" href="./assets/img/favicon/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css">
-    <link rel="stylesheet" href="./assets/style/mian.css">
+    <link rel="stylesheet" href="./assets/style/main.css">
 </head>
+
 <body>
     <header class="home-header">
         <nav class="container d-flex justify-content-between align-items-center">
             <div class="right d-flex align-items-center">
                 <img src="./assets/img/logo sport.svg" alt="logo sport" class="logo img-fluid">
-                <ul class="d-flex">
+                <ul class="d-md-flex d-none">
                     <li><a href="#">صفحه اصلی</a></li>
                     <li><a href="#">محصولات</a></li>
                     <li><a href="#">درباره ما</a></li>
                     <li><a href="#">بلاگ</a></li>
                 </ul>
             </div>
-            <div class="left">
+            <div class="left login-btn d-md-inline-block d-none">
                 <button class="button">ورود / عضویت</button>
+            </div>
+            <div class="burger d-md-none">
+                <label class="burger" for="burger">
+                    <input type="checkbox" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
             </div>
         </nav>
     </header>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
