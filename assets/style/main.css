@@ -53,6 +53,24 @@ header.home-header div.right ul li a {
 header.home-header div.right ul li a:hover {
   color: #E53935;
 }
+header.home-header div.right ul li.dropdown-toggle {
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+header.home-header div.right ul li:hover {
+  color: #E53935;
+}
+header.home-header div.right ul.dropdown-menu {
+  background-color: rgb(63.6, 63.6, 63.6);
+}
+header.home-header div.right ul.dropdown-menu li {
+  margin-right: 0px;
+  font-size: 1.2em;
+}
+header.home-header div.right ul.dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.123);
+}
 header.home-header div.burger .burger {
   position: relative;
   width: 40px;

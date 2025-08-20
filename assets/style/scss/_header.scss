@@ -23,9 +23,33 @@ header.home-header {
                     color: $Primary-color;
                 }
             }
+
+            li.dropdown-toggle {
+                color: $header-text;
+                cursor: pointer;
+                transition: 0.25s;
+            }
+
+            li:hover {
+                color: $Primary-color;
+            }
         }
 
+        ul.dropdown-menu {
+            background-color: lighten($color: $header-color, $amount: 12);
+
+            li {
+                margin-right: 0px;
+                font-size: 1.2em;
+            }
+
+            a:hover {
+                background-color: rgba(0, 0, 0, 0.123)
+            }
+
+        }
     }
+
     div.burger {
         .burger {
             position: relative;
