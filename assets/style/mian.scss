@@ -2,4 +2,21 @@
 
 * {
     font-family: Vazir;
+    direction: rtl;
+    text-wrap: nowrap;
+    color: black;
 }
+
+$header-color : #212121; 
+$header-text : white;
+$Primary-color : #E53935;
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    list-style: none;
+    margin: 0px;
+}
+@import "./scss/header";

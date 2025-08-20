@@ -18,4 +18,74 @@
 }
 * {
   font-family: Vazir;
+  direction: rtl;
+  text-wrap: nowrap;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+}
+
+header.home-header {
+  background-color: #212121;
+  font-size: 1rem;
+  padding: 10px 0px;
+}
+header.home-header div.right img {
+  width: 10%;
+}
+header.home-header div.right ul li {
+  margin-right: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+header.home-header div.right ul li a {
+  color: white;
+  transition: 0.25s;
+}
+header.home-header div.right ul li a:hover {
+  color: #E53935;
+}
+header.home-header div.left .button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid white;
+  background-color: rgba(0, 0, 0, 0);
+}
+header.home-header div.left button:hover {
+  color: white;
+  transform: scale(1.1);
+  outline: 2px solid rgb(235.9789473684, 110.1473684211, 107.2210526316);
+  box-shadow: 4px 5px 17px -4px rgb(195.6210526316, 29.0526315789, 25.1789473684);
+}
+header.home-header div.left button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #E53935;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+header.home-header div.left button:hover::before {
+  width: 250%;
 }/*# sourceMappingURL=mian.css.map */
