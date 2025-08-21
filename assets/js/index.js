@@ -1,9 +1,28 @@
+
+// Slowing down link execution to fix animation issues on touch screens.
+
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const href = this.href;
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 700);
+  });
+});
+
+
+
+
+// burger menu
+
 let burger = document.getElementById("burger")
 let burgerBox = document.getElementById("burger-box")
-
 let openBurgerBox = false
 
-
+// open burger menu
 burger.addEventListener("click", () => {
   if (openBurgerBox) {
     openBurgerBox = false
@@ -16,12 +35,13 @@ burger.addEventListener("click", () => {
 })
 
 
+// Dropdown in burger menu
 let burgerDropdown = document.getElementById("burger-dropdown")
 let burgerDropdownBox = document.getElementById("burger-dropdown-box")
 
 let openBurgerDropdown = false
 
-
+// open Dropdown in burger menu
 burgerDropdown.addEventListener("click", () => {
   if (openBurgerDropdown) {
     openBurgerDropdown = false
@@ -34,18 +54,7 @@ burgerDropdown.addEventListener("click", () => {
 })
 
 
-document.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault(); // جلوگیری از رفتن فوری به لینک
-
-    const href = this.href;
-
-    setTimeout(() => {
-      window.location.href = href; // بعد از تاخیر برو به لینک
-    }, 700); // ۵۰۰ میلی‌ثانیه تاخیر
-  });
-});
-
+// intro slider
 
 let btnIntro = document.getElementsByClassName("btn-intro")
 
@@ -53,6 +62,7 @@ let sliders = Array.from(document.getElementsByClassName("sliders"))
 let positionSlides = 0
 
 
+// Slider change button.
 
 function introBtnClick(num) {
   for (let i = 0; i < 3; i++) {
@@ -81,7 +91,7 @@ function introBtnClick(num) {
 }
 
 
-
+// auto Slider change.
 setInterval(() => {
   if (positionSlides == 0) {
     sliders.forEach((value) => {
