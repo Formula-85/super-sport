@@ -128,6 +128,7 @@ header.home-header div.burger .burger input:checked ~ span:nth-of-type(3) {
   left: 5px;
 }
 header.home-header div.burger-box {
+  z-index: 9;
   top: 0;
   right: -50%;
   position: absolute;
