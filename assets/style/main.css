@@ -212,30 +212,8 @@ header.home-header div.dropdown-box ul a:hover {
   width: 250%;
 }
 
-@media screen and (max-width: 992px) {
-  header.home-header {
-    font-size: 0.9rem;
-  }
-  header.home-header div.right img {
-    width: 12%;
-  }
-  header.home-header div.right ul {
-    padding: 0px;
-  }
-}
-@media screen and (max-width: 768px) {
-  header.home-header {
-    padding: 5px 0px;
-  }
-  header.home-header div.right img {
-    width: 20%;
-  }
-}
-@media screen and (max-width: 576px) {
-  header.home-header div.burger-box {
-    right: -75%;
-    width: 75vw;
-  }
+section.intro {
+  font-size: 1rem;
 }
 section.intro div.item {
   position: relative;
@@ -282,4 +260,69 @@ section.intro div.btns-intro .active-btn {
 }
 section.intro div.btns-intro div.btn-intro:hover {
   background-color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 1400px) {
+  section.intro {
+    font-size: 0.8rem;
+  }
+  section.intro div.btns-intro {
+    top: -40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  section.intro div.btns-intro {
+    top: -40px;
+  }
+  section.intro div.btns-intro div.btn-intro {
+    width: 15px;
+    height: 15px;
+  }
+  section.intro div.btns-intro .active-btn {
+    width: 30px !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  header.home-header {
+    font-size: 0.9rem;
+  }
+  header.home-header div.right img {
+    width: 12%;
+  }
+  header.home-header div.right ul {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  header.home-header {
+    padding: 5px 0px;
+  }
+  header.home-header div.right img {
+    width: 20%;
+  }
+  section.intro {
+    font-size: 0.7rem;
+  }
+  section.intro div.btns-intro {
+    top: -30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  header.home-header div.burger-box {
+    right: -75%;
+    width: 75vw;
+  }
+  section.intro {
+    font-size: 0.5rem;
+  }
+  section.intro div.btns-intro {
+    top: -25px;
+  }
+  section.intro div.btns-intro div.btn-intro {
+    width: 10px;
+    height: 10px;
+  }
+  section.intro div.btns-intro .active-btn {
+    width: 20px !important;
+  }
 }/*# sourceMappingURL=main.css.map */
