@@ -237,6 +237,9 @@ header.home-header div.dropdown-box ul a:hover {
     width: 75vw;
   }
 }
+section.intro div.item {
+  position: relative;
+}
 section.intro div.item a {
   display: contents;
   width: 100vw;
@@ -247,9 +250,22 @@ section.intro div.item img {
   width: 100%;
   transition: 1s ease-in-out;
 }
+section.intro div.item div.btn-LR {
+  position: absolute;
+}
+section.intro div.item div.btn-LR i {
+  margin: 0px 25px;
+  font-size: 3.5em;
+  color: rgb(216, 216, 216);
+  cursor: pointer;
+  transition: 0.5s;
+}
+section.intro div.item div.btn-LR i:hover {
+  color: #E53935;
+}
 section.intro div.btns-intro {
   position: relative;
-  top: -35px;
+  top: -65px;
 }
 section.intro div.btns-intro div.btn-intro {
   border-radius: 9999px;
