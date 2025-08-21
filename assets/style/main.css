@@ -235,4 +235,34 @@ header.home-header div.dropdown-box ul a:hover {
     right: -75%;
     width: 75vw;
   }
+}
+section.intro div.item a {
+  display: contents;
+  width: 100vw;
+}
+section.intro div.item img {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+section.intro div.btns-intro {
+  position: relative;
+  top: -35px;
+}
+section.intro div.btns-intro div.btn-intro {
+  border-radius: 9999px;
+  width: 18px;
+  height: 18px;
+  background-color: rgb(216, 216, 216);
+  margin: 0px 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+section.intro div.btns-intro .active-btn {
+  width: 36px !important;
+  background-color: #E53935 !important;
+}
+section.intro div.btns-intro div.btn-intro:hover {
+  background-color: rgb(184, 184, 184);
 }/*# sourceMappingURL=main.css.map */
