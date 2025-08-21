@@ -1,0 +1,36 @@
+section.intro {
+    div.item {
+        a {
+            display: contents;
+            width: 100vw;
+        }
+        img{
+            position: relative;
+            left: 0%;
+            width: 100%;
+            transition: 1s ease-in-out;
+        }
+    }
+
+    div.btns-intro{
+        position: relative;
+        top: -35px;
+        div.btn-intro{
+            border-radius: 9999px;
+            width: 18px;
+            height: 18px;
+            background-color: rgb(216, 216, 216);
+            margin: 0px 5px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .active-btn{
+            width: 36px !important;
+            background-color: $Primary-color !important;
+        }
+        div.btn-intro:hover {
+            background-color: rgb(184, 184, 184);
+        }
+
+    }
+}
