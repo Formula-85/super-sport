@@ -56,10 +56,15 @@ burgerDropdown.addEventListener("click", () => {
 
 // intro slider
 
+let rightBtnIntro = document.getElementById("rightBtnIntro")
+let leftBtnIntro = document.getElementById("leftBtnIntro")
+
+
 let btnIntro = document.getElementsByClassName("btn-intro")
 
 let sliders = Array.from(document.getElementsByClassName("sliders"))
 let positionSlides = 0
+
 
 
 // Slider change button.
@@ -91,6 +96,41 @@ function introBtnClick(num) {
 }
 
 
+// Slider R or L button.
+function RL_slider(direction) {
+  console.log("HI");
+  
+  if (direction == "R") {
+    if(positionSlides == 0){
+      introBtnClick(2)
+    }
+    else if(positionSlides == 1){
+      introBtnClick(0)
+    }
+    else{
+      introBtnClick(1)
+    }
+  }
+  if (direction == "L") {
+    if(positionSlides == 0){
+      introBtnClick(1)
+    }
+    else if(positionSlides == 1){
+      introBtnClick(2)
+    }
+    else{
+      introBtnClick(0)
+    }
+  }
+}
+
+rightBtnIntro.addEventListener("click",() => {
+  RL_slider("R")
+})
+leftBtnIntro.addEventListener("click",() => {
+  RL_slider("L")
+})
+
 // auto Slider change.
 setInterval(() => {
   if (positionSlides == 0) {
@@ -111,7 +151,7 @@ setInterval(() => {
     })
     introBtnClick(0)
   }
-}, 8000);
+}, 10000);
 
 
 

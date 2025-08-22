@@ -212,6 +212,76 @@ header.home-header div.dropdown-box ul a:hover {
   width: 250%;
 }
 
+section.intro {
+  font-size: 1rem;
+}
+section.intro div.item {
+  position: relative;
+}
+section.intro div.item a {
+  display: contents;
+  width: 100vw;
+}
+section.intro div.item img {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+section.intro div.item div.btn-LR {
+  position: absolute;
+}
+section.intro div.item div.btn-LR i {
+  margin: 0px 25px;
+  font-size: 3.5em;
+  color: rgb(216, 216, 216);
+  cursor: pointer;
+  transition: 0.5s;
+}
+section.intro div.item div.btn-LR i:hover {
+  color: #E53935;
+}
+section.intro div.btns-intro {
+  position: relative;
+  top: -65px;
+}
+section.intro div.btns-intro div.btn-intro {
+  border-radius: 9999px;
+  width: 18px;
+  height: 18px;
+  background-color: rgb(216, 216, 216);
+  margin: 0px 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+section.intro div.btns-intro .active-btn {
+  width: 36px !important;
+  background-color: #E53935 !important;
+}
+section.intro div.btns-intro div.btn-intro:hover {
+  background-color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 1400px) {
+  section.intro {
+    font-size: 0.8rem;
+  }
+  section.intro div.btns-intro {
+    top: -40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  section.intro div.btns-intro {
+    top: -40px;
+  }
+  section.intro div.btns-intro div.btn-intro {
+    width: 15px;
+    height: 15px;
+  }
+  section.intro div.btns-intro .active-btn {
+    width: 30px !important;
+  }
+}
 @media screen and (max-width: 992px) {
   header.home-header {
     font-size: 0.9rem;
@@ -230,40 +300,29 @@ header.home-header div.dropdown-box ul a:hover {
   header.home-header div.right img {
     width: 20%;
   }
+  section.intro {
+    font-size: 0.7rem;
+  }
+  section.intro div.btns-intro {
+    top: -30px;
+  }
 }
 @media screen and (max-width: 576px) {
   header.home-header div.burger-box {
     right: -75%;
     width: 75vw;
   }
-}
-section.intro div.item a {
-  display: contents;
-  width: 100vw;
-}
-section.intro div.item img {
-  position: relative;
-  left: 0%;
-  width: 100%;
-  transition: 1s ease-in-out;
-}
-section.intro div.btns-intro {
-  position: relative;
-  top: -35px;
-}
-section.intro div.btns-intro div.btn-intro {
-  border-radius: 9999px;
-  width: 18px;
-  height: 18px;
-  background-color: rgb(216, 216, 216);
-  margin: 0px 5px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-section.intro div.btns-intro .active-btn {
-  width: 36px !important;
-  background-color: #E53935 !important;
-}
-section.intro div.btns-intro div.btn-intro:hover {
-  background-color: rgb(184, 184, 184);
+  section.intro {
+    font-size: 0.5rem;
+  }
+  section.intro div.btns-intro {
+    top: -25px;
+  }
+  section.intro div.btns-intro div.btn-intro {
+    width: 10px;
+    height: 10px;
+  }
+  section.intro div.btns-intro .active-btn {
+    width: 20px !important;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,29 @@
-@media screen and (max-width: 1400px) {}
+@media screen and (max-width: 1400px) {
+    section.intro {
+        font-size: 0.8rem;
 
-@media screen and (max-width: 1200px) {}
+        div.btns-intro {
+            top: -40px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    section.intro {
+        div.btns-intro {
+            top: -40px;
+
+            div.btn-intro {
+                width: 15px;
+                height: 15px;
+            }
+
+            .active-btn {
+                width: 30px !important;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 992px) {
     header.home-header {
@@ -28,6 +51,15 @@
             }
         }
     }
+
+
+    section.intro {
+        font-size: 0.7rem;
+
+        div.btns-intro {
+            top: -30px;
+        }
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -37,4 +69,21 @@
             width: 75vw;
         }
     }
+
+
+    section.intro {
+        font-size: 0.5rem;
+        div.btns-intro {
+            top: -25px;
+            div.btn-intro {
+                width: 10px;
+                height: 10px;
+            }
+
+            .active-btn {
+                width: 20px !important;
+            }
+        }
+    }
+
 }
