@@ -230,6 +230,7 @@ section.intro div.item img {
 }
 section.intro div.item div.btn-LR {
   position: absolute;
+  z-index: 1;
 }
 section.intro div.item div.btn-LR i {
   margin: 0px 25px;
