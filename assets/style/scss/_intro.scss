@@ -1,0 +1,53 @@
+section.intro {
+    font-size: 1rem;
+    div.item {
+        position: relative;
+        a {
+            display: contents;
+            width: 100vw;
+        }
+        img{
+            position: relative;
+            left: 0%;
+            width: 100%;
+            transition: 1s ease-in-out;
+        }
+        div.btn-LR {
+            position: absolute;
+            z-index: 1;
+            i{
+                margin: 0px 25px;
+                font-size: 3.5em;
+                color: rgb(216, 216, 216);
+                cursor: pointer;
+                transition: 0.5s;
+            }
+            i:hover{
+                color: $Primary-color;
+            }
+        }
+    }
+
+
+    div.btns-intro{
+        position: relative;
+        top: -65px;
+        div.btn-intro{
+            border-radius: 9999px;
+            width: 18px;
+            height: 18px;
+            background-color: rgb(216, 216, 216);
+            margin: 0px 5px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+        .active-btn{
+            width: 36px !important;
+            background-color: $Primary-color !important;
+        }
+        div.btn-intro:hover {
+            background-color: rgb(184, 184, 184);
+        }
+
+    }
+}

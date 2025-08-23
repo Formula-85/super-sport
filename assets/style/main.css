@@ -1,0 +1,329 @@
+@font-face {
+  font-family: Vazir;
+  src: url("../font/Vazir.eot");
+  src: url("../font/Vazir.eot?#iefix") format("embedded-opentype"), url("../font/Vazir.woff") format("woff"), url("../font/Vazir.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("../font/Vazir-Bold.eot");
+  src: url("../font/Vazir-Bold.eot?#iefix") format("embedded-opentype"), url("../font/Vazir-Bold.woff") format("woff"), url("../font/Vazir-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("../font/Vazir-Light.eot");
+  src: url("../font/Vazir-Light.eot?#iefix") format("embedded-opentype"), url("../font/Vazir-Light.woff") format("woff"), url("../font/Vazir-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+* {
+  font-family: Vazir;
+  direction: rtl;
+  text-wrap: nowrap;
+  color: black;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+header.home-header {
+  background-color: #212121;
+  font-size: 1rem;
+  padding: 10px 0px;
+}
+header.home-header div.right img {
+  width: 10%;
+}
+header.home-header div.right ul {
+  margin: 0px;
+}
+header.home-header div.right ul li {
+  margin-right: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+header.home-header div.right ul li a {
+  color: white;
+  transition: 0.25s;
+}
+header.home-header div.right ul li a:hover {
+  color: #E53935;
+}
+header.home-header div.right ul li.dropdown-toggle {
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+header.home-header div.right ul li:hover {
+  color: #E53935;
+}
+header.home-header div.right ul.dropdown-menu {
+  background-color: rgb(63.6, 63.6, 63.6);
+}
+header.home-header div.right ul.dropdown-menu li {
+  margin-right: 0px;
+  font-size: 1.2em;
+}
+header.home-header div.right ul.dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.123);
+}
+header.home-header div.burger .burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+header.home-header div.burger .burger input {
+  display: none;
+}
+header.home-header div.burger .burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+header.home-header div.burger .burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+header.home-header div.burger .burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+header.home-header div.burger .burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+header.home-header div.burger .burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+header.home-header div.burger .burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+header.home-header div.burger .burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+header.home-header div.burger-box {
+  z-index: 9;
+  top: 0;
+  right: -50%;
+  position: absolute;
+  background-color: rgb(22.8, 22.8, 22.8);
+  width: 50vw;
+  height: 100vh;
+  transition: 1s;
+}
+header.home-header ul {
+  margin-top: 20px;
+  padding: 0px 40px;
+}
+header.home-header ul li {
+  color: white;
+  transition: 0.25s;
+  font-size: 1em;
+}
+header.home-header ul li a {
+  color: white;
+  transition: 0.25s;
+}
+header.home-header ul li.dropdown-toggle {
+  cursor: pointer;
+}
+header.home-header ul li:hover,
+header.home-header ul a:hover {
+  color: #E53935;
+}
+header.home-header div.dropdown-box {
+  height: 0px;
+  overflow: hidden;
+  transition: 1s;
+}
+header.home-header div.dropdown-box ul {
+  padding: 0px;
+}
+header.home-header div.dropdown-box ul li,
+header.home-header div.dropdown-box ul a {
+  font-weight: 100;
+  opacity: 50%;
+}
+header.home-header div.dropdown-box ul a:hover {
+  opacity: 80%;
+  color: white;
+}
+
+.login-btn .button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  transition: all 1000ms;
+  font-size: 1em;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid white;
+  background-color: rgba(0, 0, 0, 0);
+}
+.login-btn button:hover {
+  color: white;
+  transform: scale(1.1);
+  outline: 2px solid rgb(235.9789473684, 110.1473684211, 107.2210526316);
+  box-shadow: 4px 5px 17px -4px rgb(195.6210526316, 29.0526315789, 25.1789473684);
+}
+.login-btn button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #E53935;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+.login-btn button:hover::before {
+  width: 250%;
+}
+
+section.intro {
+  font-size: 1rem;
+}
+section.intro div.item {
+  position: relative;
+}
+section.intro div.item a {
+  display: contents;
+  width: 100vw;
+}
+section.intro div.item img {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+section.intro div.item div.btn-LR {
+  position: absolute;
+  z-index: 1;
+}
+section.intro div.item div.btn-LR i {
+  margin: 0px 25px;
+  font-size: 3.5em;
+  color: rgb(216, 216, 216);
+  cursor: pointer;
+  transition: 0.5s;
+}
+section.intro div.item div.btn-LR i:hover {
+  color: #E53935;
+}
+section.intro div.btns-intro {
+  position: relative;
+  top: -65px;
+}
+section.intro div.btns-intro div.btn-intro {
+  border-radius: 9999px;
+  width: 18px;
+  height: 18px;
+  background-color: rgb(216, 216, 216);
+  margin: 0px 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+section.intro div.btns-intro .active-btn {
+  width: 36px !important;
+  background-color: #E53935 !important;
+}
+section.intro div.btns-intro div.btn-intro:hover {
+  background-color: rgb(184, 184, 184);
+}
+
+@media screen and (max-width: 1400px) {
+  section.intro {
+    font-size: 0.8rem;
+  }
+  section.intro div.btns-intro {
+    top: -40px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  section.intro div.btns-intro {
+    top: -40px;
+  }
+  section.intro div.btns-intro div.btn-intro {
+    width: 15px;
+    height: 15px;
+  }
+  section.intro div.btns-intro .active-btn {
+    width: 30px !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  header.home-header {
+    font-size: 0.9rem;
+  }
+  header.home-header div.right img {
+    width: 12%;
+  }
+  header.home-header div.right ul {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 768px) {
+  header.home-header {
+    padding: 5px 0px;
+  }
+  header.home-header div.right img {
+    width: 20%;
+  }
+  section.intro {
+    font-size: 0.7rem;
+  }
+  section.intro div.btns-intro {
+    top: -30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  header.home-header div.burger-box {
+    right: -75%;
+    width: 75vw;
+  }
+  section.intro {
+    font-size: 0.5rem;
+  }
+  section.intro div.btns-intro {
+    top: -25px;
+  }
+  section.intro div.btns-intro div.btn-intro {
+    width: 10px;
+    height: 10px;
+  }
+  section.intro div.btns-intro .active-btn {
+    width: 20px !important;
+  }
+}/*# sourceMappingURL=main.css.map */
