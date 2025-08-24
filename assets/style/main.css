@@ -263,6 +263,109 @@ section.intro div.btns-intro div.btn-intro:hover {
   background-color: rgb(184, 184, 184);
 }
 
+section.best-products {
+  font-size: 1rem;
+  margin: 40px 0px;
+}
+section.best-products h1 {
+  font-weight: bold;
+  color: #E53935;
+  margin-bottom: 45px;
+}
+section.best-products div.products-box {
+  position: relative;
+  font-size: 1em;
+  margin-bottom: 35px;
+  padding: 20px;
+  border-radius: 21px;
+  background: #efefef;
+  box-shadow: -5px 5px 10px #828282, 5px -5px 10px #ffffff;
+}
+section.best-products div.products-box div.string {
+  margin-top: 5px;
+}
+section.best-products div.products-box div.string span.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+}
+section.best-products div.products-box div.string p.description {
+  font-size: 1em;
+  color: #555;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+section.best-products div.products-box div.discount span.price {
+  text-decoration: line-through;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #AAAAAA;
+  font-size: 0.9em;
+}
+section.best-products div.products-box div.discount span.price::after {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.best-products div.products-box div.discount div.Percentage {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+}
+section.best-products div.products-box div.discount div.Percentage span {
+  color: #fff;
+  background-color: #E53935;
+  padding: 3px 5px;
+  border-radius: 13px;
+}
+section.best-products div.products-box div.discount-off {
+  visibility: hidden;
+}
+section.best-products div.products-box div.bottom span.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555555;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+section.best-products div.products-box div.bottom span.price::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.best-products div.products-box div.bottom a.btn-view {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+section.best-products div.products-box div.bottom a.btn-view:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+section.best-products div.products-box div.bottom a.btn-view:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;
@@ -281,6 +384,9 @@ section.intro div.btns-intro div.btn-intro:hover {
   }
   section.intro div.btns-intro .active-btn {
     width: 30px !important;
+  }
+  section.best-products div.products-box {
+    margin: 0px 30px 35px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -307,6 +413,9 @@ section.intro div.btns-intro div.btn-intro:hover {
   section.intro div.btns-intro {
     top: -30px;
   }
+  section.best-products div.products-box {
+    margin: 0px 0px 35px;
+  }
 }
 @media screen and (max-width: 576px) {
   header.home-header div.burger-box {
@@ -325,5 +434,13 @@ section.intro div.btns-intro div.btn-intro:hover {
   }
   section.intro div.btns-intro .active-btn {
     width: 20px !important;
+  }
+  section.best-products div.products-box {
+    margin: 0px 65px 35px;
+  }
+}
+@media screen and (max-width: 400px) {
+  section.best-products div.products-box {
+    margin: 0px 9px 25px;
   }
 }/*# sourceMappingURL=main.css.map */
