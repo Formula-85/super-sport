@@ -366,12 +366,28 @@ section.best-products div.products-box div.bottom a.btn-view:active {
   transition: 200ms;
 }
 
+main.home section.ADs div.boxAds div.ADimg {
+  height: 420px;
+}
+main.home section.ADs div.boxAds div.ADimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;
   }
   section.intro div.btns-intro {
     top: -40px;
+  }
+  main.home section.ADs div.boxAds .sm-img,
+  main.home section.ADs div.boxAds .lg-img {
+    height: 360px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -387,6 +403,10 @@ section.best-products div.products-box div.bottom a.btn-view:active {
   }
   section.best-products div.products-box {
     margin: 0px 30px 35px;
+  }
+  main.home section.ADs div.boxAds .sm-img,
+  main.home section.ADs div.boxAds .lg-img {
+    height: 300px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -415,6 +435,10 @@ section.best-products div.products-box div.bottom a.btn-view:active {
   }
   section.best-products div.products-box {
     margin: 0px 0px 35px;
+  }
+  main.home section.ADs div.boxAds .sm-img,
+  main.home section.ADs div.boxAds .lg-img {
+    height: auto;
   }
 }
 @media screen and (max-width: 576px) {

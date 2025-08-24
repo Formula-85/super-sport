@@ -194,7 +194,7 @@ fetch("https://jsonkeeper.com/b/QZEJL")
   })
   .then((data) => {
 
-    let dataBest_products = data
+    let dataBest_products = data.best_products
 
     dataBest_products.forEach((value) => {
       if (value.discount === "0") {
@@ -247,10 +247,28 @@ fetch("https://jsonkeeper.com/b/QZEJL")
 </div>
   `
       }
-
-
     })
-
   })
 
-  
+
+
+
+
+
+let ADimg = document.getElementsByClassName("ADimg")
+
+fetch("https://jsonkeeper.com/b/QZEJL")
+  .then((result) => {
+    return result.json()
+  })
+  .then((data) => {
+    data.ads.forEach((value) => {
+      ADimg[value.positon].innerHTML = `<a href="${value.href}"><img src="${value.img}" alt="${value.imgAlt}"></a>`
+    })
+  })
+
+
+
+
+
+
