@@ -23,6 +23,12 @@
             }
         }
     }
+
+    section.best-products {
+        div.products-box {
+            margin: 0px 30px 35px;
+        }
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -60,6 +66,12 @@
             top: -30px;
         }
     }
+
+    section.best-products {
+        div.products-box {
+            margin: 0px 0px 35px;
+        }
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -73,8 +85,10 @@
 
     section.intro {
         font-size: 0.5rem;
+
         div.btns-intro {
             top: -25px;
+
             div.btn-intro {
                 width: 10px;
                 height: 10px;
@@ -86,4 +100,18 @@
         }
     }
 
+    section.best-products {
+        div.products-box {
+            margin: 0px 65px 35px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    section.best-products {
+        div.products-box {
+            margin: 0px 9px 25px;
+        }
+    }
 }

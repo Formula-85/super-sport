@@ -132,14 +132,14 @@ fetch("https://jsonkeeper.com/b/JOWOV")
     // For get circular buttons
     btnIntro = document.getElementsByClassName("btn-intro");
 
-    
+
 
     // For get for get right and left btn
     rightBtnIntro = document.getElementById("rightBtnIntro");
     leftBtnIntro = document.getElementById("leftBtnIntro");
 
 
-    
+
     // changing slides with the left and right buttons
     rightBtnIntro.addEventListener("click", () => {
       RL_slider("R");
@@ -164,3 +164,93 @@ setInterval(() => {
   }
 }, 10000);
 
+
+// best_products
+
+
+
+let boxBestProducts = document.getElementById("boxBestProducts")
+
+
+
+function englishToPrsian(value) {
+  let num = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  return num.replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])
+}
+function discountPrice(priceNum, discountNum) {
+  let discount = discountNum.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
+  discount = parseInt(discount)
+  let price = priceNum.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
+  price = parseInt(price.replace(/,/g, ""));
+  let finalprice = price - (price * (discount / 100))
+  finalprice = finalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  finalprice = finalprice.replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])
+  return finalprice
+}
+
+fetch("https://jsonkeeper.com/b/QZEJL")
+  .then((result) => {
+    return result.json()
+  })
+  .then((data) => {
+
+    let dataBest_products = data
+
+    dataBest_products.forEach((value) => {
+      if (value.discount === "0") {
+        boxBestProducts.innerHTML += `
+  <div class=" col-xl-3 col-sm-6 col-12">
+    <div class="products-box">
+        <div class="img">
+            <img src="${value.img}" alt="${value.imgAlt}" class="img-fluid">
+        </div>
+        <div class="string">
+            <span class="title">${value.title}</span>
+            <p class="description">${value.description}</p>
+        </div>
+        <div class="discount discount-off">
+            <span class="price"></span>
+            <div class="Percentage">
+                <span></span>
+            </div>
+        </div>
+        <div class="bottom d-flex justify-content-between align-items-center">
+            <span class="price">${englishToPrsian(value.price)}</span>
+            <a href="${value.href}" class="btn-view">مشاهده</a>
+        </div>
+    </div>
+</div>
+  `
+      }
+      else {
+        boxBestProducts.innerHTML += `
+  <div class=" col-xl-3 col-sm-6 col-12">
+    <div class="products-box">
+        <div class="img">
+            <img src="${value.img}" alt="${value.imgAlt}" class="img-fluid">
+        </div>
+        <div class="string">
+            <span class="title">${value.title}</span>
+            <p class="description">${value.description}</p>
+        </div>
+        <div class="discount">
+            <span class="price">${englishToPrsian(value.price)}</span>
+            <div class="Percentage">
+                <span>${englishToPrsian(value.discount)}%</span>
+            </div>
+        </div>
+        <div class="bottom d-flex justify-content-between align-items-center">
+            <span class="price">${discountPrice(value.price, value.discount)}</span>
+            <a href="${value.href}" class="btn-view">مشاهده</a>
+        </div>
+    </div>
+</div>
+  `
+      }
+
+
+    })
+
+  })
+
+  
