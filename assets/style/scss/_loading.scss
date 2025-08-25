@@ -6,6 +6,8 @@ section.loading {
     position: fixed;
     top: 0;
     z-index: 9999;
+    opacity: 1;
+    transition: 0.25S;
     div.loading-ai {
         .dots {
             width: var(--size);
@@ -89,6 +91,10 @@ section.loading {
         color: #fff;
         margin-top: 15px;
     }
+}
+
+.aiLoading{
+    opacity: 0 !important;
 }
 
 .offLoading {

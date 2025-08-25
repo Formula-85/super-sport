@@ -386,6 +386,8 @@ section.loading {
   position: fixed;
   top: 0;
   z-index: 9999;
+  opacity: 1;
+  transition: 0.25S;
 }
 section.loading div.loading-ai .dots {
   width: var(--size);
@@ -456,6 +458,10 @@ section.loading span.loading-title {
   font-size: 1.5em;
   color: #fff;
   margin-top: 15px;
+}
+
+.aiLoading {
+  opacity: 0 !important;
 }
 
 .offLoading {
