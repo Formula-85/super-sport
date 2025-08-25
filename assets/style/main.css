@@ -378,6 +378,96 @@ main.home section.ADs div.boxAds div.ADimg img {
   border-radius: 8px;
 }
 
+section.loading {
+  font-size: 1rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E53935;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  opacity: 1;
+  transition: 0.25S;
+}
+section.loading div.loading-ai .dots {
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+}
+section.loading div.loading-ai .dot {
+  width: var(--size);
+  height: var(--size);
+  animation: dwl-dot-spin calc(var(--speed) * 5) infinite linear both;
+  animation-delay: calc(var(--i) * var(--speed) / (var(--dot-count) + 2) * -1);
+  rotate: calc(var(--i) * var(--spread) / (var(--dot-count) - 1));
+  position: absolute;
+}
+section.loading div.loading-ai .dot::before {
+  content: "";
+  display: block;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 50%;
+}
+@keyframes dwl-dot-spin {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: 1;
+  }
+  2% {
+    transform: rotate(20deg);
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  30% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    opacity: 1;
+  }
+  41% {
+    transform: rotate(380deg);
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  69% {
+    transform: rotate(520deg);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    opacity: 1;
+  }
+  76% {
+    opacity: 1;
+  }
+  76.1% {
+    opacity: 0;
+  }
+  80% {
+    transform: rotate(720deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+section.loading span.loading-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.aiLoading {
+  opacity: 0 !important;
+}
+
+.offLoading {
+  display: none !important;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;

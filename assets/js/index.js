@@ -268,7 +268,19 @@ fetch("https://jsonkeeper.com/b/QZEJL")
   })
 
 
+let loding = document.getElementById("loading")
+let body = document.getElementById("body")
 
+const fetchIntro = fetch("https://jsonkeeper.com/b/JOWOV").then((result) => { return result.json() })
+const fetchHome = fetch("https://jsonkeeper.com/b/QZEJL").then((result) => { return result.json() })
 
-
-
+window.addEventListener("load", () => {
+  Promise.allSettled([fetchHome, fetchIntro])
+    .then(() => {
+      loding.classList.add("aiLoading")
+      body.classList.remove("overflow-hidden")
+      setTimeout(() => {
+        loding.classList.add("offLoading")
+      }, 2000);
+    })
+})
