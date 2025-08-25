@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./assets/style/main.css">
 </head>
 
-<body>
+<body class="overflow-hidden">
     <header class="home-header">
         <nav class="container d-flex justify-content-between align-items-center">
             <div class="right d-flex align-items-center">
@@ -73,6 +73,20 @@
     </header>
 
     <main class="home">
+        <section class="loading d-flex flex-column align-items-center justify-content-center" id="loading">
+            <div class="loading-ai">
+                <div style="--size: 64px; --dot-size: 6px; --dot-count: 6; --color: #fff; --speed: 1s; --spread: 60deg;"
+                    class="dots">
+                    <div style="--i: 0;" class="dot"></div>
+                    <div style="--i: 1;" class="dot"></div>
+                    <div style="--i: 2;" class="dot"></div>
+                    <div style="--i: 3;" class="dot"></div>
+                    <div style="--i: 4;" class="dot"></div>
+                    <div style="--i: 5;" class="dot"></div>
+                </div>
+            </div>
+            <span class="loading-title">لطفا منتظر بمانید ...</span>
+        </section>
         <section class="intro">
             <div class="item overflow-hidden d-flex align-items-center" id="boxSlider">
                 <div class="btn-LR w-100 d-flex justify-content-between">
