@@ -17,7 +17,7 @@ let openBurgerDropdown = false;
 // --- intro ---
 let sizeDataIntro;
 // this for small circles at the bottom of the slides
-let btnIntoBox = document.getElementById("btns-intro");
+let btnIntroBox = document.getElementById("btns-intro");
 let btnIntro;
 // In order: for accessing the element that contains the slides, the slides themselves, and the slide position.
 let slidersBox = document.getElementById("boxSlider");
@@ -39,7 +39,7 @@ let ADimg = document.getElementsByClassName("ADimg")
 
 
 // --- loading ---
-let loding = document.getElementById("loading")
+let loading = document.getElementById("loading")
 let body = document.getElementById("body")
 
 
@@ -101,9 +101,9 @@ function createIntro(data) {
   // For creating circular buttons.
   for (let i = 0; i <= sizeDataIntro; i++) {
     if (i == 0) {
-      btnIntoBox.innerHTML = `<div class="btn-intro active-btn" onclick="introBtnClick(0)"></div>`;
+      btnIntroBox.innerHTML = `<div class="btn-intro active-btn" onclick="introBtnClick(0)"></div>`;
     } else {
-      btnIntoBox.innerHTML += `<div class="btn-intro" onclick="introBtnClick(${i})"></div>`;
+      btnIntroBox.innerHTML += `<div class="btn-intro" onclick="introBtnClick(${i})"></div>`;
     }
   }
 
@@ -280,10 +280,10 @@ window.addEventListener("load", async function getData() {
     createBestProducts(homeData)
     createAD(homeData)
 
-    loding.classList.add("aiLoading")
+    loading.classList.add("aiLoading")
     body.classList.remove("overflow-hidden")
     setTimeout(() => {
-      loding.classList.add("offLoading")
+      loading.classList.add("offLoading")
     }, 2000);
   } catch {
     console.log("error");
