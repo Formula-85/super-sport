@@ -42,7 +42,9 @@ let ADimg = document.getElementsByClassName("ADimg")
 let loading = document.getElementById("loading")
 let body = document.getElementById("body")
 
+// --- special offer ---
 
+let specialOfferProducts = document.getElementById("special_offer_products")
 
 // =========================
 // 2. FUNCTIONS
@@ -136,7 +138,7 @@ function createIntro(data) {
 }
 
 
-// --- dataBest products ---
+// --- Best products ---
 
 // Convert Persian Numbers to English and Separate Numbers by Thousands
 function englishToPrsian(value) {
@@ -248,6 +250,57 @@ function offLoading() {
   }, 250);
 }
 
+// --- special offer ---
+
+function createSpecialOffer(data) {
+  data.Special_offer.forEach(value => {
+    if (value.discount === "0") {
+      specialOfferProducts.innerHTML += `
+  <div class="card-box">
+      <div class="img">
+          <img src="${value.img}" alt="${value.imgAlt}">
+      </div>
+      <div class="title">
+          <span>${value.title}</span>
+      </div>
+      <div class="discount discount-off">
+          <span class="discountPrice">}</span>
+          <span class="discount">}%</span>
+      </div>
+      <div class="bottom d-flex align-items-center justify-content-between">
+          <span class="price">${discountPrice(value.price, value.discount)}</span>
+          <div class="btn-view">
+              <a href="#">مشاهده</a>
+          </div>
+      </div>
+  </div>
+  `
+    }
+    else {
+      specialOfferProducts.innerHTML += `
+  <div class="card-box">
+      <div class="img">
+          <img src="${value.img}" alt="${value.imgAlt}">
+      </div>
+      <div class="title">
+          <span>${value.title}</span>
+      </div>
+      <div class="discount">
+          <span class="discountPrice">${englishToPrsian(value.price)}</span>
+          <span class="discount">${englishToPrsian(value.discount)}%</span>
+      </div>
+      <div class="bottom d-flex align-items-center justify-content-between">
+          <span class="price">${discountPrice(value.price, value.discount)}</span>
+          <div class="btn-view">
+              <a href="#">مشاهده</a>
+          </div>
+      </div>
+  </div>
+  `
+    }
+  });
+}
+
 // =========================
 // 3. EVENT LISTENERS
 // =========================
@@ -302,6 +355,8 @@ window.addEventListener("load", async function getData() {
     createIntro(intrData)
     createBestProducts(homeData)
     createAD(homeData)
+    createSpecialOffer(homeData)
+
 
     await waitForImagesToLoad()
     offLoading()

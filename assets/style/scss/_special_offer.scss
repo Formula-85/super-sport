@@ -71,14 +71,21 @@ section.special_offer {
 
         div.products {
             margin-right: 50px;
+            width: 75%;
             gap: 10px;
 
             div.card-box {
                 display: flex;
+                width: 25%;
                 flex-direction: column;
                 background-color: #fff;
                 padding: 10px 15px;
 
+                div.img {
+                    img {
+                        width: 144px;
+                    }
+                }
 
                 div.title {
                     margin: 5px 0px;
@@ -111,6 +118,7 @@ section.special_offer {
                         gap: 2px;
                         color: #aaa;
                     }
+                
 
                     span.discountPrice::after {
                         display: inline-block;
@@ -120,6 +128,10 @@ section.special_offer {
                         background-repeat: no-repeat;
                         content: url(../img/icon/toman-t.svg);
                     }
+                }
+
+                div.discount-off {
+                    visibility: hidden;
                 }
 
                 div.bottom {
