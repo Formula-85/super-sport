@@ -233,11 +233,19 @@ function waitForImagesToLoad() {
       if (img.complete) {
         resolve()
       }
-      else{
+      else {
         img.onload = img.onerror = resolve;
       }
     })
   }))
+}
+
+function offLoading() {
+  loading.classList.add("aiLoading")
+  setTimeout(() => {
+    loading.classList.add("offLoading")
+    body.classList.remove("overflow-hidden")
+  }, 250);
 }
 
 // =========================
@@ -296,12 +304,7 @@ window.addEventListener("load", async function getData() {
     createAD(homeData)
 
     await waitForImagesToLoad()
-
-    loading.classList.add("aiLoading")
-    setTimeout(() => {
-      loading.classList.add("offLoading")
-      body.classList.remove("overflow-hidden")
-    }, 250);
+    offLoading()
   } catch {
     console.log("error");
   }
