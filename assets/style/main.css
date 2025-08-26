@@ -468,6 +468,140 @@ section.loading span.loading-title {
   display: none !important;
 }
 
+section.special_offer {
+  font-size: 1rem;
+  margin: 60px 0px;
+}
+section.special_offer div.box {
+  background-color: #E53935;
+  border-radius: 30px;
+  padding: 25px 30px;
+}
+section.special_offer div.box div.information div.string {
+  margin-bottom: 15px;
+}
+section.special_offer div.box div.information div.string h2 {
+  font-size: 2em;
+}
+section.special_offer div.box div.information div.string span {
+  font-size: 1.85em;
+}
+section.special_offer div.box div.information div.string h2,
+section.special_offer div.box div.information div.string span {
+  color: #fff;
+  font-weight: bold;
+}
+section.special_offer div.box div.information div.timer {
+  flex-direction: row-reverse;
+}
+section.special_offer div.box div.information div.timer div.boxNumber {
+  margin: 0px 5px;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+section.special_offer div.box div.information div.timer div.boxNumber span {
+  color: #E53935 !important;
+}
+section.special_offer div.box div.information div.timer span {
+  color: #fff;
+  font-size: 1.45em;
+  font-weight: bold;
+  position: relative;
+  top: 3px;
+}
+section.special_offer div.box div.information div.btn-view {
+  margin-top: 15px;
+}
+section.special_offer div.box div.information div.btn-view a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+}
+section.special_offer div.box div.products {
+  margin-right: 50px;
+  gap: 10px;
+}
+section.special_offer div.box div.products div.card-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px 15px;
+}
+section.special_offer div.box div.products div.card-box div.title {
+  margin: 5px 0px;
+}
+section.special_offer div.box div.products div.card-box div.title span {
+  color: #555;
+  font-size: 1rem;
+  font-weight: bold;
+}
+section.special_offer div.box div.products div.card-box div.discount {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+section.special_offer div.box div.products div.card-box div.discount span.discount {
+  color: #fff;
+  background-color: #E53935;
+  font-size: 0.8em;
+  padding: 3px;
+  border-radius: 5px;
+}
+section.special_offer div.box div.products div.card-box div.discount span.discountPrice {
+  font-size: 0.8em;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: line-through;
+  gap: 2px;
+  color: #aaa;
+}
+section.special_offer div.box div.products div.card-box div.discount span.discountPrice::after {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.special_offer div.box div.products div.card-box div.bottom span.price {
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  color: #555;
+}
+section.special_offer div.box div.products div.card-box div.bottom span.price::after {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.special_offer div.box div.products div.card-box div.bottom div.btn-view a {
+  color: rgb(240.6315789474, 145.5789473684, 143.3684210526);
+  font-size: 1em;
+  font-weight: bold;
+  transition: 0.5s;
+}
+section.special_offer div.box div.products div.card-box div.bottom div.btn-view a:hover {
+  color: #E53935;
+}
+section.special_offer div.box div.card-box:first-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+section.special_offer div.box div.card-box:last-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;

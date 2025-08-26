@@ -1,0 +1,172 @@
+$border-radius-special-offer : 10px;
+
+section.special_offer {
+    font-size: 1rem;
+    margin: 60px 0px;
+
+
+    div.box {
+        background-color: $Primary-color;
+        border-radius: 30px;
+        padding: 25px 30px;
+
+        div.information {
+            div.string {
+                margin-bottom: 15px;
+
+                h2 {
+                    font-size: 2em;
+                }
+
+                span {
+                    font-size: 1.85em;
+                }
+
+                h2,
+                span {
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+
+            div.timer {
+                flex-direction: row-reverse;
+
+                div.boxNumber {
+                    margin: 0px 5px;
+                    background-color: #fff;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 8px;
+
+                    span {
+                        color: $Primary-color !important;
+                    }
+                }
+
+                span {
+                    color: #fff;
+                    font-size: 1.45em;
+                    font-weight: bold;
+                    position: relative;
+                    top: 3px;
+                }
+            }
+
+            div.btn-view {
+                margin-top: 15px;
+
+                a {
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 1em;
+                }
+            }
+        }
+
+
+
+        div.products {
+            margin-right: 50px;
+            gap: 10px;
+
+            div.card-box {
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                padding: 10px 15px;
+
+
+                div.title {
+                    margin: 5px 0px;
+
+                    span {
+                        color: #555;
+                        font-size: 1rem;
+                        font-weight: bold;
+                    }
+                }
+
+                div.discount {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-bottom: 5px;
+
+                    span.discount {
+                        color: #fff;
+                        background-color: $Primary-color;
+                        font-size: 0.8em;
+                        padding: 3px;
+                        border-radius: 5px;
+                    }
+
+                    span.discountPrice {
+                        font-size: 0.8em;
+                        display: inline-flex;
+                        align-items: center;
+                        text-decoration: line-through;
+                        gap: 2px;
+                        color: #aaa;
+                    }
+
+                    span.discountPrice::after {
+                        display: inline-block;
+                        width: 15px;
+                        height: 15px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        content: url(../img/icon/toman-t.svg);
+                    }
+                }
+
+                div.bottom {
+                    span.price {
+                        font-size: 1em;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 4px;
+                        font-weight: bold;
+                        color: #555;
+                    }
+
+                    span.price::after {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        content: url(../img/icon/toman.svg);
+                    }
+
+                    div.btn-view {
+                        a {
+                            color: lighten($color: $Primary-color, $amount: 20);
+                            font-size: 1em;
+                            font-weight: bold;
+                            transition: 0.5s;
+                        }
+
+                        a:hover {
+                            color: $Primary-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+
+        div.card-box:first-child {
+            border-top-right-radius: $border-radius-special-offer;
+            border-bottom-right-radius: $border-radius-special-offer;
+        }
+
+        div.card-box:last-child {
+            border-top-left-radius: $border-radius-special-offer;
+            border-bottom-left-radius: $border-radius-special-offer;
+        }
+    }
+}
