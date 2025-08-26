@@ -224,6 +224,29 @@ function createAD(data) {
   })
 }
 
+// --- loading ---
+
+function waitForImagesToLoad() {
+  const images = Array.from(document.querySelectorAll("img"))
+  return Promise.all(images.map(img => {
+    return new Promise(resolve => {
+      if (img.complete) {
+        resolve()
+      }
+      else {
+        img.onload = img.onerror = resolve;
+      }
+    })
+  }))
+}
+
+function offLoading() {
+  loading.classList.add("aiLoading")
+  setTimeout(() => {
+    loading.classList.add("offLoading")
+    body.classList.remove("overflow-hidden")
+  }, 250);
+}
 
 // =========================
 // 3. EVENT LISTENERS
@@ -280,11 +303,8 @@ window.addEventListener("load", async function getData() {
     createBestProducts(homeData)
     createAD(homeData)
 
-    loading.classList.add("aiLoading")
-    body.classList.remove("overflow-hidden")
-    setTimeout(() => {
-      loading.classList.add("offLoading")
-    }, 2000);
+    await waitForImagesToLoad()
+    offLoading()
   } catch {
     console.log("error");
   }
