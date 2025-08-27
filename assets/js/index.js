@@ -42,6 +42,14 @@ let ADimg = document.getElementsByClassName("ADimg")
 let loading = document.getElementById("loading")
 let body = document.getElementById("body")
 
+// --- special offer ---
+
+let specialOffer = document.getElementById("special_offer")
+let specialOfferProducts = document.getElementById("special_offer_products")
+
+let hours = document.getElementById("hours")
+let minutes = document.getElementById("minutes")
+let seconds = document.getElementById("seconds")
 
 
 // =========================
@@ -136,7 +144,7 @@ function createIntro(data) {
 }
 
 
-// --- dataBest products ---
+// --- Best products ---
 
 // Convert Persian Numbers to English and Separate Numbers by Thousands
 function englishToPrsian(value) {
@@ -214,8 +222,6 @@ function createBestProducts(data) {
     }
   })
 }
-
-
 // --- ADs ---
 // for creare ADs
 function createAD(data) {
@@ -246,6 +252,113 @@ function offLoading() {
     loading.classList.add("offLoading")
     body.classList.remove("overflow-hidden")
   }, 250);
+}
+
+// --- special offer ---
+
+function createSpecialOffer(data) {
+  data.Special_offer.forEach(value => {
+    if (value.discount === "0") {
+      specialOfferProducts.innerHTML += `
+  <div class="card-box">
+      <div class="img">
+          <img src="${value.img}" alt="${value.imgAlt}">
+      </div>
+      <div class="title">
+          <span>${value.title}</span>
+      </div>
+      <div class="discount discount-off">
+          <span class="discountPrice">}</span>
+          <span class="discount">}%</span>
+      </div>
+      <div class="bottom d-flex align-items-center justify-content-between">
+          <span class="price">${discountPrice(value.price, value.discount)}</span>
+          <div class="btn-view">
+              <a href="#">مشاهده</a>
+          </div>
+      </div>
+  </div>
+  `
+    }
+    else {
+      specialOfferProducts.innerHTML += `
+  <div class="card-box">
+      <div class="img">
+          <img src="${value.img}" alt="${value.imgAlt}">
+      </div>
+      <div class="title">
+          <span>${value.title}</span>
+      </div>
+      <div class="discount">
+          <span class="discountPrice">${englishToPrsian(value.price)}</span>
+          <span class="discount">${englishToPrsian(value.discount)}%</span>
+      </div>
+      <div class="bottom d-flex align-items-center justify-content-between">
+          <span class="price">${discountPrice(value.price, value.discount)}</span>
+          <div class="btn-view">
+              <a href="#">مشاهده</a>
+          </div>
+      </div>
+  </div>
+  `
+    }
+  });
+}
+
+function timer(value) {
+  if (value.Special_offer_timer == "off") {
+    specialOffer.classList.add("d-none")
+  }
+  else if (value.Special_offer_timer == "auto") {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 1)
+    targetDate.setHours(12, 24, 13)
+
+    const dif = targetDate - new Date()
+
+    if (dif > 0) {
+      const hou = Math.floor(dif / (1000 * 60 * 60));
+      const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+      const sec = Math.floor((dif % (1000 * 60)) / 1000);
+
+      hours.innerHTML = englishToPrsian(hou.toString())
+      minutes.innerHTML = englishToPrsian(min.toString())
+      seconds.innerHTML = englishToPrsian(sec.toString())
+    }
+    else {
+      hours.innerHTML = englishToPrsian("0")
+      minutes.innerHTML = englishToPrsian("0")
+      seconds.innerHTML = englishToPrsian("0")
+
+      setTimeout(() => {
+        specialOffer.classList.add("d-none")
+      }, 5000);
+    }
+  }
+  else {
+    const targetDate = new Date(value.Special_offer_timer);
+
+    const dif = targetDate - new Date()
+
+    if (dif > 0) {
+      const hou = Math.floor(dif / (1000 * 60 * 60));
+      const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+      const sec = Math.floor((dif % (1000 * 60)) / 1000);
+
+      hours.innerHTML = englishToPrsian(hou.toString())
+      minutes.innerHTML = englishToPrsian(min.toString())
+      seconds.innerHTML = englishToPrsian(sec.toString())
+    }
+    else {
+      hours.innerHTML = englishToPrsian("0")
+      minutes.innerHTML = englishToPrsian("0")
+      seconds.innerHTML = englishToPrsian("0")
+
+      setTimeout(() => {
+        specialOffer.classList.add("d-none")
+      }, 5000);
+    }
+  }
 }
 
 // =========================
@@ -302,6 +415,13 @@ window.addEventListener("load", async function getData() {
     createIntro(intrData)
     createBestProducts(homeData)
     createAD(homeData)
+    createSpecialOffer(homeData)
+    timer(homeData)
+    setInterval(() => {
+      timer(homeData)
+    }, 1000);
+
+
 
     await waitForImagesToLoad()
     offLoading()
@@ -309,3 +429,10 @@ window.addEventListener("load", async function getData() {
     console.log("error");
   }
 })
+
+
+
+
+
+
+
