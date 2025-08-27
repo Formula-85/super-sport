@@ -44,7 +44,13 @@ let body = document.getElementById("body")
 
 // --- special offer ---
 
+let specialOffer = document.getElementById("special_offer")
 let specialOfferProducts = document.getElementById("special_offer_products")
+
+let hours = document.getElementById("hours")
+let minutes = document.getElementById("minutes")
+let seconds = document.getElementById("seconds")
+
 
 // =========================
 // 2. FUNCTIONS
@@ -216,8 +222,6 @@ function createBestProducts(data) {
     }
   })
 }
-
-
 // --- ADs ---
 // for creare ADs
 function createAD(data) {
@@ -301,6 +305,62 @@ function createSpecialOffer(data) {
   });
 }
 
+function timer(value) {
+  if (value.Special_offer_timer == "off") {
+    specialOffer.classList.add("d-none")
+  }
+  else if (value.Special_offer_timer == "auto") {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 1)
+    targetDate.setHours(12, 24, 13)
+
+    const dif = targetDate - new Date()
+
+    if (dif > 0) {
+      const hou = Math.floor(dif / (1000 * 60 * 60));
+      const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+      const sec = Math.floor((dif % (1000 * 60)) / 1000);
+
+      hours.innerHTML = englishToPrsian(hou.toString())
+      minutes.innerHTML = englishToPrsian(min.toString())
+      seconds.innerHTML = englishToPrsian(sec.toString())
+    }
+    else {
+      hours.innerHTML = englishToPrsian("0")
+      minutes.innerHTML = englishToPrsian("0")
+      seconds.innerHTML = englishToPrsian("0")
+
+      setTimeout(() => {
+        specialOffer.classList.add("d-none")
+      }, 5000);
+    }
+  }
+  else {
+    const targetDate = new Date(value.Special_offer_timer);
+
+    const dif = targetDate - new Date()
+
+    if (dif > 0) {
+      const hou = Math.floor(dif / (1000 * 60 * 60));
+      const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+      const sec = Math.floor((dif % (1000 * 60)) / 1000);
+
+      hours.innerHTML = englishToPrsian(hou.toString())
+      minutes.innerHTML = englishToPrsian(min.toString())
+      seconds.innerHTML = englishToPrsian(sec.toString())
+    }
+    else {
+      hours.innerHTML = englishToPrsian("0")
+      minutes.innerHTML = englishToPrsian("0")
+      seconds.innerHTML = englishToPrsian("0")
+
+      setTimeout(() => {
+        specialOffer.classList.add("d-none")
+      }, 5000);
+    }
+  }
+}
+
 // =========================
 // 3. EVENT LISTENERS
 // =========================
@@ -356,6 +416,11 @@ window.addEventListener("load", async function getData() {
     createBestProducts(homeData)
     createAD(homeData)
     createSpecialOffer(homeData)
+    timer(homeData)
+    setInterval(() => {
+      timer(homeData)
+    }, 1000);
+
 
 
     await waitForImagesToLoad()
@@ -364,3 +429,10 @@ window.addEventListener("load", async function getData() {
     console.log("error");
   }
 })
+
+
+
+
+
+
+
