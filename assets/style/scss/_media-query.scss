@@ -10,9 +10,7 @@
     main.home {
         section.ADs {
             div.boxAds {
-
-                .sm-img,
-                .lg-img {
+                div.ADimg {
                     height: 360px;
                 }
             }
@@ -45,9 +43,7 @@
     main.home {
         section.ADs {
             div.boxAds {
-
-                .sm-img,
-                .lg-img {
+                div.ADimg {
                     height: 300px;
                 }
             }
@@ -66,6 +62,17 @@
 
             ul {
                 padding: 0px;
+            }
+        }
+    }
+
+
+        main.home {
+        section.ADs {
+            div.boxAds {
+                div.ADimg {
+                    height: auto;
+                }
             }
         }
     }
