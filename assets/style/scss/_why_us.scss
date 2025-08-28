@@ -1,0 +1,23 @@
+section.why_us {
+    font-size: 1rem;
+    div.box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        img{
+            width: 60px;
+            fill: #ff0000;
+        }
+        div.string{
+            h3{
+                font-size: 1.5em;
+                font-weight: bold;
+                color: #444;
+            }
+            span{
+                color: #666;
+            }
+        }
+    }
+}

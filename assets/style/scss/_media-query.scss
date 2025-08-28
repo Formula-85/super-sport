@@ -117,6 +117,13 @@
             }
         }
     }
+
+    section.why_us{
+        font-size: 0.8rem;
+        div.box{
+            gap: 8px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -163,6 +170,18 @@
             div.products {
                 div.card-box {
                     width: auto;
+                }
+            }
+        }
+    }
+
+    section.why_us{
+        font-size: 1.15rem;
+        div.box{
+            margin-bottom: 20px;
+            div.img{
+                img{
+                    width: 65px;
                 }
             }
         }
@@ -284,6 +303,15 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    section.why_us{
+        font-size: 0.9rem;
+        div.box{
+            div.img{
+                width: 58px;
             }
         }
     }

@@ -620,6 +620,28 @@ section.special_offer div.box div.card-box:last-child {
   border-bottom-left-radius: 10px;
 }
 
+section.why_us {
+  font-size: 1rem;
+}
+section.why_us div.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+section.why_us div.box img {
+  width: 60px;
+  fill: #ff0000;
+}
+section.why_us div.box div.string h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #444;
+}
+section.why_us div.box div.string span {
+  color: #666;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;
@@ -684,6 +706,12 @@ section.special_offer div.box div.card-box:last-child {
   section.special_offer div.box div.products div.card-box div.img img {
     width: 128px;
   }
+  section.why_us {
+    font-size: 0.8rem;
+  }
+  section.why_us div.box {
+    gap: 8px;
+  }
 }
 @media screen and (max-width: 768px) {
   header.home-header {
@@ -710,6 +738,15 @@ section.special_offer div.box div.card-box:last-child {
   }
   section.special_offer div.box div.products div.card-box {
     width: auto;
+  }
+  section.why_us {
+    font-size: 1.15rem;
+  }
+  section.why_us div.box {
+    margin-bottom: 20px;
+  }
+  section.why_us div.box div.img img {
+    width: 65px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -786,5 +823,11 @@ section.special_offer div.box div.card-box:last-child {
   }
   section.special_offer div.box div.products div.card-box div.img img {
     width: 117px;
+  }
+  section.why_us {
+    font-size: 0.9rem;
+  }
+  section.why_us div.box div.img {
+    width: 58px;
   }
 }/*# sourceMappingURL=main.css.map */
