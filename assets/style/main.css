@@ -706,6 +706,12 @@ section.why_us div.box div.string span {
   section.special_offer div.box div.products div.card-box div.img img {
     width: 128px;
   }
+  section.why_us {
+    font-size: 0.8rem;
+  }
+  section.why_us div.box {
+    gap: 8px;
+  }
 }
 @media screen and (max-width: 768px) {
   header.home-header {
@@ -732,6 +738,15 @@ section.why_us div.box div.string span {
   }
   section.special_offer div.box div.products div.card-box {
     width: auto;
+  }
+  section.why_us {
+    font-size: 1.15rem;
+  }
+  section.why_us div.box {
+    margin-bottom: 20px;
+  }
+  section.why_us div.box div.img img {
+    width: 65px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -808,5 +823,11 @@ section.why_us div.box div.string span {
   }
   section.special_offer div.box div.products div.card-box div.img img {
     width: 117px;
+  }
+  section.why_us {
+    font-size: 0.9rem;
+  }
+  section.why_us div.box div.img {
+    width: 58px;
   }
 }/*# sourceMappingURL=main.css.map */
