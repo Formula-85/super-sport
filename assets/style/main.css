@@ -620,6 +620,28 @@ section.special_offer div.box div.card-box:last-child {
   border-bottom-left-radius: 10px;
 }
 
+section.why_us {
+  font-size: 1rem;
+}
+section.why_us div.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+section.why_us div.box img {
+  width: 60px;
+  fill: #ff0000;
+}
+section.why_us div.box div.string h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #444;
+}
+section.why_us div.box div.string span {
+  color: #666;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;
