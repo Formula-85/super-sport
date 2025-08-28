@@ -68,6 +68,7 @@ header.home-header div.right ul li:hover {
 }
 header.home-header div.right ul.dropdown-menu {
   background-color: rgb(63.6, 63.6, 63.6);
+  padding: 0px;
 }
 header.home-header div.right ul.dropdown-menu li {
   margin-right: 0px;
