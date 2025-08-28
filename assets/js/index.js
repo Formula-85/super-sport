@@ -222,6 +222,8 @@ function createBestProducts(data) {
     }
   })
 }
+
+
 // --- ADs ---
 // for creare ADs
 function createAD(data) {
@@ -262,7 +264,7 @@ function createSpecialOffer(data) {
       specialOfferProducts.innerHTML += `
   <div class="card-box">
       <div class="img">
-          <img src="${value.img}" alt="${value.imgAlt}">
+          <img src="${value.img}" alt="${value.imgAlt}" draggable="false">
       </div>
       <div class="title">
           <span>${value.title}</span>
@@ -284,7 +286,7 @@ function createSpecialOffer(data) {
       specialOfferProducts.innerHTML += `
   <div class="card-box">
       <div class="img">
-          <img src="${value.img}" alt="${value.imgAlt}">
+          <img src="${value.img}" alt="${value.imgAlt}" draggable="false">
       </div>
       <div class="title">
           <span>${value.title}</span>
@@ -361,6 +363,39 @@ function timer(value) {
   }
 }
 
+
+// --- drag ---
+
+function drag(value) {
+  const slider = document.querySelector(value)
+
+  let isDown = false
+  let startX 
+  let scrollLeft
+
+
+  slider.addEventListener("mousedown" , e => {
+    isDown = true
+    startX = e.pageX - slider.offsetLeft
+    scrollLeft = slider.scrollLeft;
+  })
+  slider.addEventListener("mouseup",() => {
+    isDown = false
+  })
+  slider.addEventListener("mouseleave",() => {
+    isDown = false
+  })
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault()
+    const x = e.pageX - slider.offsetLeft
+    const walk = (x - startX) * 1
+    slider.scrollLeft = scrollLeft - walk
+  })
+}
+
+
+
 // =========================
 // 3. EVENT LISTENERS
 // =========================
@@ -420,6 +455,7 @@ window.addEventListener("load", async function getData() {
     setInterval(() => {
       timer(homeData)
     }, 1000);
+    drag("#special_offer_products")
 
 
 

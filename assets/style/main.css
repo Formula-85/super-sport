@@ -68,6 +68,7 @@ header.home-header div.right ul li:hover {
 }
 header.home-header div.right ul.dropdown-menu {
   background-color: rgb(63.6, 63.6, 63.6);
+  padding: 0px;
 }
 header.home-header div.right ul.dropdown-menu li {
   margin-right: 0px;
@@ -514,18 +515,23 @@ section.special_offer div.box div.information div.timer span {
   position: relative;
   top: 3px;
 }
-section.special_offer div.box div.information div.btn-view {
-  margin-top: 15px;
-}
 section.special_offer div.box div.information div.btn-view a {
   color: #fff;
   font-weight: bold;
   font-size: 1em;
 }
+section.special_offer div.box div.information div.btn-view #small {
+  display: none;
+}
 section.special_offer div.box div.products {
   margin-right: 50px;
   width: 75%;
   gap: 10px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 section.special_offer div.box div.products div.card-box {
   display: flex;
@@ -533,6 +539,7 @@ section.special_offer div.box div.products div.card-box {
   flex-direction: column;
   background-color: #fff;
   padding: 10px 15px;
+  -webkit-user-drag: none;
 }
 section.special_offer div.box div.products div.card-box div.img img {
   width: 144px;
@@ -542,7 +549,7 @@ section.special_offer div.box div.products div.card-box div.title {
 }
 section.special_offer div.box div.products div.card-box div.title span {
   color: #555;
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: bold;
 }
 section.special_offer div.box div.products div.card-box div.discount {
@@ -601,6 +608,9 @@ section.special_offer div.box div.products div.card-box div.bottom div.btn-view 
 section.special_offer div.box div.products div.card-box div.bottom div.btn-view a:hover {
   color: #E53935;
 }
+section.special_offer div.box div.products::-webkit-scrollbar {
+  display: none;
+}
 section.special_offer div.box div.card-box:first-child {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -617,8 +627,7 @@ section.special_offer div.box div.card-box:last-child {
   section.intro div.btns-intro {
     top: -40px;
   }
-  main.home section.ADs div.boxAds .sm-img,
-  main.home section.ADs div.boxAds .lg-img {
+  main.home section.ADs div.boxAds div.ADimg {
     height: 360px;
   }
 }
@@ -636,9 +645,15 @@ section.special_offer div.box div.card-box:last-child {
   section.best-products div.products-box {
     margin: 0px 30px 35px;
   }
-  main.home section.ADs div.boxAds .sm-img,
-  main.home section.ADs div.boxAds .lg-img {
+  main.home section.ADs div.boxAds div.ADimg {
     height: 300px;
+  }
+  section.special_offer div.box div.information {
+    gap: 10px;
+  }
+  section.special_offer div.box div.products {
+    width: 100%;
+    margin: 0;
   }
 }
 @media screen and (max-width: 992px) {
@@ -650,6 +665,24 @@ section.special_offer div.box div.card-box:last-child {
   }
   header.home-header div.right ul {
     padding: 0px;
+  }
+  main.home section.ADs div.boxAds div.ADimg {
+    height: auto;
+  }
+  section.special_offer {
+    font-size: 0.85rem;
+  }
+  section.special_offer div.box div.information {
+    margin-bottom: 10px;
+  }
+  section.special_offer div.box div.information div.string {
+    margin-bottom: 0;
+  }
+  section.special_offer div.box div.information div.string h2 {
+    margin-bottom: 0px;
+  }
+  section.special_offer div.box div.products div.card-box div.img img {
+    width: 128px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -672,6 +705,12 @@ section.special_offer div.box div.card-box:last-child {
   main.home section.ADs div.boxAds .lg-img {
     height: auto;
   }
+  section.special_offer {
+    margin: 40px 0px;
+  }
+  section.special_offer div.box div.products div.card-box {
+    width: auto;
+  }
 }
 @media screen and (max-width: 576px) {
   header.home-header div.burger-box {
@@ -691,12 +730,61 @@ section.special_offer div.box div.card-box:last-child {
   section.intro div.btns-intro .active-btn {
     width: 20px !important;
   }
+  section.best-products {
+    margin: 30px 0px;
+  }
+  section.best-products h1 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
   section.best-products div.products-box {
     margin: 0px 65px 35px;
   }
+  section.special_offer div.box div.information {
+    gap: 5px;
+  }
+  section.special_offer div.box div.information div.string h2 {
+    font-size: 1.5em;
+  }
+  section.special_offer div.box div.information div.timer div.boxNumber {
+    margin: 0px 4px;
+    width: 30px;
+    height: 30px;
+  }
+  section.special_offer div.box div.information div.timer span {
+    font-size: 1.2em;
+  }
+  section.special_offer div.box div.information div.btn-view a#small {
+    display: block;
+  }
+  section.special_offer div.box div.information div.btn-view a#larg {
+    display: none;
+  }
 }
 @media screen and (max-width: 400px) {
+  section.best-products {
+    margin: 20px 0px;
+  }
+  section.best-products h1 {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+  }
   section.best-products div.products-box {
     margin: 0px 9px 25px;
+  }
+  section.special_offer {
+    font-size: 0.75rem;
+  }
+  section.special_offer div.box {
+    padding: 15px 15px;
+    border-radius: 20px;
+  }
+  section.special_offer div.box div.information div.timer div.boxNumber {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+  }
+  section.special_offer div.box div.products div.card-box div.img img {
+    width: 117px;
   }
 }/*# sourceMappingURL=main.css.map */

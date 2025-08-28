@@ -57,12 +57,14 @@ section.special_offer {
             }
 
             div.btn-view {
-                margin-top: 15px;
-
                 a {
                     color: #fff;
                     font-weight: bold;
                     font-size: 1em;
+                }
+
+                #small {
+                    display: none;
                 }
             }
         }
@@ -73,6 +75,9 @@ section.special_offer {
             margin-right: 50px;
             width: 75%;
             gap: 10px;
+            overflow-x: scroll;
+            scrollbar-width: none; 
+             user-select: none;
 
             div.card-box {
                 display: flex;
@@ -80,6 +85,7 @@ section.special_offer {
                 flex-direction: column;
                 background-color: #fff;
                 padding: 10px 15px;
+                -webkit-user-drag: none;
 
                 div.img {
                     img {
@@ -92,7 +98,7 @@ section.special_offer {
 
                     span {
                         color: #555;
-                        font-size: 1rem;
+                        font-size: 1em;
                         font-weight: bold;
                     }
                 }
@@ -167,6 +173,10 @@ section.special_offer {
                     }
                 }
             }
+        }
+
+        div.products::-webkit-scrollbar{
+            display: none;
         }
 
         
