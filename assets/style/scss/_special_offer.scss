@@ -73,6 +73,9 @@ section.special_offer {
             margin-right: 50px;
             width: 75%;
             gap: 10px;
+            overflow-x: scroll;
+            scrollbar-width: none; 
+             user-select: none;
 
             div.card-box {
                 display: flex;
@@ -80,6 +83,7 @@ section.special_offer {
                 flex-direction: column;
                 background-color: #fff;
                 padding: 10px 15px;
+                -webkit-user-drag: none;
 
                 div.img {
                     img {
@@ -167,6 +171,10 @@ section.special_offer {
                     }
                 }
             }
+        }
+
+        div.products::-webkit-scrollbar{
+            display: none;
         }
 
         
