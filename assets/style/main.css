@@ -68,6 +68,7 @@ header.home-header div.right ul li:hover {
 }
 header.home-header div.right ul.dropdown-menu {
   background-color: rgb(63.6, 63.6, 63.6);
+  padding: 0px;
 }
 header.home-header div.right ul.dropdown-menu li {
   margin-right: 0px;
@@ -263,12 +264,371 @@ section.intro div.btns-intro div.btn-intro:hover {
   background-color: rgb(184, 184, 184);
 }
 
+section.best-products {
+  font-size: 1rem;
+  margin: 40px 0px;
+}
+section.best-products h1 {
+  font-weight: bold;
+  color: #E53935;
+  margin-bottom: 45px;
+}
+section.best-products div.products-box {
+  position: relative;
+  font-size: 1em;
+  margin-bottom: 35px;
+  padding: 20px;
+  border-radius: 21px;
+  background: #efefef;
+  box-shadow: -5px 5px 10px #828282, 5px -5px 10px #ffffff;
+}
+section.best-products div.products-box div.string {
+  margin-top: 5px;
+}
+section.best-products div.products-box div.string span.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+}
+section.best-products div.products-box div.string p.description {
+  font-size: 1em;
+  color: #555;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+section.best-products div.products-box div.discount span.price {
+  text-decoration: line-through;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #AAAAAA;
+  font-size: 0.9em;
+}
+section.best-products div.products-box div.discount span.price::after {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.best-products div.products-box div.discount div.Percentage {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+}
+section.best-products div.products-box div.discount div.Percentage span {
+  color: #fff;
+  background-color: #E53935;
+  padding: 3px 5px;
+  border-radius: 13px;
+}
+section.best-products div.products-box div.discount-off {
+  visibility: hidden;
+}
+section.best-products div.products-box div.bottom span.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555555;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+section.best-products div.products-box div.bottom span.price::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.best-products div.products-box div.bottom a.btn-view {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+section.best-products div.products-box div.bottom a.btn-view:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+section.best-products div.products-box div.bottom a.btn-view:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+main.home section.ADs div.boxAds div.ADimg {
+  height: 420px;
+}
+main.home section.ADs div.boxAds div.ADimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+section.loading {
+  font-size: 1rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: #E53935;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  opacity: 1;
+  transition: 0.25S;
+}
+section.loading div.loading-ai .dots {
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+}
+section.loading div.loading-ai .dot {
+  width: var(--size);
+  height: var(--size);
+  animation: dwl-dot-spin calc(var(--speed) * 5) infinite linear both;
+  animation-delay: calc(var(--i) * var(--speed) / (var(--dot-count) + 2) * -1);
+  rotate: calc(var(--i) * var(--spread) / (var(--dot-count) - 1));
+  position: absolute;
+}
+section.loading div.loading-ai .dot::before {
+  content: "";
+  display: block;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background-color: var(--color);
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 0;
+  left: 50%;
+}
+@keyframes dwl-dot-spin {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    opacity: 1;
+  }
+  2% {
+    transform: rotate(20deg);
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  30% {
+    transform: rotate(180deg);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    opacity: 1;
+  }
+  41% {
+    transform: rotate(380deg);
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  69% {
+    transform: rotate(520deg);
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    opacity: 1;
+  }
+  76% {
+    opacity: 1;
+  }
+  76.1% {
+    opacity: 0;
+  }
+  80% {
+    transform: rotate(720deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+section.loading span.loading-title {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.aiLoading {
+  opacity: 0 !important;
+}
+
+.offLoading {
+  display: none !important;
+}
+
+section.special_offer {
+  font-size: 1rem;
+  margin: 60px 0px;
+}
+section.special_offer div.box {
+  background-color: #E53935;
+  border-radius: 30px;
+  padding: 25px 30px;
+}
+section.special_offer div.box div.information div.string {
+  margin-bottom: 15px;
+}
+section.special_offer div.box div.information div.string h2 {
+  font-size: 2em;
+}
+section.special_offer div.box div.information div.string span {
+  font-size: 1.85em;
+}
+section.special_offer div.box div.information div.string h2,
+section.special_offer div.box div.information div.string span {
+  color: #fff;
+  font-weight: bold;
+}
+section.special_offer div.box div.information div.timer {
+  flex-direction: row-reverse;
+}
+section.special_offer div.box div.information div.timer div.boxNumber {
+  margin: 0px 5px;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+section.special_offer div.box div.information div.timer div.boxNumber span {
+  color: #E53935 !important;
+}
+section.special_offer div.box div.information div.timer span {
+  color: #fff;
+  font-size: 1.45em;
+  font-weight: bold;
+  position: relative;
+  top: 3px;
+}
+section.special_offer div.box div.information div.btn-view a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+}
+section.special_offer div.box div.information div.btn-view #small {
+  display: none;
+}
+section.special_offer div.box div.products {
+  margin-right: 50px;
+  width: 75%;
+  gap: 10px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+section.special_offer div.box div.products div.card-box {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px 15px;
+  -webkit-user-drag: none;
+}
+section.special_offer div.box div.products div.card-box div.img img {
+  width: 144px;
+}
+section.special_offer div.box div.products div.card-box div.title {
+  margin: 5px 0px;
+}
+section.special_offer div.box div.products div.card-box div.title span {
+  color: #555;
+  font-size: 1em;
+  font-weight: bold;
+}
+section.special_offer div.box div.products div.card-box div.discount {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+section.special_offer div.box div.products div.card-box div.discount span.discount {
+  color: #fff;
+  background-color: #E53935;
+  font-size: 0.8em;
+  padding: 3px;
+  border-radius: 5px;
+}
+section.special_offer div.box div.products div.card-box div.discount span.discountPrice {
+  font-size: 0.8em;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: line-through;
+  gap: 2px;
+  color: #aaa;
+}
+section.special_offer div.box div.products div.card-box div.discount span.discountPrice::after {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.special_offer div.box div.products div.card-box div.discount-off {
+  visibility: hidden;
+}
+section.special_offer div.box div.products div.card-box div.bottom span.price {
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  color: #555;
+}
+section.special_offer div.box div.products div.card-box div.bottom span.price::after {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.special_offer div.box div.products div.card-box div.bottom div.btn-view a {
+  color: rgb(240.6315789474, 145.5789473684, 143.3684210526);
+  font-size: 1em;
+  font-weight: bold;
+  transition: 0.5s;
+}
+section.special_offer div.box div.products div.card-box div.bottom div.btn-view a:hover {
+  color: #E53935;
+}
+section.special_offer div.box div.products::-webkit-scrollbar {
+  display: none;
+}
+section.special_offer div.box div.card-box:first-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+section.special_offer div.box div.card-box:last-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 @media screen and (max-width: 1400px) {
   section.intro {
     font-size: 0.8rem;
   }
   section.intro div.btns-intro {
     top: -40px;
+  }
+  main.home section.ADs div.boxAds div.ADimg {
+    height: 360px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -282,6 +642,19 @@ section.intro div.btns-intro div.btn-intro:hover {
   section.intro div.btns-intro .active-btn {
     width: 30px !important;
   }
+  section.best-products div.products-box {
+    margin: 0px 30px 35px;
+  }
+  main.home section.ADs div.boxAds div.ADimg {
+    height: 300px;
+  }
+  section.special_offer div.box div.information {
+    gap: 10px;
+  }
+  section.special_offer div.box div.products {
+    width: 100%;
+    margin: 0;
+  }
 }
 @media screen and (max-width: 992px) {
   header.home-header {
@@ -292,6 +665,24 @@ section.intro div.btns-intro div.btn-intro:hover {
   }
   header.home-header div.right ul {
     padding: 0px;
+  }
+  main.home section.ADs div.boxAds div.ADimg {
+    height: auto;
+  }
+  section.special_offer {
+    font-size: 0.85rem;
+  }
+  section.special_offer div.box div.information {
+    margin-bottom: 10px;
+  }
+  section.special_offer div.box div.information div.string {
+    margin-bottom: 0;
+  }
+  section.special_offer div.box div.information div.string h2 {
+    margin-bottom: 0px;
+  }
+  section.special_offer div.box div.products div.card-box div.img img {
+    width: 128px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -306,6 +697,19 @@ section.intro div.btns-intro div.btn-intro:hover {
   }
   section.intro div.btns-intro {
     top: -30px;
+  }
+  section.best-products div.products-box {
+    margin: 0px 0px 35px;
+  }
+  main.home section.ADs div.boxAds .sm-img,
+  main.home section.ADs div.boxAds .lg-img {
+    height: auto;
+  }
+  section.special_offer {
+    margin: 40px 0px;
+  }
+  section.special_offer div.box div.products div.card-box {
+    width: auto;
   }
 }
 @media screen and (max-width: 576px) {
@@ -325,5 +729,62 @@ section.intro div.btns-intro div.btn-intro:hover {
   }
   section.intro div.btns-intro .active-btn {
     width: 20px !important;
+  }
+  section.best-products {
+    margin: 30px 0px;
+  }
+  section.best-products h1 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+  section.best-products div.products-box {
+    margin: 0px 65px 35px;
+  }
+  section.special_offer div.box div.information {
+    gap: 5px;
+  }
+  section.special_offer div.box div.information div.string h2 {
+    font-size: 1.5em;
+  }
+  section.special_offer div.box div.information div.timer div.boxNumber {
+    margin: 0px 4px;
+    width: 30px;
+    height: 30px;
+  }
+  section.special_offer div.box div.information div.timer span {
+    font-size: 1.2em;
+  }
+  section.special_offer div.box div.information div.btn-view a#small {
+    display: block;
+  }
+  section.special_offer div.box div.information div.btn-view a#larg {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  section.best-products {
+    margin: 20px 0px;
+  }
+  section.best-products h1 {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+  }
+  section.best-products div.products-box {
+    margin: 0px 9px 25px;
+  }
+  section.special_offer {
+    font-size: 0.75rem;
+  }
+  section.special_offer div.box {
+    padding: 15px 15px;
+    border-radius: 20px;
+  }
+  section.special_offer div.box div.information div.timer div.boxNumber {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+  }
+  section.special_offer div.box div.products div.card-box div.img img {
+    width: 117px;
   }
 }/*# sourceMappingURL=main.css.map */

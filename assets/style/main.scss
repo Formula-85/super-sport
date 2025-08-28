@@ -9,7 +9,7 @@
     padding: 0px;
 }
 
-$header-color : #212121; 
+$header-color : #212121;
 $header-text : white;
 $Primary-color : #E53935;
 
@@ -17,6 +17,7 @@ a {
     text-decoration: none;
     color: black;
 }
+
 ul {
     list-style: none;
     padding: 0px;
@@ -24,6 +25,10 @@ ul {
 
 @import "./scss/header";
 @import "./scss/intro";
+@import "./scss/Best_Products";
+@import "./scss/ADs";
+@import "./scss/loading";
+@import "./scss/special_offer";
 
 
 

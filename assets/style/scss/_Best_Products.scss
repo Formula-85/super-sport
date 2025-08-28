@@ -1,0 +1,126 @@
+section.best-products {
+    font-size: 1rem;
+
+    margin: 40px 0px;
+
+    h1{
+        font-weight: bold;
+        color: $Primary-color;
+        margin-bottom: 45px;
+    }
+
+    div.products-box {
+        position: relative;
+        font-size: 1em;
+        margin-bottom: 35px;
+        padding: 20px;
+        border-radius: 21px;
+        background: #efefef;
+        box-shadow: -5px 5px 10px #828282,
+            5px -5px 10px #ffffff;
+
+        div.string {
+            margin-top: 5px;
+
+            span.title {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #444;
+            }
+
+            p.description {
+                font-size: 1em;
+                color: #555;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+        div.discount {
+            span.price {
+                text-decoration: line-through;
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                color: #AAAAAA;
+                font-size: 0.9em;
+            }
+
+            span.price::after {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                content: url(../img/icon/toman-t.svg);
+            }
+
+            div.Percentage {
+                position: absolute;
+                top: -5px;
+                right: -15px;
+
+                span {
+                    color: #fff;
+                    background-color: $Primary-color;
+                    padding: 3px 5px;
+                    border-radius: 13px;
+                }
+            }
+        }
+
+        div.discount-off {
+            visibility: hidden;
+        }
+
+        div.bottom {
+            span.price {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                color: #555555;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            span.price::after {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                content: url(../img/icon/toman.svg);
+            }
+
+
+
+            a.btn-view {
+                padding: 10px 25px;
+                border-radius: 10px;
+                border: 0;
+                background-color: rgb(255, 56, 86);
+                letter-spacing: 1.5px;
+                font-size: 15px;
+                transition: all 0.3s ease;
+                box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+                cursor: pointer;
+                color: #ffffff;
+                font-weight: bold;
+            }
+
+            a.btn-view:hover {
+                box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+            }
+
+            a.btn-view:active {
+                background-color: rgb(255, 56, 86);
+                /*50, 168, 80*/
+                box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+                transform: translateY(5px);
+                transition: 200ms;
+            }
+
+        }
+    }
+}

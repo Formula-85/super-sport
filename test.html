@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: content-box;
+            overflow: hidden;
+        }
+
+
+        body {
+            background-color: darkslateblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .boxs {
+            display: flex;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 57px;
+            height: 57px;
+            border-radius: 12px;
+        }
+
+        .box span {
+            padding: 0px !important;
+            color: #444 !important;
+        }
+
+        span {
+            color: white;
+            font-size: 2rem;
+            padding: 0px 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxs">
+        <div class="box">
+            <span id="hours"></span>
+        </div>
+        <span>:</span>
+        <div class="box">
+            <span id="minutes"></span>
+        </div>
+        <span>:</span>
+        <div class="box">
+            <span id="seconds"></span>
+        </div>
+    </div>
+
+    <script>
+        function timer() {
+            const targetDate = new Date("2025-08-28 00:00:00");      
+
+            const dif = targetDate - new Date()
+
+            if (dif > 0) {
+                const hou = Math.floor(dif / (1000 * 60 * 60));
+                const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+                const sec = Math.floor((dif % (1000 * 60)) / 1000);
+
+                hours.innerHTML = hou
+                minutes.innerHTML = min
+                seconds.innerHTML = sec
+            }
+            else {
+                hours.innerHTML = 0
+                minutes.innerHTML = 0
+                seconds.innerHTML = 0
+            }
+
+
+        }
+        let hours = document.getElementById("hours")
+        let minutes = document.getElementById("minutes")
+        let seconds = document.getElementById("seconds")
+
+        timer()
+        setInterval(() => {
+            timer()
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>
