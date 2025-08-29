@@ -660,6 +660,11 @@ footer div.up h4 {
   color: #dadada;
   font-size: 1.5em;
   font-weight: bold;
+  cursor: pointer;
+}
+footer div.up ul {
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 footer div.up ul li,
 footer div.up ul a {
