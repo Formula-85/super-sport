@@ -1,5 +1,6 @@
 footer {
     margin-top: 70px;
+    font-size: 1rem;
 
     div.up {
         background-color: #343a40;
@@ -9,8 +10,14 @@ footer {
             width: 100px;
         }
 
+        img.brand{
+            width: 100px;
+        }
+
         h4 {
             color: #dadada;
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
         ul {
@@ -18,8 +25,12 @@ footer {
             li,
             a {
                 color: #d9d9d980;
-                text-wrap: wrap;
                 transition: 0.5s ease-in-out;
+                font-size: 1em;
+            }
+
+            .addres{
+                text-wrap: wrap;
             }
 
 
@@ -37,23 +48,29 @@ footer {
             h2 {
                 color: #dadada;
                 font-weight: bold;
+                font-size: 1.5em;
+                margin: 0;
             }
         }
     }
 
-    div.down{
+    div.down {
         background-color: #212529;
         padding: 10px 0px;
-        div.copyright_notice{
-            p{
+
+        div.copyright_notice {
+            p {
                 color: #c0c0c0;
                 margin: 0;
+                font-size: 1em;
             }
         }
-        div.social{
-            a{
+
+        div.social {
+            a {
                 margin-right: 13px;
-                img{
+
+                img {
                     width: 30px;
                 }
             }
