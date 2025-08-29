@@ -1,4 +1,4 @@
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1399px) {
     section.intro {
         font-size: 0.8rem;
 
@@ -18,7 +18,7 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
     section.intro {
         div.btns-intro {
             top: -40px;
@@ -62,9 +62,20 @@
             }
         }
     }
+
+    footer {
+        margin-top: 60px;
+        font-size: 0.9rem;
+
+        div.up {
+            img.brand {
+                width: 85px;
+            }
+        }
+    }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
     header.home-header {
         font-size: 0.9rem;
 
@@ -117,9 +128,17 @@
             }
         }
     }
+
+    section.why_us {
+        font-size: 0.8rem;
+
+        div.box {
+            gap: 8px;
+        }
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     header.home-header {
         padding: 5px 0px;
 
@@ -159,6 +178,7 @@
 
     section.special_offer {
         margin: 40px 0px;
+
         div.box {
             div.products {
                 div.card-box {
@@ -167,9 +187,44 @@
             }
         }
     }
+
+    section.why_us {
+        font-size: 1.15rem;
+
+        div.box {
+            margin-bottom: 20px;
+
+            div.img {
+                img {
+                    width: 65px;
+                }
+            }
+        }
+    }
+
+    footer {
+        div.down {
+            div.copyright_notice {
+                p {
+                    font-size: 0.82em;
+                }
+            }
+
+            div.social {
+                a {
+                    margin-right: 8px;
+
+                    img {
+                        width: 25px;
+                    }
+                }
+
+            }
+        }
+    }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
     header.home-header {
         div.burger-box {
             right: -75%;
@@ -243,6 +298,29 @@
             }
         }
     }
+
+    footer {
+        margin-top: 30px;
+        font-size: 0.75rem;
+        div.up{
+            padding: 30px 0px 0px;
+            img.brand{
+                width: 60px;
+            }
+            img{
+                width: 80px;
+            }
+        }
+        div.down{
+            div.social{
+                a{
+                    img{
+                        width: 20px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -283,6 +361,40 @@
                             width: 117px;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    section.why_us {
+        font-size: 0.9rem;
+
+        div.box {
+            div.img {
+                width: 58px;
+            }
+        }
+    }
+
+    footer{
+        div.up{
+            padding: 24px 0px 10px;
+            img.brand{
+                width: 50px;
+            }
+            div.brand{
+                h2{
+                    font-size: 1.2em;
+                }
+            }
+            div.namad{
+                flex-direction: column;
+            }
+        }
+        div.down{
+            div.copyright_notice{
+                p{
+                    font-size: 0.7em;
                 }
             }
         }
