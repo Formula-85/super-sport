@@ -51,6 +51,9 @@ let hours = document.getElementById("hours")
 let minutes = document.getElementById("minutes")
 let seconds = document.getElementById("seconds")
 
+// --- footer ---
+
+const footerTitle = document.querySelectorAll(".footer-title")
 
 // =========================
 // 2. FUNCTIONS
@@ -370,19 +373,19 @@ function drag(value) {
   const slider = document.querySelector(value)
 
   let isDown = false
-  let startX 
+  let startX
   let scrollLeft
 
 
-  slider.addEventListener("mousedown" , e => {
+  slider.addEventListener("mousedown", e => {
     isDown = true
     startX = e.pageX - slider.offsetLeft
     scrollLeft = slider.scrollLeft;
   })
-  slider.addEventListener("mouseup",() => {
+  slider.addEventListener("mouseup", () => {
     isDown = false
   })
-  slider.addEventListener("mouseleave",() => {
+  slider.addEventListener("mouseleave", () => {
     isDown = false
   })
   slider.addEventListener("mousemove", (e) => {
@@ -394,7 +397,24 @@ function drag(value) {
   })
 }
 
-
+// --- footer ---
+function footerBtn(value) {
+  value.forEach((title) => {
+    const list = title.nextElementSibling;
+    list.style.height = list.scrollHeight + "px"
+    let open = true
+    title.addEventListener("click", () => {
+      if(open) {
+        list.style.height = " 0px"
+        open = false
+      }
+      else{
+        list.style.height = list.scrollHeight + "px"
+        open = true
+      }
+    })
+  })
+}
 
 // =========================
 // 3. EVENT LISTENERS
@@ -456,7 +476,7 @@ window.addEventListener("load", async function getData() {
       timer(homeData)
     }, 1000);
     drag("#special_offer_products")
-
+    footerBtn(footerTitle)
 
 
     await waitForImagesToLoad()
