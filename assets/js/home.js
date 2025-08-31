@@ -1,17 +1,19 @@
 // =========================
-// 1. VARIABLES
+// IMPORTS
 // =========================
 
-// --- Burger Menu ---
-// Burger Menu Variables
-let burger = document.getElementById("burger");
-let burgerBox = document.getElementById("burger-box");
-let openBurgerBox = false;
+import {
+  englishToPrsian,
+  discountPrice,
+  waitForImagesToLoad,
+  offLoading,
+  slowingLink,
+  drag
+} from "./main.js";
 
-// Dropdown in burger menu Variables
-let burgerDropdown = document.getElementById("burger-dropdown");
-let burgerDropdownBox = document.getElementById("burger-dropdown-box");
-let openBurgerDropdown = false;
+// =========================
+// 1. VARIABLES
+// =========================
 
 
 // --- intro ---
@@ -38,22 +40,17 @@ let ADimg = document.getElementsByClassName("ADimg")
 
 
 
-// --- loading ---
-let loading = document.getElementById("loading")
-let body = document.getElementById("body")
 
 // --- special offer ---
 
+// Boxes for the special offers section
 let specialOffer = document.getElementById("special_offer")
 let specialOfferProducts = document.getElementById("special_offer_products")
 
+// Boxes for the special products timer
 let hours = document.getElementById("hours")
 let minutes = document.getElementById("minutes")
 let seconds = document.getElementById("seconds")
-
-// --- footer ---
-
-const footerTitle = document.querySelectorAll(".footer-title")
 
 // =========================
 // 2. FUNCTIONS
@@ -149,25 +146,6 @@ function createIntro(data) {
 
 // --- Best products ---
 
-// Convert Persian Numbers to English and Separate Numbers by Thousands
-function englishToPrsian(value) {
-  let num = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  return num.replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])
-}
-
-// For Discount Calculation
-function discountPrice(priceNum, discountNum) {
-  let discount = discountNum.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
-  discount = parseInt(discount)
-  let price = priceNum.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
-  price = parseInt(price.replace(/,/g, ""));
-  let finalprice = price - (price * (discount / 100))
-  finalprice = finalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  finalprice = finalprice.replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])
-  return finalprice
-}
-
-
 // for create Best Products
 function createBestProducts(data) {
   let dataBest_products = data.best_products
@@ -235,32 +213,11 @@ function createAD(data) {
   })
 }
 
-// --- loading ---
 
-function waitForImagesToLoad() {
-  const images = Array.from(document.querySelectorAll("img"))
-  return Promise.all(images.map(img => {
-    return new Promise(resolve => {
-      if (img.complete) {
-        resolve()
-      }
-      else {
-        img.onload = img.onerror = resolve;
-      }
-    })
-  }))
-}
-
-function offLoading() {
-  loading.classList.add("aiLoading")
-  setTimeout(() => {
-    loading.classList.add("offLoading")
-    body.classList.remove("overflow-hidden")
-  }, 250);
-}
 
 // --- special offer ---
 
+// Creating special offer products
 function createSpecialOffer(data) {
   data.Special_offer.forEach(value => {
     if (value.discount === "0") {
@@ -310,27 +267,39 @@ function createSpecialOffer(data) {
   });
 }
 
+// Special products timer
 function timer(value) {
+
+  // If the timer is off, special offers should not be displayed
   if (value.Special_offer_timer == "off") {
     specialOffer.classList.add("d-none")
   }
+
+  // If set to automatic mode, it should run infinitely based on the specified time
   else if (value.Special_offer_timer == "auto") {
+
+    // For calculating the remaining time
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 1)
     targetDate.setHours(12, 24, 13)
-
     const dif = targetDate - new Date()
 
+    // If the remaining time is greater than zero:
     if (dif > 0) {
+      // Getting exact numbers in hourly format
       const hou = Math.floor(dif / (1000 * 60 * 60));
       const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
       const sec = Math.floor((dif % (1000 * 60)) / 1000);
 
+      // Placing numbers inside a specific box
       hours.innerHTML = englishToPrsian(hou.toString())
       minutes.innerHTML = englishToPrsian(min.toString())
       seconds.innerHTML = englishToPrsian(sec.toString())
     }
+
+    // If the remaining time has passed:
     else {
+      // Place zeros in the specified boxes, and after 5 seconds, the special offers will disappear
       hours.innerHTML = englishToPrsian("0")
       minutes.innerHTML = englishToPrsian("0")
       seconds.innerHTML = englishToPrsian("0")
@@ -340,21 +309,26 @@ function timer(value) {
       }, 5000);
     }
   }
+
+  // If a specific time is set:
   else {
+    // For calculating the remaining time
     const targetDate = new Date(value.Special_offer_timer);
-
     const dif = targetDate - new Date()
 
     if (dif > 0) {
+      // Getting exact numbers in hourly format
       const hou = Math.floor(dif / (1000 * 60 * 60));
       const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
       const sec = Math.floor((dif % (1000 * 60)) / 1000);
-
+      // Placing numbers inside a specific box
       hours.innerHTML = englishToPrsian(hou.toString())
       minutes.innerHTML = englishToPrsian(min.toString())
       seconds.innerHTML = englishToPrsian(sec.toString())
     }
+    // If the remaining time has passed:
     else {
+      // Place zeros in the specified boxes, and after 5 seconds, the special offers will disappear
       hours.innerHTML = englishToPrsian("0")
       minutes.innerHTML = englishToPrsian("0")
       seconds.innerHTML = englishToPrsian("0")
@@ -367,97 +341,10 @@ function timer(value) {
 }
 
 
-// --- drag ---
-
-function drag(value) {
-  const slider = document.querySelector(value)
-
-  let isDown = false
-  let startX
-  let scrollLeft
-
-
-  slider.addEventListener("mousedown", e => {
-    isDown = true
-    startX = e.pageX - slider.offsetLeft
-    scrollLeft = slider.scrollLeft;
-  })
-  slider.addEventListener("mouseup", () => {
-    isDown = false
-  })
-  slider.addEventListener("mouseleave", () => {
-    isDown = false
-  })
-  slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault()
-    const x = e.pageX - slider.offsetLeft
-    const walk = (x - startX) * 1
-    slider.scrollLeft = scrollLeft - walk
-  })
-}
-
-// --- footer ---
-function footerBtn(value) {
-  value.forEach((title) => {
-    const list = title.nextElementSibling;
-    list.style.height = list.scrollHeight + "px"
-    let open = true
-    title.addEventListener("click", () => {
-      if(open) {
-        list.style.height = " 0px"
-        open = false
-      }
-      else{
-        list.style.height = list.scrollHeight + "px"
-        open = true
-      }
-    })
-  })
-}
 
 // =========================
 // 3. EVENT LISTENERS
 // =========================
-
-// --- tag a---
-// Slowing down link execution to fix animation issues on touch screens.
-document.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const href = this.href;
-
-    setTimeout(() => {
-      window.location.href = href;
-    }, 700);
-  });
-});
-
-
-// --- burger menu ---
-
-// open burger menu
-burger.addEventListener("click", () => {
-  if (openBurgerBox) {
-    openBurgerBox = false;
-    burgerBox.style = "";
-  } else {
-    openBurgerBox = true;
-    burgerBox.style.right = "0%";
-  }
-});
-
-// open Dropdown in burger menu
-burgerDropdown.addEventListener("click", () => {
-  if (openBurgerDropdown) {
-    openBurgerDropdown = false;
-    burgerDropdownBox.style.height = "";
-  } else {
-    openBurgerDropdown = true;
-    burgerDropdownBox.style.height = burgerDropdownBox.scrollHeight + "px";
-  }
-});
 
 
 window.addEventListener("load", async function getData() {
@@ -466,7 +353,6 @@ window.addEventListener("load", async function getData() {
       fetch("https://jsonkeeper.com/b/JOWOV").then(result => result.json()),
       fetch("https://jsonkeeper.com/b/QZEJL").then(result => result.json())
     ]);
-
     createIntro(intrData)
     createBestProducts(homeData)
     createAD(homeData)
@@ -476,7 +362,7 @@ window.addEventListener("load", async function getData() {
       timer(homeData)
     }, 1000);
     drag("#special_offer_products")
-    footerBtn(footerTitle)
+    slowingLink()
 
 
     await waitForImagesToLoad()
