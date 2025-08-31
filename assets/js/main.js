@@ -14,13 +14,12 @@ let burgerDropdownBox = document.getElementById("burger-dropdown-box");
 let openBurgerDropdown = false;
 
 // --- loading ---
-let loading = document.getElementById("loading")
-let body = document.getElementById("body")
-
+let loading = document.getElementById("loading");
+let body = document.getElementById("body");
 
 // --- footer ---
 
-const footerTitle = document.querySelectorAll(".footer-title")
+const footerTitle = document.querySelectorAll(".footer-title");
 
 // =========================
 // 2. FUNCTIONS
@@ -30,137 +29,132 @@ const footerTitle = document.querySelectorAll(".footer-title")
 
 // Convert Persian Numbers to English and Separate Numbers by Thousands
 export function englishToPrsian(value) {
-    let num = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    return num.replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])
+  let num = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return num.replace(/[0-9]/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
 }
 
 // For Discount Calculation
 export function discountPrice(priceNum, discountNum) {
-    let discount = discountNum.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
-    discount = parseInt(discount)
-    let price = priceNum.replace(/[۰-۹]/g, d => "۰۱۲۳۴۵۶۷۸۹".indexOf(d))
-    price = parseInt(price.replace(/,/g, ""));
-    let finalprice = price - (price * (discount / 100))
-    finalprice = finalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-    finalprice = finalprice.replace(/[0-9]/g, d => "۰۱۲۳۴۵۶۷۸۹"[d])
-    return finalprice
+  let discount = discountNum.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
+  discount = parseInt(discount);
+  let price = priceNum.replace(/[۰-۹]/g, (d) => "۰۱۲۳۴۵۶۷۸۹".indexOf(d));
+  price = parseInt(price.replace(/,/g, ""));
+  let finalprice = price - price * (discount / 100);
+  finalprice = finalprice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  finalprice = finalprice.replace(/[0-9]/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+  return finalprice;
 }
 
 // --- loading ---
 
 export function waitForImagesToLoad() {
-    const images = Array.from(document.querySelectorAll("img"))
-    return Promise.all(images.map(img => {
-        return new Promise(resolve => {
-            if (img.complete) {
-                resolve()
-            }
-            else {
-                img.onload = img.onerror = resolve;
-            }
-        })
-    }))
+  const images = Array.from(document.querySelectorAll("img"));
+  return Promise.all(
+    images.map((img) => {
+      return new Promise((resolve) => {
+        if (img.complete) {
+          resolve();
+        } else {
+          img.onload = img.onerror = resolve;
+        }
+      });
+    })
+  );
 }
 
 export function offLoading() {
-    loading.classList.add("aiLoading")
-    setTimeout(() => {
-        loading.classList.add("offLoading")
-        body.classList.remove("overflow-hidden")
-    }, 250);
+  loading.classList.add("aiLoading");
+  setTimeout(() => {
+    loading.classList.add("offLoading");
+    body.classList.remove("overflow-hidden");
+  }, 250);
 }
-
 
 // --- tag a---
 // Slowing down link execution to fix animation issues on touch screens.
 export function slowingLink() {
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    document.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
+      const href = this.href;
 
-            const href = this.href;
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 700);
-        });
+      setTimeout(() => {
+        window.location.href = href;
+      }, 700);
     });
+  });
 }
 
 // --- drag ---
 
 export function drag(value) {
-    const slider = document.querySelector(value)
+  const slider = document.querySelector(value);
 
-    let isDown = false
-    let startX
-    let scrollLeft
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-
-    slider.addEventListener("mousedown", e => {
-        isDown = true
-        startX = e.pageX - slider.offsetLeft
-        scrollLeft = slider.scrollLeft;
-    })
-    slider.addEventListener("mouseup", () => {
-        isDown = false
-    })
-    slider.addEventListener("mouseleave", () => {
-        isDown = false
-    })
-    slider.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        e.preventDefault()
-        const x = e.pageX - slider.offsetLeft
-        const walk = (x - startX) * 1
-        slider.scrollLeft = scrollLeft - walk
-    })
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+  });
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1;
+    slider.scrollLeft = scrollLeft - walk;
+  });
 }
 
 // =========================
 // 3. EVENT LISTENERS
 // =========================
 
-
-
 // --- burger menu ---
 
 // open burger menu
 burger.addEventListener("click", () => {
-    if (openBurgerBox) {
-        openBurgerBox = false;
-        burgerBox.style = "";
-    } else {
-        openBurgerBox = true;
-        burgerBox.style.right = "0%";
-    }
+  if (openBurgerBox) {
+    openBurgerBox = false;
+    burgerBox.style = "";
+  } else {
+    openBurgerBox = true;
+    burgerBox.style.right = "0%";
+  }
 });
 
 // open Dropdown in burger menu
 burgerDropdown.addEventListener("click", () => {
-    if (openBurgerDropdown) {
-        openBurgerDropdown = false;
-        burgerDropdownBox.style.height = "";
-    } else {
-        openBurgerDropdown = true;
-        burgerDropdownBox.style.height = burgerDropdownBox.scrollHeight + "px";
-    }
+  if (openBurgerDropdown) {
+    openBurgerDropdown = false;
+    burgerDropdownBox.style.height = "";
+  } else {
+    openBurgerDropdown = true;
+    burgerDropdownBox.style.height = burgerDropdownBox.scrollHeight + "px";
+  }
 });
 
 // --- footer ---
 footerTitle.forEach((title) => {
-    const list = title.nextElementSibling;
-    list.style.height = list.scrollHeight + "px"
-    let open = true
-    title.addEventListener("click", () => {
-        if (open) {
-            list.style.height = " 0px"
-            open = false
-        }
-        else {
-            list.style.height = list.scrollHeight + "px"
-            open = true
-        }
-    })
-})
+  const list = title.nextElementSibling;
+  list.style.height = list.scrollHeight + "px";
+  let open = true;
+  title.addEventListener("click", () => {
+    if (open) {
+      list.style.height = " 0px";
+      open = false;
+    } else {
+      list.style.height = list.scrollHeight + "px";
+      open = true;
+    }
+  });
+});

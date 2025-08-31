@@ -8,13 +8,12 @@ import {
   waitForImagesToLoad,
   offLoading,
   slowingLink,
-  drag
+  drag,
 } from "./main.js";
 
 // =========================
 // 1. VARIABLES
 // =========================
-
 
 // --- intro ---
 let sizeDataIntro;
@@ -29,33 +28,26 @@ let positionSlides = 0;
 let rightBtnIntro;
 let leftBtnIntro;
 
-
 // --- best_products ---
-let boxBestProducts = document.getElementById("boxBestProducts")
-
-
+let boxBestProducts = document.getElementById("boxBestProducts");
 
 // --- ADs ---
-let ADimg = document.getElementsByClassName("ADimg")
-
-
-
+let ADimg = document.getElementsByClassName("ADimg");
 
 // --- special offer ---
 
 // Boxes for the special offers section
-let specialOffer = document.getElementById("special_offer")
-let specialOfferProducts = document.getElementById("special_offer_products")
+let specialOffer = document.getElementById("special_offer");
+let specialOfferProducts = document.getElementById("special_offer_products");
 
 // Boxes for the special products timer
-let hours = document.getElementById("hours")
-let minutes = document.getElementById("minutes")
-let seconds = document.getElementById("seconds")
+let hours = document.getElementById("hours");
+let minutes = document.getElementById("minutes");
+let seconds = document.getElementById("seconds");
 
 // =========================
 // 2. FUNCTIONS
 // =========================
-
 
 // --- Intro ---
 
@@ -92,9 +84,8 @@ function RL_slider(direction) {
 
 // for create intro
 function createIntro(data) {
-  let dataIntro = data
+  let dataIntro = data;
   sizeDataIntro = dataIntro.length - 1;
-
 
   // For placing the slider image.
   dataIntro.map((value) => {
@@ -104,7 +95,6 @@ function createIntro(data) {
   // For get sliders
   // We converted it to an array so we could use forEach on it.
   sliders = Array.from(document.getElementsByClassName("sliders"));
-
 
   // For creating circular buttons.
   for (let i = 0; i <= sizeDataIntro; i++) {
@@ -118,8 +108,6 @@ function createIntro(data) {
   // For get circular buttons
   btnIntro = document.getElementsByClassName("btn-intro");
 
-
-
   // For get for get right and left btn
   rightBtnIntro = document.getElementById("rightBtnIntro");
   leftBtnIntro = document.getElementById("leftBtnIntro");
@@ -132,7 +120,6 @@ function createIntro(data) {
     RL_slider("L");
   });
 
-
   // auto Slider change.
   setInterval(() => {
     if (positionSlides == sizeDataIntro) {
@@ -143,12 +130,11 @@ function createIntro(data) {
   }, 10000);
 }
 
-
 // --- Best products ---
 
 // for create Best Products
 function createBestProducts(data) {
-  let dataBest_products = data.best_products
+  let dataBest_products = data.best_products;
 
   dataBest_products.forEach((value) => {
     if (value.discount === "0") {
@@ -174,9 +160,8 @@ function createBestProducts(data) {
         </div>
     </div>
 </div>
-  `
-    }
-    else {
+  `;
+    } else {
       boxBestProducts.innerHTML += `
   <div class=" col-xl-3 col-sm-6 col-12">
     <div class="products-box">
@@ -194,32 +179,34 @@ function createBestProducts(data) {
             </div>
         </div>
         <div class="bottom d-flex justify-content-between align-items-center">
-            <span class="price">${discountPrice(value.price, value.discount)}</span>
+            <span class="price">${discountPrice(
+              value.price,
+              value.discount
+            )}</span>
             <a href="${value.href}" class="btn-view">مشاهده</a>
         </div>
     </div>
 </div>
-  `
+  `;
     }
-  })
+  });
 }
-
 
 // --- ADs ---
 // for creare ADs
 function createAD(data) {
   data.ads.forEach((value) => {
-    ADimg[value.positon].innerHTML = `<a href="${value.href}"><img src="${value.img}" alt="${value.imgAlt}"></a>`
-  })
+    ADimg[
+      value.positon
+    ].innerHTML = `<a href="${value.href}"><img src="${value.img}" alt="${value.imgAlt}"></a>`;
+  });
 }
-
-
 
 // --- special offer ---
 
 // Creating special offer products
 function createSpecialOffer(data) {
-  data.Special_offer.forEach(value => {
+  data.Special_offer.forEach((value) => {
     if (value.discount === "0") {
       specialOfferProducts.innerHTML += `
   <div class="card-box">
@@ -234,15 +221,17 @@ function createSpecialOffer(data) {
           <span class="discount">}%</span>
       </div>
       <div class="bottom d-flex align-items-center justify-content-between">
-          <span class="price">${discountPrice(value.price, value.discount)}</span>
+          <span class="price">${discountPrice(
+            value.price,
+            value.discount
+          )}</span>
           <div class="btn-view">
               <a href="#">مشاهده</a>
           </div>
       </div>
   </div>
-  `
-    }
-    else {
+  `;
+    } else {
       specialOfferProducts.innerHTML += `
   <div class="card-box">
       <div class="img">
@@ -256,56 +245,57 @@ function createSpecialOffer(data) {
           <span class="discount">${englishToPrsian(value.discount)}%</span>
       </div>
       <div class="bottom d-flex align-items-center justify-content-between">
-          <span class="price">${discountPrice(value.price, value.discount)}</span>
+          <span class="price">${discountPrice(
+            value.price,
+            value.discount
+          )}</span>
           <div class="btn-view">
               <a href="#">مشاهده</a>
           </div>
       </div>
   </div>
-  `
+  `;
     }
   });
 }
 
 // Special products timer
 function timer(value) {
-
   // If the timer is off, special offers should not be displayed
   if (value.Special_offer_timer == "off") {
-    specialOffer.classList.add("d-none")
+    specialOffer.classList.add("d-none");
   }
 
   // If set to automatic mode, it should run infinitely based on the specified time
   else if (value.Special_offer_timer == "auto") {
-
     // For calculating the remaining time
     const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 1)
-    targetDate.setHours(12, 24, 13)
-    const dif = targetDate - new Date()
+    targetDate.setDate(targetDate.getDate() + 1);
+    targetDate.setHours(12, 24, 13);
+    const dif = targetDate - new Date();
 
     // If the remaining time is greater than zero:
     if (dif > 0) {
       // Getting exact numbers in hourly format
       const hou = Math.floor(dif / (1000 * 60 * 60));
-      const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+      const min = Math.floor((dif % (1000 * 60 * 60)) / (1000 * 60));
       const sec = Math.floor((dif % (1000 * 60)) / 1000);
 
       // Placing numbers inside a specific box
-      hours.innerHTML = englishToPrsian(hou.toString())
-      minutes.innerHTML = englishToPrsian(min.toString())
-      seconds.innerHTML = englishToPrsian(sec.toString())
+      hours.innerHTML = englishToPrsian(hou.toString());
+      minutes.innerHTML = englishToPrsian(min.toString());
+      seconds.innerHTML = englishToPrsian(sec.toString());
     }
 
     // If the remaining time has passed:
     else {
       // Place zeros in the specified boxes, and after 5 seconds, the special offers will disappear
-      hours.innerHTML = englishToPrsian("0")
-      minutes.innerHTML = englishToPrsian("0")
-      seconds.innerHTML = englishToPrsian("0")
+      hours.innerHTML = englishToPrsian("0");
+      minutes.innerHTML = englishToPrsian("0");
+      seconds.innerHTML = englishToPrsian("0");
 
       setTimeout(() => {
-        specialOffer.classList.add("d-none")
+        specialOffer.classList.add("d-none");
       }, 5000);
     }
   }
@@ -314,67 +304,56 @@ function timer(value) {
   else {
     // For calculating the remaining time
     const targetDate = new Date(value.Special_offer_timer);
-    const dif = targetDate - new Date()
+    const dif = targetDate - new Date();
 
     if (dif > 0) {
       // Getting exact numbers in hourly format
       const hou = Math.floor(dif / (1000 * 60 * 60));
-      const min = Math.floor((dif % (1000 * 60 * 60) / (1000 * 60)));
+      const min = Math.floor((dif % (1000 * 60 * 60)) / (1000 * 60));
       const sec = Math.floor((dif % (1000 * 60)) / 1000);
       // Placing numbers inside a specific box
-      hours.innerHTML = englishToPrsian(hou.toString())
-      minutes.innerHTML = englishToPrsian(min.toString())
-      seconds.innerHTML = englishToPrsian(sec.toString())
+      hours.innerHTML = englishToPrsian(hou.toString());
+      minutes.innerHTML = englishToPrsian(min.toString());
+      seconds.innerHTML = englishToPrsian(sec.toString());
     }
     // If the remaining time has passed:
     else {
       // Place zeros in the specified boxes, and after 5 seconds, the special offers will disappear
-      hours.innerHTML = englishToPrsian("0")
-      minutes.innerHTML = englishToPrsian("0")
-      seconds.innerHTML = englishToPrsian("0")
+      hours.innerHTML = englishToPrsian("0");
+      minutes.innerHTML = englishToPrsian("0");
+      seconds.innerHTML = englishToPrsian("0");
 
       setTimeout(() => {
-        specialOffer.classList.add("d-none")
+        specialOffer.classList.add("d-none");
       }, 5000);
     }
   }
 }
 
-
-
 // =========================
 // 3. EVENT LISTENERS
 // =========================
 
-
 window.addEventListener("load", async function getData() {
   try {
     const [intrData, homeData] = await Promise.all([
-      fetch("https://jsonkeeper.com/b/JOWOV").then(result => result.json()),
-      fetch("https://jsonkeeper.com/b/QZEJL").then(result => result.json())
+      fetch("https://jsonkeeper.com/b/JOWOV").then((result) => result.json()),
+      fetch("https://jsonkeeper.com/b/QZEJL").then((result) => result.json()),
     ]);
-    createIntro(intrData)
-    createBestProducts(homeData)
-    createAD(homeData)
-    createSpecialOffer(homeData)
-    timer(homeData)
+    createIntro(intrData);
+    createBestProducts(homeData);
+    createAD(homeData);
+    createSpecialOffer(homeData);
+    timer(homeData);
     setInterval(() => {
-      timer(homeData)
+      timer(homeData);
     }, 1000);
-    drag("#special_offer_products")
-    slowingLink()
+    drag("#special_offer_products");
+    slowingLink();
 
-
-    await waitForImagesToLoad()
-    offLoading()
+    await waitForImagesToLoad();
+    offLoading();
   } catch {
     console.log("error");
   }
-})
-
-
-
-
-
-
-
+});
