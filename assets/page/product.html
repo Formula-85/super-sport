@@ -88,21 +88,51 @@
     </header>
 
     <main class="product">
+      <section
+        class="loading d-flex flex-column align-items-center justify-content-center"
+        id="loading"
+      >
+        <div class="loading-ai">
+          <div
+            style="
+              --size: 64px;
+              --dot-size: 6px;
+              --dot-count: 6;
+              --color: #fff;
+              --speed: 1s;
+              --spread: 60deg;
+            "
+            class="dots"
+          >
+            <div style="--i: 0" class="dot"></div>
+            <div style="--i: 1" class="dot"></div>
+            <div style="--i: 2" class="dot"></div>
+            <div style="--i: 3" class="dot"></div>
+            <div style="--i: 4" class="dot"></div>
+            <div style="--i: 5" class="dot"></div>
+          </div>
+        </div>
+        <span class="loading-title">لطفا منتظر بمانید ...</span>
+      </section>
       <section class="breadcrumb">
-        <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb" class="container">
+        <nav
+          style="--bs-breadcrumb-divider: '>'"
+          aria-label="breadcrumb"
+          class="container"
+        >
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">محصولات</a></li>
-            <li class="breadcrumb-item"><a href="#">کیف های ورزشی</a></li>
-            <li class="breadcrumb-item active" aria-current="page">کیف ابی</li>
+            <li class="breadcrumb-item"><a href="#" id="breadcrumb-category">کیف های ورزشی</a></li>
+            <li class="breadcrumb-item active" id="breadcrumb-item" aria-current="page">کیف ابی</li>
           </ol>
         </nav>
       </section>
     </main>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <footer>
       <div class="up">
         <div class="container">
@@ -186,5 +216,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/product.js"></script>
   </body>
 </html>
