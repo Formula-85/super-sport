@@ -703,23 +703,24 @@ section.why_us div.box div.string span {
   color: #666;
 }
 
-main.product section.breadcrumb {
+section.breadcrumb {
   font-size: 1rem;
   background-color: #cfcfcf;
 }
-main.product section.breadcrumb ol {
+section.breadcrumb ol {
   padding: 13px 0px;
   margin: 0;
 }
-main.product section.breadcrumb ol li, main.product section.breadcrumb ol a {
+section.breadcrumb ol li,
+section.breadcrumb ol a {
   font-size: 1.05em;
   color: #444;
   transition: 0.5s;
 }
-main.product section.breadcrumb ol a:hover {
+section.breadcrumb ol a:hover {
   color: #E53935;
 }
-main.product section.breadcrumb ol li.active {
+section.breadcrumb ol li.active {
   font-size: 1.05em;
 }
 
@@ -799,6 +800,12 @@ main.product section.breadcrumb ol li.active {
   }
   section.why_us div.box {
     gap: 8px;
+  }
+  section.breadcrumb {
+    font-size: 0.85rem;
+  }
+  section.breadcrumb ol {
+    padding: 10px 0;
   }
 }
 @media screen and (max-width: 767px) {
@@ -957,5 +964,11 @@ main.product section.breadcrumb ol li.active {
   }
   footer div.down div.copyright_notice p {
     font-size: 0.7em;
+  }
+  section.breadcrumb {
+    font-size: 0.75rem;
+  }
+  section.breadcrumb ol {
+    padding: 10px 0;
   }
 }/*# sourceMappingURL=main.css.map */

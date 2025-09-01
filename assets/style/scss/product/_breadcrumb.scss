@@ -1,21 +1,20 @@
-main.product{
-    section.breadcrumb{
-        font-size: 1rem;
-        background-color: #cfcfcf;
-        ol{
-            padding: 13px 0px;
-            margin: 0;
-            li,a{
-                font-size: 1.05em;
-                color: #444;
-                transition: 0.5s;
-            }
-            a:hover{
-                color: $Primary-color;
-            }
-            li.active{
-                font-size: 1.05em;
-            }
-        }
+section.breadcrumb {
+  font-size: 1rem;
+  background-color: #cfcfcf;
+  ol {
+    padding: 13px 0px;
+    margin: 0;
+    li,
+    a {
+      font-size: 1.05em;
+      color: #444;
+      transition: 0.5s;
     }
+    a:hover {
+      color: $Primary-color;
+    }
+    li.active {
+      font-size: 1.05em;
+    }
+  }
 }
