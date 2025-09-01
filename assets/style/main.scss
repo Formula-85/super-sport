@@ -24,14 +24,17 @@ ul {
 }
 
 @import "./scss/header";
+@import "./scss/footer";
+
+// home page
 @import "./scss/intro";
 @import "./scss/Best_Products";
 @import "./scss/ADs";
 @import "./scss/loading";
 @import "./scss/special_offer";
 @import "./scss/why_us";
-@import "./scss/footer";
 
 
+// product page
 
 @import "./scss/media-query";
