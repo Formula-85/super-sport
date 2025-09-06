@@ -724,6 +724,123 @@ section.breadcrumb ol li.active {
   font-size: 1.05em;
 }
 
+section.product-box {
+  font-size: 1rem;
+  margin-top: 50px;
+}
+section.product-box div.img {
+  aspect-ratio: 1/1;
+  border-radius: 64px;
+  padding: 60px;
+  background: linear-gradient(225deg, #f0f0f0, #cacaca);
+  box-shadow: -7px 7px 37px #a1a1a1, 7px -7px 37px #ffffff;
+}
+section.product-box div.img img {
+  width: 100%;
+  filter: drop-shadow(-5px 7px 7px rgba(71, 71, 71, 0.658));
+}
+section.product-box div.information {
+  padding-right: 30px;
+}
+section.product-box div.information h1 {
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #444;
+}
+section.product-box div.information p.description {
+  color: #555;
+  font-weight: bold;
+  text-wrap: wrap;
+  text-align: justify;
+  font-size: 1.35em;
+  line-height: 2.1843em;
+}
+section.product-box div.information div.features span.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+section.product-box div.information div.features li {
+  color: #555;
+  margin-bottom: 4px;
+}
+section.product-box div.information div.discount-box {
+  gap: 25px;
+}
+section.product-box div.information div.discount-box div.price-discount {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #aaaaaa;
+  font-size: 1.1em;
+  text-decoration: line-through;
+}
+section.product-box div.information div.discount-box div.price-discount::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.product-box div.information div.discount-box div.discount {
+  background-color: #E53935;
+  padding: 4px 14px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+section.product-box div.information div.discount-box div.discount span {
+  color: #fff;
+  position: relative;
+  top: 2px;
+}
+section.product-box div.information div.bottom div.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+section.product-box div.information div.bottom div.price::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.product-box div.information div.bottom button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+section.product-box div.information div.bottom button:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+section.product-box div.information div.bottom button:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+section.product-box .offDiscount {
+  visibility: hidden !important;
+}
+
 @media screen and (max-width: 1399px) {
   section.intro {
     font-size: 0.8rem;
