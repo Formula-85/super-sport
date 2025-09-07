@@ -7,6 +7,7 @@ import {
   waitForImagesToLoad,
   englishToPrsian,
   discountPrice,
+  alertError
 } from "./main.js";
 
 // =========================
@@ -191,7 +192,7 @@ window.addEventListener("load", async function getData() {
     offLoading();
 
     slowingLink();
-  } catch (error) {
-    console.log("Error:", error);
+  } catch (err) {
+    alertError(err)
   }
 });

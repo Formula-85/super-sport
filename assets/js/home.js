@@ -9,6 +9,7 @@ import {
   offLoading,
   slowingLink,
   drag,
+  alertError,
 } from "./main.js";
 
 // =========================
@@ -362,7 +363,7 @@ window.addEventListener("load", async function getData() {
 
     await waitForImagesToLoad();
     offLoading();
-  } catch {
-    console.log("error");
+  } catch(err){
+    alertError(err);
   }
 });

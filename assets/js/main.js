@@ -119,6 +119,23 @@ export function drag(value) {
   });
 }
 
+// --- alert error ---
+// Creating a site error alert
+export function alertError(value) {
+  // Alert settings
+  Swal.fire({
+    icon: "error",
+    title: "مشکلی پیش امده",
+    text: "لطفا بعدا دوباره تلاش کنید",
+    showConfirmButton: false,
+    timer: 10000
+  });
+  // Bringing the alert to the front so it doesn’t get stuck behind elements
+  document.querySelector(".swal2-container").style.zIndex = "9999";
+
+  // Printing the error reason in the console
+  console.error(value);
+}
 // =========================
 // 3. EVENT LISTENERS
 // =========================
