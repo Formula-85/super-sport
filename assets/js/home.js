@@ -156,7 +156,7 @@ function createBestProducts(data) {
         </div>
         <div class="bottom d-flex justify-content-between align-items-center">
             <span class="price">${englishToPrsian(value.price)}</span>
-            <a href="${value.href}" class="btn-view">مشاهده</a>
+            <a href="./assets/page/product.html?id=${value.id}" class="btn-view">مشاهده</a>
         </div>
     </div>
 </div>
@@ -183,7 +183,7 @@ function createBestProducts(data) {
               value.price,
               value.discount
             )}</span>
-            <a href="${value.href}" class="btn-view">مشاهده</a>
+            <a href="./assets/page/product.html?id=${value.id}" class="btn-view">مشاهده</a>
         </div>
     </div>
 </div>
@@ -226,7 +226,7 @@ function createSpecialOffer(data) {
             value.discount
           )}</span>
           <div class="btn-view">
-              <a href="#">مشاهده</a>
+              <a href="./assets/page/product.html?id=${value.id}">مشاهده</a>
           </div>
       </div>
   </div>
@@ -250,7 +250,7 @@ function createSpecialOffer(data) {
             value.discount
           )}</span>
           <div class="btn-view">
-              <a href="#">مشاهده</a>
+              <a href="./assets/page/product.html?id=${value.id}">مشاهده</a>
           </div>
       </div>
   </div>

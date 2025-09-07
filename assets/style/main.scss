@@ -23,15 +23,25 @@ ul {
     padding: 0px;
 }
 
-@import "./scss/header";
-@import "./scss/intro";
-@import "./scss/Best_Products";
-@import "./scss/ADs";
-@import "./scss/loading";
-@import "./scss/special_offer";
-@import "./scss/why_us";
-@import "./scss/footer";
+@import "./scss/main/footer";
+@import "./scss/main/loading";
+@import "./scss/main/header";
 
 
 
-@import "./scss/media-query";
+// home page
+@import "./scss/home/ADs";
+@import "./scss/home/Best_Products";
+@import "./scss/home/intro";
+@import "./scss/home/special_offer";
+@import "./scss/home/why_us";
+
+
+// product page
+@import "./scss/product/breadcrumb";
+@import "./scss/product/product";
+@import "./scss/product/related_products";
+
+
+
+@import "./scss/main/media-query";

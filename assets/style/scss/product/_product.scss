@@ -1,0 +1,123 @@
+section.product-box {
+  font-size: 1rem;
+  margin-top: 50px;
+  div.img {
+    aspect-ratio: 1/1;
+    border-radius: 64px;
+    padding: 60px;
+    background: linear-gradient(225deg, #f0f0f0, #cacaca);
+    box-shadow: -7px 7px 37px #a1a1a1, 7px -7px 37px #ffffff;
+    img {
+      width: 100%;
+      filter: drop-shadow(-5px 7px 7px rgba(71, 71, 71, 0.658));
+    }
+  }
+  div.information {
+    padding-right: 30px;
+    h1 {
+      font-weight: bold;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    p.description {
+      color: #555;
+      font-weight: bold;
+      text-wrap: wrap;
+      text-align: justify;
+      font-size: 1.35em;
+      line-height: 2em;
+    }
+    div.features{
+      span.title{
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #444;
+        display: inline-block;
+        margin-bottom: 4px;
+      }
+      li{
+        color: #555;
+        margin-bottom: 4px;
+      }
+    }
+    div.discount-box {
+      gap: 25px;
+      div.price-discount {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: #aaaaaa;
+        font-size: 1.1em;
+        text-decoration: line-through;
+      }
+      div.price-discount::after {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        content: url(../img/icon/toman-t.svg);
+      }
+      div.discount {
+        background-color: $Primary-color;
+        padding: 4px 14px;
+        border-radius: 14px;
+        font-weight: bold;
+        font-size: 1.2em;
+        span {
+          color: #fff;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+    div.bottom {
+      div.price {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: #555;
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      div.price::after {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        content: url(../img/icon/toman.svg);
+      }
+
+      button {
+        padding: 10px 25px;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgb(255, 56, 86);
+        letter-spacing: 1.5px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+        cursor: pointer;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      button:hover {
+        box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+      }
+
+      button:active {
+        background-color: rgb(255, 56, 86);
+        /*50, 168, 80*/
+        box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+        transform: translateY(5px);
+        transition: 200ms;
+      }
+    }
+  }
+  .offDiscount {
+    visibility: hidden !important;
+  }
+}
