@@ -24,6 +24,9 @@ let breadcrumbItem = document.getElementById("breadcrumb-item");
 let product;
 let productImg = document.getElementById("img-product");
 let informationProduct = document.getElementById("information-product");
+
+// --- related products ---
+let relatedProducts = document.getElementById("related_products-box");
 // =========================
 // 2. FUNCTIONS
 // =========================
@@ -99,6 +102,65 @@ function createProduct(value) {
   }
 }
 
+function creatingRelatedProducts(allProducts, currentProduct) {
+  let related = allProducts.filter(
+    (p) => p.category === currentProduct.category && p.id !== currentProduct.id
+  );
+
+  if (related.length < 4) {
+    const other = allProducts.filter((p) => p.id !== currentProduct.id);
+    related = [...related, ...other].filter(
+      (p, index, self) => self.findIndex((x) => p.id === x.id) === index
+    );
+  }
+  related = related.slice(0, 4);
+
+  related.forEach((value) => {
+    if (value.discount !== "0") {
+      relatedProducts.innerHTML += `
+    <div class="col-3 box">
+    <div class="box-product">
+      <img src="${value.img}" alt="${value.imgAlt}">
+      <div class="information">
+        <span class="title">${value.title}</span>
+        <p class="description">${value.description}</p>
+      </div>
+      <div class="discount-box">
+        <span class="price-discount">${englishToPrsian(value.price)}</span>
+        <div class="discount"><span>${englishToPrsian(
+          value.discount
+        )}%</span></div>
+      </div>
+      <div class="bottom">
+        <span class="price">${discountPrice(value.price, value.discount)}</span>
+        <a href="./product.html?id=${value.id}">مشاهده</a>
+      </div>
+    </div>
+  </div>
+  `;
+    } else {
+      relatedProducts.innerHTML += `
+    <div class="col-3 box">
+    <div class="box-product">
+      <img src="${value.img}" alt="${value.imgAlt}">
+      <div class="information">
+        <span class="title">${value.title}</span>
+        <p class="description">${value.description}</p>
+      </div>
+      <div class="discount-box off">
+        <span class="price-discount"></span>
+        <div class="discount"><span>%</span></div>
+      </div>
+      <div class="bottom">
+        <span class="price">${englishToPrsian(value.price)}</span>
+        <a href="./product.html?id=${value.id}">مشاهده</a>
+      </div>
+    </div>
+  </div>
+  `;
+    }
+  });
+}
 // =========================
 // 3. EVENT LISTENERS
 // =========================
@@ -112,6 +174,7 @@ window.addEventListener("load", async function getData() {
     foundFindingProduct(productData);
     createBreadcrumb(product);
     createProduct(product);
+    creatingRelatedProducts(productData, product);
 
     await waitForImagesToLoad();
     offLoading();
