@@ -18,7 +18,6 @@ let loading = document.getElementById("loading");
 let body = document.getElementById("body");
 
 // --- footer ---
-
 const footerTitle = document.querySelectorAll(".footer-title");
 
 // =========================
@@ -47,6 +46,7 @@ export function discountPrice(priceNum, discountNum) {
 
 // --- loading ---
 
+// Waiting for images to load
 export function waitForImagesToLoad() {
   const images = Array.from(document.querySelectorAll("img"));
   return Promise.all(
@@ -62,6 +62,7 @@ export function waitForImagesToLoad() {
   );
 }
 
+// Remove loading
 export function offLoading() {
   loading.classList.add("aiLoading");
   setTimeout(() => {
@@ -71,6 +72,7 @@ export function offLoading() {
 }
 
 // --- tag a---
+
 // Slowing down link execution to fix animation issues on touch screens.
 export function slowingLink() {
   document.querySelectorAll("a").forEach((link) => {
@@ -88,9 +90,11 @@ export function slowingLink() {
 
 // --- drag ---
 
+// Enable drag mode
 export function drag(value) {
   const slider = document.querySelector(value);
 
+  // Necessary variables for mouse position and state
   let isDown = false;
   let startX;
   let scrollLeft;
@@ -144,6 +148,7 @@ burgerDropdown.addEventListener("click", () => {
 });
 
 // --- footer ---
+// Opening and closing footer lists
 footerTitle.forEach((title) => {
   const list = title.nextElementSibling;
   list.style.height = list.scrollHeight + "px";
