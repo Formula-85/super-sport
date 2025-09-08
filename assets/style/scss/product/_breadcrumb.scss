@@ -1,13 +1,13 @@
 section.breadcrumb {
   font-size: 1rem;
-  background-color: #cfcfcf;
+  background-color: $breadcrumb-color;
   ol {
     padding: 13px 0px;
     margin: 0;
     li,
     a {
       font-size: 1.05em;
-      color: #444;
+      color: $title;
       transition: 0.5s;
     }
     a:hover {
@@ -15,6 +15,7 @@ section.breadcrumb {
     }
     li.active {
       font-size: 1.05em;
+      color: $description;
     }
   }
 }

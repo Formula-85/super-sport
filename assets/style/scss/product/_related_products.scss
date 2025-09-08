@@ -20,14 +20,14 @@ section.related_products {
       div.information {
         span.title {
           font-weight: bold;
-          color: #555;
+          color: $title;
           font-size: 1.3em;
           margin: 3px 0px;
           display: block;
         }
         p.description {
           font-weight: bold;
-          color: #777;
+          color: $description;
           font-size: 1em;
           overflow: hidden;
           white-space: nowrap;
@@ -36,30 +36,20 @@ section.related_products {
       }
       div.discount-box {
         span.price-discount {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          color: #aaaaaa;
-          font-size: 1.1em;
-          text-decoration: line-through;
+          @include discount-price(5px,1.1rem)
         }
         span.price-discount::after {
-          display: inline-block;
-          width: 25px;
-          height: 25px;
-          background-size: cover;
-          background-repeat: no-repeat;
-          content: url(../img/icon/toman-t.svg);
+          @include discount-price-after(25px)
         }
         div.discount {
-          background-color: #e53935;
+          background-color: $Primary-color;
           border-radius: 8px;
           padding: 1px 7px;
           position: absolute;
           top: -8px;
           right: -10px;
           span {
-            color: #ffffff;
+            color: $light-text;
             font-weight: bold;
             font-size: 1em;
             position: relative;
@@ -77,48 +67,13 @@ section.related_products {
         align-items: center;
         margin-bottom: 8px;
         span.price {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          color: #555;
-          font-size: 1.1em;
-          font-weight: bold;
+          @include price(5px,1.1em)
         }
         span.price::after {
-          display: inline-block;
-          width: 25px;
-          height: 25px;
-          background-size: cover;
-          background-repeat: no-repeat;
-          content: url(../img/icon/toman.svg);
+          @include price-after(25px)
         }
 
-        a {
-          display: inline-block;
-          padding: 10px 25px;
-          border-radius: 10px;
-          border: 0;
-          background-color: rgb(255, 56, 86);
-          letter-spacing: 1.5px;
-          font-size: 15px;
-          transition: all 0.3s ease;
-          box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-          cursor: pointer;
-          color: #ffffff;
-          font-weight: bold;
-        }
-
-        a:hover {
-          box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-        }
-
-        a:active {
-          background-color: rgb(255, 56, 86);
-          /*50, 168, 80*/
-          box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-          transform: translateY(5px);
-          transition: 200ms;
-        }
+        @include btn-view(10px 25px,10px,1em)
       }
     }
   }

@@ -5,7 +5,7 @@ section.product-box {
     aspect-ratio: 1/1;
     border-radius: 64px;
     padding: 60px;
-    background: linear-gradient(225deg, #f0f0f0, #cacaca);
+    background: $product-background;
     box-shadow: -7px 7px 37px #a1a1a1, 7px -7px 37px #ffffff;
     img {
       width: 100%;
@@ -18,46 +18,36 @@ section.product-box {
       font-weight: bold;
       font-size: 2.5em;
       margin-bottom: 20px;
-      color: #444;
+      color: $title;
     }
     p.description {
-      color: #555;
+      color: $description;
       font-weight: bold;
       text-wrap: wrap;
       text-align: justify;
       font-size: 1.35em;
       line-height: 2em;
     }
-    div.features{
-      span.title{
+    div.features {
+      span.title {
         font-size: 1.2em;
         font-weight: bold;
-        color: #444;
+        color: $title;
         display: inline-block;
         margin-bottom: 4px;
       }
-      li{
-        color: #555;
+      li {
+        color: $description;
         margin-bottom: 4px;
       }
     }
     div.discount-box {
       gap: 25px;
       div.price-discount {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        color: #aaaaaa;
-        font-size: 1.1em;
-        text-decoration: line-through;
+        @include discount-price(5px, 1.1em);
       }
       div.price-discount::after {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        content: url(../img/icon/toman-t.svg);
+        @include discount-price-after(25px);
       }
       div.discount {
         background-color: $Primary-color;
@@ -66,7 +56,7 @@ section.product-box {
         font-weight: bold;
         font-size: 1.2em;
         span {
-          color: #fff;
+          color: $light-text;
           position: relative;
           top: 2px;
         }
@@ -74,12 +64,7 @@ section.product-box {
     }
     div.bottom {
       div.price {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        color: #555;
-        font-size: 1.1em;
-        font-weight: bold;
+        @include price(5px, 1.1em);
       }
       div.price::after {
         display: inline-block;
@@ -90,31 +75,7 @@ section.product-box {
         content: url(../img/icon/toman.svg);
       }
 
-      button {
-        padding: 10px 25px;
-        border-radius: 10px;
-        border: 0;
-        background-color: rgb(255, 56, 86);
-        letter-spacing: 1.5px;
-        font-size: 15px;
-        transition: all 0.3s ease;
-        box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-        cursor: pointer;
-        color: #ffffff;
-        font-weight: bold;
-      }
-
-      button:hover {
-        box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-      }
-
-      button:active {
-        background-color: rgb(255, 56, 86);
-        /*50, 168, 80*/
-        box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-        transform: translateY(5px);
-        transition: 200ms;
-      }
+        @include btn-view(10px 25px, 10px, 1em);
     }
   }
   .offDiscount {

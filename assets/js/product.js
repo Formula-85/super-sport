@@ -75,7 +75,7 @@ function createProduct(value) {
         </div>
         <div class="bottom d-flex justify-content-between">
           <div class="price">${discountPrice(value.price, value.discount)}</div>
-          <button>افزودن به سبد خرید</button>
+          <a href="">افزودن به سبد خرید</a>
         </div>
     `;
   } else {

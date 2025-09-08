@@ -69,7 +69,7 @@ footer div.up ul .addres {
   text-wrap: wrap;
 }
 footer div.up ul a:hover {
-  color: #E53935;
+  color: #e53935;
 }
 footer div.up ul li {
   margin-bottom: 10px;
@@ -100,7 +100,7 @@ section.loading {
   font-size: 1rem;
   width: 100vw;
   height: 100vh;
-  background-color: #E53935;
+  background-color: #e53935;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -125,7 +125,7 @@ section.loading div.loading-ai .dot::before {
   display: block;
   width: var(--dot-size);
   height: var(--dot-size);
-  background-color: var(--color);
+  background-color: #fff;
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -203,19 +203,19 @@ header.home-header div.right ul li {
   font-weight: bold;
 }
 header.home-header div.right ul li a {
-  color: white;
+  color: #fff;
   transition: 0.25s;
 }
 header.home-header div.right ul li a:hover {
-  color: #E53935;
+  color: #e53935;
 }
 header.home-header div.right ul li.dropdown-toggle {
-  color: white;
+  color: #fff;
   cursor: pointer;
   transition: 0.25s;
 }
 header.home-header div.right ul li:hover {
-  color: #E53935;
+  color: #e53935;
 }
 header.home-header div.right ul.dropdown-menu {
   background-color: rgb(63.6, 63.6, 63.6);
@@ -244,7 +244,7 @@ header.home-header div.burger .burger span {
   position: absolute;
   height: 4px;
   width: 100%;
-  background: white;
+  background: #fff;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -294,12 +294,12 @@ header.home-header ul {
   padding: 0px 40px;
 }
 header.home-header ul li {
-  color: white;
+  color: #fff;
   transition: 0.25s;
   font-size: 1em;
 }
 header.home-header ul li a {
-  color: white;
+  color: #fff;
   transition: 0.25s;
 }
 header.home-header ul li.dropdown-toggle {
@@ -307,7 +307,7 @@ header.home-header ul li.dropdown-toggle {
 }
 header.home-header ul li:hover,
 header.home-header ul a:hover {
-  color: #E53935;
+  color: #e53935;
 }
 header.home-header div.dropdown-box {
   height: 0px;
@@ -324,7 +324,7 @@ header.home-header div.dropdown-box ul a {
 }
 header.home-header div.dropdown-box ul a:hover {
   opacity: 80%;
-  color: white;
+  color: #fff;
 }
 
 .login-btn .button {
@@ -334,16 +334,16 @@ header.home-header div.dropdown-box ul a:hover {
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  color: white;
+  color: #fff;
   transition: all 1000ms;
   font-size: 1em;
   position: relative;
   overflow: hidden;
-  outline: 2px solid white;
+  outline: 2px solid #fff;
   background-color: rgba(0, 0, 0, 0);
 }
 .login-btn button:hover {
-  color: white;
+  color: #fff;
   transform: scale(1.1);
   outline: 2px solid rgb(235.9789473684, 110.1473684211, 107.2210526316);
   box-shadow: 4px 5px 17px -4px rgb(195.6210526316, 29.0526315789, 25.1789473684);
@@ -355,7 +355,7 @@ header.home-header div.dropdown-box ul a:hover {
   top: 0;
   width: 0;
   height: 100%;
-  background-color: #E53935;
+  background-color: #e53935;
   transform: skewX(45deg);
   z-index: -1;
   transition: width 1000ms;
@@ -382,7 +382,7 @@ section.best-products {
 }
 section.best-products h1 {
   font-weight: bold;
-  color: #E53935;
+  color: #e53935;
   margin-bottom: 45px;
 }
 section.best-products div.products-box {
@@ -414,7 +414,7 @@ section.best-products div.products-box div.discount span.price {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #AAAAAA;
+  color: #aaaaaa;
   font-size: 0.9em;
 }
 section.best-products div.products-box div.discount span.price::after {
@@ -432,7 +432,7 @@ section.best-products div.products-box div.discount div.Percentage {
 }
 section.best-products div.products-box div.discount div.Percentage span {
   color: #fff;
-  background-color: #E53935;
+  background-color: #e53935;
   padding: 3px 5px;
   border-radius: 13px;
 }
@@ -455,12 +455,11 @@ section.best-products div.products-box div.bottom span.price::after {
   background-repeat: no-repeat;
   content: url(../img/icon/toman.svg);
 }
-section.best-products div.products-box div.bottom a.btn-view {
+section.best-products div.products-box div.bottom a {
   padding: 10px 25px;
   border-radius: 10px;
   border: 0;
-  background-color: rgb(255, 56, 86);
-  letter-spacing: 1.5px;
+  background-color: #ff3856;
   font-size: 15px;
   transition: all 0.3s ease;
   box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
@@ -468,10 +467,10 @@ section.best-products div.products-box div.bottom a.btn-view {
   color: #ffffff;
   font-weight: bold;
 }
-section.best-products div.products-box div.bottom a.btn-view:hover {
+section.best-products div.products-box div.bottom a:hover {
   box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
 }
-section.best-products div.products-box div.bottom a.btn-view:active {
+section.best-products div.products-box div.bottom a:active {
   background-color: rgb(255, 56, 86);
   /*50, 168, 80*/
   box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
@@ -502,12 +501,12 @@ section.intro div.item div.btn-LR {
 section.intro div.item div.btn-LR i {
   margin: 0px 25px;
   font-size: 3.5em;
-  color: rgb(216, 216, 216);
+  color: #d8d8d8;
   cursor: pointer;
   transition: 0.5s;
 }
 section.intro div.item div.btn-LR i:hover {
-  color: #E53935;
+  color: #e53935;
 }
 section.intro div.btns-intro {
   position: relative;
@@ -517,17 +516,17 @@ section.intro div.btns-intro div.btn-intro {
   border-radius: 9999px;
   width: 18px;
   height: 18px;
-  background-color: rgb(216, 216, 216);
+  background-color: #d8d8d8;
   margin: 0px 5px;
   transition: 0.5s;
   cursor: pointer;
 }
 section.intro div.btns-intro .active-btn {
   width: 36px !important;
-  background-color: #E53935 !important;
+  background-color: #e53935 !important;
 }
 section.intro div.btns-intro div.btn-intro:hover {
-  background-color: rgb(184, 184, 184);
+  background-color: #b8b8b8;
 }
 
 section.special_offer {
@@ -535,7 +534,7 @@ section.special_offer {
   margin: 60px 0px;
 }
 section.special_offer div.box {
-  background-color: #E53935;
+  background-color: #e53935;
   border-radius: 30px;
   padding: 25px 30px;
 }
@@ -567,7 +566,7 @@ section.special_offer div.box div.information div.timer div.boxNumber {
   border-radius: 8px;
 }
 section.special_offer div.box div.information div.timer div.boxNumber span {
-  color: #E53935 !important;
+  color: #e53935 !important;
 }
 section.special_offer div.box div.information div.timer span {
   color: #fff;
@@ -609,7 +608,7 @@ section.special_offer div.box div.products div.card-box div.title {
   margin: 5px 0px;
 }
 section.special_offer div.box div.products div.card-box div.title span {
-  color: #555;
+  color: #444;
   font-size: 1em;
   font-weight: bold;
 }
@@ -620,18 +619,18 @@ section.special_offer div.box div.products div.card-box div.discount {
 }
 section.special_offer div.box div.products div.card-box div.discount span.discount {
   color: #fff;
-  background-color: #E53935;
+  background-color: #e53935;
   font-size: 0.8em;
   padding: 3px;
   border-radius: 5px;
 }
 section.special_offer div.box div.products div.card-box div.discount span.discountPrice {
-  font-size: 0.8em;
+  text-decoration: line-through;
   display: inline-flex;
   align-items: center;
-  text-decoration: line-through;
   gap: 2px;
-  color: #aaa;
+  color: #aaaaaa;
+  font-size: 0.8em;
 }
 section.special_offer div.box div.products div.card-box div.discount span.discountPrice::after {
   display: inline-block;
@@ -645,12 +644,12 @@ section.special_offer div.box div.products div.card-box div.discount-off {
   visibility: hidden;
 }
 section.special_offer div.box div.products div.card-box div.bottom span.price {
-  font-size: 1em;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  color: #555555;
+  font-size: 1em;
   font-weight: bold;
-  color: #555;
 }
 section.special_offer div.box div.products div.card-box div.bottom span.price::after {
   display: inline-block;
@@ -667,7 +666,7 @@ section.special_offer div.box div.products div.card-box div.bottom div.btn-view 
   transition: 0.5s;
 }
 section.special_offer div.box div.products div.card-box div.bottom div.btn-view a:hover {
-  color: #E53935;
+  color: #e53935;
 }
 section.special_offer div.box div.products::-webkit-scrollbar {
   display: none;
@@ -692,7 +691,6 @@ section.why_us div.box {
 }
 section.why_us div.box img {
   width: 60px;
-  fill: #ff0000;
 }
 section.why_us div.box div.string h3 {
   font-size: 1.5em;
@@ -718,10 +716,11 @@ section.breadcrumb ol a {
   transition: 0.5s;
 }
 section.breadcrumb ol a:hover {
-  color: #E53935;
+  color: #e53935;
 }
 section.breadcrumb ol li.active {
   font-size: 1.05em;
+  color: #555;
 }
 
 section.product-box {
@@ -771,12 +770,12 @@ section.product-box div.information div.discount-box {
   gap: 25px;
 }
 section.product-box div.information div.discount-box div.price-discount {
+  text-decoration: line-through;
   display: inline-flex;
   align-items: center;
   gap: 5px;
   color: #aaaaaa;
   font-size: 1.1em;
-  text-decoration: line-through;
 }
 section.product-box div.information div.discount-box div.price-discount::after {
   display: inline-block;
@@ -787,7 +786,7 @@ section.product-box div.information div.discount-box div.price-discount::after {
   content: url(../img/icon/toman-t.svg);
 }
 section.product-box div.information div.discount-box div.discount {
-  background-color: #E53935;
+  background-color: #e53935;
   padding: 4px 14px;
   border-radius: 14px;
   font-weight: bold;
@@ -802,7 +801,7 @@ section.product-box div.information div.bottom div.price {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #555;
+  color: #555555;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -814,23 +813,22 @@ section.product-box div.information div.bottom div.price::after {
   background-repeat: no-repeat;
   content: url(../img/icon/toman.svg);
 }
-section.product-box div.information div.bottom button {
+section.product-box div.information div.bottom a {
   padding: 10px 25px;
   border-radius: 10px;
   border: 0;
-  background-color: rgb(255, 56, 86);
-  letter-spacing: 1.5px;
-  font-size: 15px;
+  background-color: #ff3856;
+  font-size: 1em;
   transition: all 0.3s ease;
   box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
   cursor: pointer;
   color: #ffffff;
   font-weight: bold;
 }
-section.product-box div.information div.bottom button:hover {
+section.product-box div.information div.bottom a:hover {
   box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
 }
-section.product-box div.information div.bottom button:active {
+section.product-box div.information div.bottom a:active {
   background-color: rgb(255, 56, 86);
   /*50, 168, 80*/
   box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
@@ -845,7 +843,7 @@ section.related_products {
   font-size: 1rem;
 }
 section.related_products h2 {
-  color: #E53935;
+  color: #e53935;
   font-size: 2.2em;
   margin: 60px 0px 30px;
   font-weight: bold;
@@ -863,26 +861,26 @@ section.related_products div.box div.box-product img {
 }
 section.related_products div.box div.box-product div.information span.title {
   font-weight: bold;
-  color: #555;
+  color: #444;
   font-size: 1.3em;
   margin: 3px 0px;
   display: block;
 }
 section.related_products div.box div.box-product div.information p.description {
   font-weight: bold;
-  color: #777;
+  color: #555;
   font-size: 1em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 section.related_products div.box div.box-product div.discount-box span.price-discount {
+  text-decoration: line-through;
   display: inline-flex;
   align-items: center;
   gap: 5px;
   color: #aaaaaa;
-  font-size: 1.1em;
-  text-decoration: line-through;
+  font-size: 1.1rem;
 }
 section.related_products div.box div.box-product div.discount-box span.price-discount::after {
   display: inline-block;
@@ -901,7 +899,7 @@ section.related_products div.box div.box-product div.discount-box div.discount {
   right: -10px;
 }
 section.related_products div.box div.box-product div.discount-box div.discount span {
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
   font-size: 1em;
   position: relative;
@@ -920,7 +918,7 @@ section.related_products div.box div.box-product div.bottom span.price {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  color: #555;
+  color: #555555;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -933,13 +931,11 @@ section.related_products div.box div.box-product div.bottom span.price::after {
   content: url(../img/icon/toman.svg);
 }
 section.related_products div.box div.box-product div.bottom a {
-  display: inline-block;
   padding: 10px 25px;
   border-radius: 10px;
   border: 0;
-  background-color: rgb(255, 56, 86);
-  letter-spacing: 1.5px;
-  font-size: 15px;
+  background-color: #ff3856;
+  font-size: 1em;
   transition: all 0.3s ease;
   box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
   cursor: pointer;

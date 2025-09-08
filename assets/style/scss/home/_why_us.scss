@@ -7,16 +7,15 @@ section.why_us {
         gap: 15px;
         img{
             width: 60px;
-            fill: #ff0000;
         }
         div.string{
             h3{
                 font-size: 1.5em;
                 font-weight: bold;
-                color: #444;
+                color: $title;
             }
             span{
-                color: #666;
+                color: $why-us-text;
             }
         }
     }
