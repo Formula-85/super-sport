@@ -17,7 +17,7 @@ header.home-header {
                 font-weight: bold;
 
                 a {
-                    color: $header-text;
+                    color: $light-text;
                     transition: 0.25s;
                 }
 
@@ -27,7 +27,7 @@ header.home-header {
             }
 
             li.dropdown-toggle {
-                color: $header-text;
+                color: $light-text;
                 cursor: pointer;
                 transition: 0.25s;
             }
@@ -71,7 +71,7 @@ header.home-header {
             position: absolute;
             height: 4px;
             width: 100%;
-            background: $header-text;
+            background: $light-text;
             border-radius: 9px;
             opacity: 1;
             left: 0;
@@ -130,12 +130,12 @@ header.home-header {
         padding: 0px 40px;
 
         li {
-            color: $header-text;
+            color: $light-text;
             transition: 0.25s;
             font-size: 1em;
 
             a {
-                color: $header-text;
+                color: $light-text;
                 transition: 0.25s;
             }
         }
@@ -166,7 +166,7 @@ header.home-header {
 
             a:hover {
                 opacity: 80%;
-                color: $header-text;
+                color: $light-text;
             }
         }
     }
@@ -180,17 +180,17 @@ header.home-header {
         font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
-        color: $header-text;
+        color: $light-text;
         transition: all 1000ms;
         font-size: 1em;
         position: relative;
         overflow: hidden;
-        outline: 2px solid white;
+        outline: 2px solid $light-text;
         background-color: rgba(0, 0, 0, 0);
     }
 
     button:hover {
-        color: $header-text;
+        color: $light-text;
         transform: scale(1.1);
         outline: 2px solid lighten($color: $Primary-color, $amount: 12);
         box-shadow: 4px 5px 17px -4px darken($color: $Primary-color, $amount: 12);
