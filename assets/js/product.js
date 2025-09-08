@@ -7,6 +7,7 @@ import {
   waitForImagesToLoad,
   englishToPrsian,
   discountPrice,
+  alertError
 } from "./main.js";
 
 // =========================
@@ -30,15 +31,17 @@ let relatedProducts = document.getElementById("related_products-box");
 // =========================
 // 2. FUNCTIONS
 // =========================
-
-// --- breadcrumb ---
-function foundFindingProduct(data) {
+// --- Finding Product ---
+// Fetching specific product information
+function FindingProduct(data) {
   data.forEach((value) => {
     if (value.id == itemID) {
       product = value;
     }
   });
 }
+// --- breadcrumb ---
+// Creating a breadcrumb
 function createBreadcrumb(value) {
   breadcrumbCategory.innerHTML = value.category;
   breadcrumbItem.innerHTML = value.title;
@@ -46,6 +49,7 @@ function createBreadcrumb(value) {
 
 // --- product ---
 
+// Creating product image and information
 function createProduct(value) {
   productImg.innerHTML = `<img src="${value.img}" alt="${value.imgAlt}" draggable="false">`;
 
@@ -102,19 +106,26 @@ function createProduct(value) {
   }
 }
 
+// Creating the related products section
+
 function creatingRelatedProducts(allProducts, currentProduct) {
+  // Finding products similar to, but excluding, the main product
   let related = allProducts.filter(
     (p) => p.category === currentProduct.category && p.id !== currentProduct.id
   );
 
+  // If the number of similar products is less than four, use the remaining products
   if (related.length < 4) {
     const other = allProducts.filter((p) => p.id !== currentProduct.id);
     related = [...related, ...other].filter(
       (p, index, self) => self.findIndex((x) => p.id === x.id) === index
     );
   }
+
+  // Limits the number of products to four
   related = related.slice(0, 4);
 
+  // Creating the similar products section
   related.forEach((value) => {
     if (value.discount !== "0") {
       relatedProducts.innerHTML += `
@@ -161,6 +172,7 @@ function creatingRelatedProducts(allProducts, currentProduct) {
     }
   });
 }
+
 // =========================
 // 3. EVENT LISTENERS
 // =========================
@@ -171,7 +183,7 @@ window.addEventListener("load", async function getData() {
       fetch("https://jsonkeeper.com/b/CFEDX").then((result) => result.json()),
     ]);
 
-    foundFindingProduct(productData);
+    FindingProduct(productData);
     createBreadcrumb(product);
     createProduct(product);
     creatingRelatedProducts(productData, product);
@@ -180,7 +192,7 @@ window.addEventListener("load", async function getData() {
     offLoading();
 
     slowingLink();
-  } catch (error) {
-    console.log("Error:", error);
+  } catch (err) {
+    alertError(err)
   }
 });

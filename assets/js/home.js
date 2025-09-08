@@ -9,6 +9,7 @@ import {
   offLoading,
   slowingLink,
   drag,
+  alertError,
 } from "./main.js";
 
 // =========================
@@ -99,14 +100,19 @@ function createIntro(data) {
   // For creating circular buttons.
   for (let i = 0; i <= sizeDataIntro; i++) {
     if (i == 0) {
-      btnIntroBox.innerHTML = `<div class="btn-intro active-btn" onclick="introBtnClick(0)"></div>`;
+      btnIntroBox.innerHTML = `<div class="btn-intro active-btn"></div>`;
     } else {
-      btnIntroBox.innerHTML += `<div class="btn-intro" onclick="introBtnClick(${i})"></div>`;
+      btnIntroBox.innerHTML += `<div class="btn-intro""></div>`;
     }
   }
 
   // For get circular buttons
   btnIntro = document.getElementsByClassName("btn-intro");
+
+  // Adding click event to circular buttons
+  for (let i = 0; i < btnIntro.length; i++) {
+    btnIntro[i].addEventListener("click", () => introBtnClick(i));
+  }
 
   // For get for get right and left btn
   rightBtnIntro = document.getElementById("rightBtnIntro");
@@ -156,7 +162,9 @@ function createBestProducts(data) {
         </div>
         <div class="bottom d-flex justify-content-between align-items-center">
             <span class="price">${englishToPrsian(value.price)}</span>
-            <a href="./assets/page/product.html?id=${value.id}" class="btn-view">مشاهده</a>
+            <a href="./assets/page/product.html?id=${
+              value.id
+            }" class="btn-view">مشاهده</a>
         </div>
     </div>
 </div>
@@ -183,7 +191,9 @@ function createBestProducts(data) {
               value.price,
               value.discount
             )}</span>
-            <a href="./assets/page/product.html?id=${value.id}" class="btn-view">مشاهده</a>
+            <a href="./assets/page/product.html?id=${
+              value.id
+            }" class="btn-view">مشاهده</a>
         </div>
     </div>
 </div>
@@ -353,7 +363,7 @@ window.addEventListener("load", async function getData() {
 
     await waitForImagesToLoad();
     offLoading();
-  } catch {
-    console.log("error");
+  } catch(err){
+    alertError(err);
   }
 });
