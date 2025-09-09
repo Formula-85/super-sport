@@ -58,7 +58,7 @@ function createProduct(value) {
         <h1>${value.title}</h1>
         <p class="description">${value.description}</p>
         <div class="features">
-          <span class="title">ویژگی های محصول :</span>
+          <h2 class="title">ویژگی های محصول :</h2>
           <ul>
           ${value.features
             .map((result) => {
@@ -74,7 +74,7 @@ function createProduct(value) {
           )}%</span></div>
         </div>
         <div class="bottom d-flex justify-content-between">
-          <div class="price">${discountPrice(value.price, value.discount)}</div>
+          <div class="price">قیمت : ${discountPrice(value.price, value.discount)}</div>
           <a href="">افزودن به سبد خرید</a>
         </div>
     `;
@@ -83,7 +83,7 @@ function createProduct(value) {
         <h1>${value.title}</h1>
         <p class="description">${value.description}</p>
         <div class="features">
-          <span class="title">ویژگی های محصول :</span>
+          <h2 class="title">ویژگی های محصول :</h2>
           <ul>
           ${value.features
             .map((result) => {
@@ -93,13 +93,11 @@ function createProduct(value) {
           </ul>
         </div>
         <div class="discount-box d-flex offDiscount">
-          <div class="price-discount">${englishToPrsian(value.price)}</div>
-          <div class="discount"><span>${englishToPrsian(
-            value.discount
-          )}%</span></div>
+          <div class="price-discount">0</div>
+          <div class="discount"><span>%</span></div>
         </div>
         <div class="bottom d-flex justify-content-between">
-          <div class="price">${discountPrice(value.price, value.discount)}</div>
+          <div class="price">قیمت : ${discountPrice(value.price, value.discount)}</div>
           <a href="#">افزودن به سبد خرید</a>
         </div>
     `;
