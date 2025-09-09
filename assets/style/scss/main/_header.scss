@@ -26,13 +26,13 @@ header.home-header {
                 }
             }
 
-            li.dropdown-toggle {
+            span.dropdown-toggle {
                 color: $light-text;
                 cursor: pointer;
                 transition: 0.25s;
             }
 
-            li:hover {
+            span.dropdown-toggle:hover {
                 color: $Primary-color;
             }
         }

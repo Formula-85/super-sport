@@ -15,7 +15,7 @@ let openBurgerDropdown = false;
 
 // --- loading ---
 let loading = document.getElementById("loading");
-let body = document.getElementById("body");
+let body = document.querySelector("body");
 
 // --- footer ---
 const footerTitle = document.querySelectorAll(".footer-title");
@@ -67,7 +67,7 @@ export function offLoading() {
   loading.classList.add("aiLoading");
   setTimeout(() => {
     loading.classList.add("offLoading");
-    body.classList.remove("overflow-hidden");
+    body.removeAttribute("class");
   }, 250);
 }
 
@@ -128,7 +128,7 @@ export function alertError(value) {
     title: "مشکلی پیش امده",
     text: "لطفا بعدا دوباره تلاش کنید",
     showConfirmButton: false,
-    timer: 10000
+    timer: 10000,
   });
   // Bringing the alert to the front so it doesn’t get stuck behind elements
   document.querySelector(".swal2-container").style.zIndex = "9999";
