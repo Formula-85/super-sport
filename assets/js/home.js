@@ -102,7 +102,7 @@ function createIntro(data) {
     if (i == 0) {
       btnIntroBox.innerHTML = `<div class="btn-intro active-btn"></div>`;
     } else {
-      btnIntroBox.innerHTML += `<div class="btn-intro""></div>`;
+      btnIntroBox.innerHTML += `<div class="btn-intro"></div>`;
     }
   }
 
@@ -227,8 +227,8 @@ function createSpecialOffer(data) {
           <span>${value.title}</span>
       </div>
       <div class="discount discount-off">
-          <span class="discountPrice">}</span>
-          <span class="discount">}%</span>
+          <span class="discountPrice">.</span>
+          <span class="discount">%</span>
       </div>
       <div class="bottom d-flex align-items-center justify-content-between">
           <span class="price">${discountPrice(

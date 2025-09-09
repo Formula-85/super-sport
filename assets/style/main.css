@@ -209,12 +209,12 @@ header.home-header div.right ul li a {
 header.home-header div.right ul li a:hover {
   color: #e53935;
 }
-header.home-header div.right ul li.dropdown-toggle {
+header.home-header div.right ul span.dropdown-toggle {
   color: #fff;
   cursor: pointer;
   transition: 0.25s;
 }
-header.home-header div.right ul li:hover {
+header.home-header div.right ul span.dropdown-toggle:hover {
   color: #e53935;
 }
 header.home-header div.right ul.dropdown-menu {
