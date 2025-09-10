@@ -1,0 +1,78 @@
+section.best-products {
+  font-size: 1rem;
+
+  margin: 40px 0px;
+
+  h1 {
+    font-weight: bold;
+    color: $Primary-color;
+    margin-bottom: 45px;
+  }
+
+  div.products-box {
+    position: relative;
+    font-size: 1em;
+    margin-bottom: 35px;
+    padding: 20px;
+    border-radius: 21px;
+    background: $best-products-color;
+    box-shadow: -5px 5px 10px #828282, 5px -5px 10px #ffffff;
+
+    div.string {
+      margin-top: 5px;
+
+      span.title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: $title;
+      }
+
+      p.description {
+        font-size: 1em;
+        color: $description;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    div.discount {
+      span.price {
+        @include discount-price(5px,0.9em)
+      }
+
+      span.price::after {
+        @include discount-price-after(20px)
+      }
+
+      div.Percentage {
+        position: absolute;
+        top: -5px;
+        right: -15px;
+
+        span {
+          color: $light-text;
+          background-color: $Primary-color;
+          padding: 3px 5px;
+          border-radius: 13px;
+        }
+      }
+    }
+
+    div.discount-off {
+      visibility: hidden;
+    }
+
+    div.bottom {
+      span.price {
+        @include price(5px,1.1em)
+      }
+
+      span.price::after {
+        @include price-after(25px)
+      }
+
+      @include btn-view(10px 25px,10px,15px)
+    }
+  }
+}

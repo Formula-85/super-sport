@@ -1,37 +1,120 @@
 @import "../font/font";
 
 * {
-    font-family: Vazir;
-    direction: rtl;
-    text-wrap: nowrap;
-    color: black;
-    margin: 0px;
-    padding: 0px;
+  font-family: Vazir;
+  direction: rtl;
+  text-wrap: nowrap;
+  color: black;
+  margin: 0px;
+  padding: 0px;
 }
 
-$header-color : #212121;
-$header-text : white;
-$Primary-color : #E53935;
+$Primary-color: #e53935;
+$light-text: #fff;
 
+$header-color: #212121;
+
+$footer-color: #343a40;
+$footer-title: #dadada;
+$footer-description: #d9d9d980;
+$footer-bottom-color: #212529;
+
+$btn-intro: #d8d8d8;
+$btn-intro_hover: #b8b8b8;
+
+$best-products-color: #efefef;
+
+$title: #444;
+$description: #555;
+$why-us-text: #666;
+
+$breadcrumb-color: #cfcfcf;
+
+$product-background: linear-gradient(225deg, #f0f0f0, #cacaca);
+@mixin price($gap, $font-size) {
+  display: inline-flex;
+  align-items: center;
+  gap: $gap;
+  color: #555555;
+  font-size: $font-size;
+  font-weight: bold;
+}
+@mixin price-after($width) {
+  display: inline-block;
+  width: $width;
+  height: $width;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+
+@mixin discount-price($gap, $font-size) {
+  text-decoration: line-through;
+  display: inline-flex;
+  align-items: center;
+  gap: $gap;
+  color: #aaaaaa;
+  font-size: $font-size;
+}
+@mixin discount-price-after($width) {
+  display: inline-block;
+  width: $width;
+  height: $width;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+
+@mixin btn-view($padding, $border, $font-size) {
+  a {
+    padding: $padding;
+    border-radius: $border;
+    border: 0;
+    background-color: #ff3856;
+    font-size: $font-size;
+    transition: all 0.3s ease;
+    box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  a:hover {
+    box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+  }
+
+  a:active {
+    background-color: rgb(255, 56, 86);
+    /*50, 168, 80*/
+    box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 200ms;
+  }
+}
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 ul {
-    list-style: none;
-    padding: 0px;
+  list-style: none;
+  padding: 0px;
 }
 
-@import "./scss/header";
-@import "./scss/intro";
-@import "./scss/Best_Products";
-@import "./scss/ADs";
-@import "./scss/loading";
-@import "./scss/special_offer";
-@import "./scss/why_us";
-@import "./scss/footer";
+@import "./scss/main/footer";
+@import "./scss/main/loading";
+@import "./scss/main/header";
 
+// home page
+@import "./scss/home/ADs";
+@import "./scss/home/Best_Products";
+@import "./scss/home/intro";
+@import "./scss/home/special_offer";
+@import "./scss/home/why_us";
 
+// product page
+@import "./scss/product/breadcrumb";
+@import "./scss/product/product";
+@import "./scss/product/related_products";
 
-@import "./scss/media-query";
+@import "./scss/main/media-query";

@@ -1,0 +1,80 @@
+section.product-box {
+  font-size: 1rem;
+  margin-top: 50px;
+  div.img {
+    aspect-ratio: 1/1;
+    border-radius: 64px;
+    padding: 60px;
+    background: $product-background;
+    box-shadow: -7px 7px 37px #a1a1a1, 7px -7px 37px #ffffff;
+    img {
+      width: 100%;
+      filter: drop-shadow(-5px 7px 7px rgba(71, 71, 71, 0.658));
+    }
+  }
+  div.information {
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-weight: bold;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: $title;
+    }
+    p.description {
+      color: $description;
+      font-weight: bold;
+      text-wrap: wrap;
+      text-align: justify;
+      font-size: 1.35em;
+      line-height: 2em;
+    }
+    div.features {
+      h2.title {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: $title;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      li {
+        color: $description;
+        margin-bottom: 4px;
+        font-size: 1.2em;
+      }
+    }
+    div.discount-box {
+      gap: 25px;
+      div.price-discount {
+        @include discount-price(5px, 1.2em);
+      }
+      div.price-discount::after {
+        @include discount-price-after(25px);
+      }
+      div.discount {
+        background-color: $Primary-color;
+        padding: 2px 11px;
+        border-radius: 9px;
+        font-weight: bold;
+        font-size: 1.2em;
+        span {
+          color: $light-text;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+    div.bottom {
+      margin-top: 20px;
+      div.price {
+        @include price(5px, 1.5em);
+      }
+      div.price::after {
+        @include price-after(30px);
+      }
+
+      @include btn-view(10px 25px, 10px, 1em);
+    }
+  }
+}

@@ -29,7 +29,7 @@ section.loading {
             display: block;
             width: var(--dot-size);
             height: var(--dot-size);
-            background-color: var(--color);
+            background-color: $light-text;
             border-radius: 50%;
             position: absolute;
             transform: translate(-50%, -50%);
@@ -88,7 +88,7 @@ section.loading {
     span.loading-title {
         font-weight: bold;
         font-size: 1.5em;
-        color: #fff;
+        color: $light-text;
         margin-top: 15px;
     }
 }

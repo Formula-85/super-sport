@@ -35,355 +35,72 @@ ul {
   padding: 0px;
 }
 
-header.home-header {
-  background-color: #212121;
+footer {
+  margin-top: 70px;
   font-size: 1rem;
+}
+footer div.up {
+  background-color: #343a40;
+  padding: 30px 0px;
+}
+footer div.up img {
+  width: 100px;
+}
+footer div.up img.brand {
+  width: 100px;
+}
+footer div.up h4 {
+  color: #dadada;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+footer div.up ul {
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+footer div.up ul li,
+footer div.up ul a {
+  color: rgba(217, 217, 217, 0.5019607843);
+  transition: 0.5s ease-in-out;
+  font-size: 1em;
+}
+footer div.up ul .addres {
+  text-wrap: wrap;
+}
+footer div.up ul a:hover {
+  color: #e53935;
+}
+footer div.up ul li {
+  margin-bottom: 10px;
+}
+footer div.up div.brand h2 {
+  color: #dadada;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 0;
+}
+footer div.down {
+  background-color: #212529;
   padding: 10px 0px;
 }
-header.home-header div.right img {
-  width: 10%;
-}
-header.home-header div.right ul {
-  margin: 0px;
-}
-header.home-header div.right ul li {
-  margin-right: 25px;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-header.home-header div.right ul li a {
-  color: white;
-  transition: 0.25s;
-}
-header.home-header div.right ul li a:hover {
-  color: #E53935;
-}
-header.home-header div.right ul li.dropdown-toggle {
-  color: white;
-  cursor: pointer;
-  transition: 0.25s;
-}
-header.home-header div.right ul li:hover {
-  color: #E53935;
-}
-header.home-header div.right ul.dropdown-menu {
-  background-color: rgb(63.6, 63.6, 63.6);
-  padding: 0px;
-}
-header.home-header div.right ul.dropdown-menu li {
-  margin-right: 0px;
-  font-size: 1.2em;
-}
-header.home-header div.right ul.dropdown-menu a:hover {
-  background-color: rgba(0, 0, 0, 0.123);
-}
-header.home-header div.burger .burger {
-  position: relative;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-}
-header.home-header div.burger .burger input {
-  display: none;
-}
-header.home-header div.burger .burger span {
-  display: block;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: white;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-header.home-header div.burger .burger span:nth-of-type(1) {
-  top: 0px;
-  transform-origin: left center;
-}
-header.home-header div.burger .burger span:nth-of-type(2) {
-  top: 50%;
-  transform: translateY(-50%);
-  transform-origin: left center;
-}
-header.home-header div.burger .burger span:nth-of-type(3) {
-  top: 100%;
-  transform-origin: left center;
-  transform: translateY(-100%);
-}
-header.home-header div.burger .burger input:checked ~ span:nth-of-type(1) {
-  transform: rotate(45deg);
-  top: 0px;
-  left: 5px;
-}
-header.home-header div.burger .burger input:checked ~ span:nth-of-type(2) {
-  width: 0%;
-  opacity: 0;
-}
-header.home-header div.burger .burger input:checked ~ span:nth-of-type(3) {
-  transform: rotate(-45deg);
-  top: 28px;
-  left: 5px;
-}
-header.home-header div.burger-box {
-  z-index: 9;
-  top: 0;
-  right: -50%;
-  position: absolute;
-  background-color: rgb(22.8, 22.8, 22.8);
-  width: 50vw;
-  height: 100vh;
-  transition: 1s;
-}
-header.home-header ul {
-  margin-top: 20px;
-  padding: 0px 40px;
-}
-header.home-header ul li {
-  color: white;
-  transition: 0.25s;
+footer div.down div.copyright_notice p {
+  color: #c0c0c0;
+  margin: 0;
   font-size: 1em;
 }
-header.home-header ul li a {
-  color: white;
-  transition: 0.25s;
+footer div.down div.social a {
+  margin-right: 13px;
 }
-header.home-header ul li.dropdown-toggle {
-  cursor: pointer;
-}
-header.home-header ul li:hover,
-header.home-header ul a:hover {
-  color: #E53935;
-}
-header.home-header div.dropdown-box {
-  height: 0px;
-  overflow: hidden;
-  transition: 1s;
-}
-header.home-header div.dropdown-box ul {
-  padding: 0px;
-}
-header.home-header div.dropdown-box ul li,
-header.home-header div.dropdown-box ul a {
-  font-weight: 100;
-  opacity: 50%;
-}
-header.home-header div.dropdown-box ul a:hover {
-  opacity: 80%;
-  color: white;
-}
-
-.login-btn .button {
-  padding: 1em 2em;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: white;
-  transition: all 1000ms;
-  font-size: 1em;
-  position: relative;
-  overflow: hidden;
-  outline: 2px solid white;
-  background-color: rgba(0, 0, 0, 0);
-}
-.login-btn button:hover {
-  color: white;
-  transform: scale(1.1);
-  outline: 2px solid rgb(235.9789473684, 110.1473684211, 107.2210526316);
-  box-shadow: 4px 5px 17px -4px rgb(195.6210526316, 29.0526315789, 25.1789473684);
-}
-.login-btn button::before {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background-color: #E53935;
-  transform: skewX(45deg);
-  z-index: -1;
-  transition: width 1000ms;
-}
-.login-btn button:hover::before {
-  width: 250%;
-}
-
-section.intro {
-  font-size: 1rem;
-}
-section.intro div.item {
-  position: relative;
-}
-section.intro div.item a {
-  display: contents;
-  width: 100vw;
-}
-section.intro div.item img {
-  position: relative;
-  left: 0%;
-  width: 100%;
-  transition: 1s ease-in-out;
-}
-section.intro div.item div.btn-LR {
-  position: absolute;
-  z-index: 1;
-}
-section.intro div.item div.btn-LR i {
-  margin: 0px 25px;
-  font-size: 3.5em;
-  color: rgb(216, 216, 216);
-  cursor: pointer;
-  transition: 0.5s;
-}
-section.intro div.item div.btn-LR i:hover {
-  color: #E53935;
-}
-section.intro div.btns-intro {
-  position: relative;
-  top: -65px;
-}
-section.intro div.btns-intro div.btn-intro {
-  border-radius: 9999px;
-  width: 18px;
-  height: 18px;
-  background-color: rgb(216, 216, 216);
-  margin: 0px 5px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-section.intro div.btns-intro .active-btn {
-  width: 36px !important;
-  background-color: #E53935 !important;
-}
-section.intro div.btns-intro div.btn-intro:hover {
-  background-color: rgb(184, 184, 184);
-}
-
-section.best-products {
-  font-size: 1rem;
-  margin: 40px 0px;
-}
-section.best-products h1 {
-  font-weight: bold;
-  color: #E53935;
-  margin-bottom: 45px;
-}
-section.best-products div.products-box {
-  position: relative;
-  font-size: 1em;
-  margin-bottom: 35px;
-  padding: 20px;
-  border-radius: 21px;
-  background: #efefef;
-  box-shadow: -5px 5px 10px #828282, 5px -5px 10px #ffffff;
-}
-section.best-products div.products-box div.string {
-  margin-top: 5px;
-}
-section.best-products div.products-box div.string span.title {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #444;
-}
-section.best-products div.products-box div.string p.description {
-  font-size: 1em;
-  color: #555;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-section.best-products div.products-box div.discount span.price {
-  text-decoration: line-through;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #AAAAAA;
-  font-size: 0.9em;
-}
-section.best-products div.products-box div.discount span.price::after {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  content: url(../img/icon/toman-t.svg);
-}
-section.best-products div.products-box div.discount div.Percentage {
-  position: absolute;
-  top: -5px;
-  right: -15px;
-}
-section.best-products div.products-box div.discount div.Percentage span {
-  color: #fff;
-  background-color: #E53935;
-  padding: 3px 5px;
-  border-radius: 13px;
-}
-section.best-products div.products-box div.discount-off {
-  visibility: hidden;
-}
-section.best-products div.products-box div.bottom span.price {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #555555;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-section.best-products div.products-box div.bottom span.price::after {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  content: url(../img/icon/toman.svg);
-}
-section.best-products div.products-box div.bottom a.btn-view {
-  padding: 10px 25px;
-  border-radius: 10px;
-  border: 0;
-  background-color: rgb(255, 56, 86);
-  letter-spacing: 1.5px;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
-  cursor: pointer;
-  color: #ffffff;
-  font-weight: bold;
-}
-section.best-products div.products-box div.bottom a.btn-view:hover {
-  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
-}
-section.best-products div.products-box div.bottom a.btn-view:active {
-  background-color: rgb(255, 56, 86);
-  /*50, 168, 80*/
-  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
-  transform: translateY(5px);
-  transition: 200ms;
-}
-
-main.home section.ADs div.boxAds div.ADimg {
-  height: 420px;
-}
-main.home section.ADs div.boxAds div.ADimg img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-  border-radius: 8px;
+footer div.down div.social a img {
+  width: 30px;
 }
 
 section.loading {
   font-size: 1rem;
   width: 100vw;
   height: 100vh;
-  background-color: #E53935;
+  background-color: #e53935;
   position: fixed;
   top: 0;
   z-index: 9999;
@@ -408,7 +125,7 @@ section.loading div.loading-ai .dot::before {
   display: block;
   width: var(--dot-size);
   height: var(--dot-size);
-  background-color: var(--color);
+  background-color: #fff;
   border-radius: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -469,12 +186,355 @@ section.loading span.loading-title {
   display: none !important;
 }
 
+header.home-header {
+  background-color: #212121;
+  font-size: 1rem;
+  padding: 10px 0px;
+}
+header.home-header div.right img {
+  width: 10%;
+}
+header.home-header div.right ul {
+  margin: 0px;
+}
+header.home-header div.right ul li {
+  margin-right: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+header.home-header div.right ul li a {
+  color: #fff;
+  transition: 0.25s;
+}
+header.home-header div.right ul li a:hover {
+  color: #e53935;
+}
+header.home-header div.right ul span.dropdown-toggle {
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+header.home-header div.right ul span.dropdown-toggle:hover {
+  color: #e53935;
+}
+header.home-header div.right ul.dropdown-menu {
+  background-color: rgb(63.6, 63.6, 63.6);
+  padding: 0px;
+}
+header.home-header div.right ul.dropdown-menu li {
+  margin-right: 0px;
+  font-size: 1.2em;
+}
+header.home-header div.right ul.dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.123);
+}
+header.home-header div.burger .burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+header.home-header div.burger .burger input {
+  display: none;
+}
+header.home-header div.burger .burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+header.home-header div.burger .burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+header.home-header div.burger .burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+header.home-header div.burger .burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+header.home-header div.burger .burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+header.home-header div.burger .burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+header.home-header div.burger .burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+header.home-header div.burger-box {
+  z-index: 9;
+  top: 0;
+  right: -50%;
+  position: absolute;
+  background-color: rgb(22.8, 22.8, 22.8);
+  width: 50vw;
+  height: 100vh;
+  transition: 1s;
+}
+header.home-header ul {
+  margin-top: 20px;
+  padding: 0px 40px;
+}
+header.home-header ul li {
+  color: #fff;
+  transition: 0.25s;
+  font-size: 1em;
+}
+header.home-header ul li a {
+  color: #fff;
+  transition: 0.25s;
+}
+header.home-header ul li.dropdown-toggle {
+  cursor: pointer;
+}
+header.home-header ul li:hover,
+header.home-header ul a:hover {
+  color: #e53935;
+}
+header.home-header div.dropdown-box {
+  height: 0px;
+  overflow: hidden;
+  transition: 1s;
+}
+header.home-header div.dropdown-box ul {
+  padding: 0px;
+}
+header.home-header div.dropdown-box ul li,
+header.home-header div.dropdown-box ul a {
+  font-weight: 100;
+  opacity: 50%;
+}
+header.home-header div.dropdown-box ul a:hover {
+  opacity: 80%;
+  color: #fff;
+}
+
+.login-btn .button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  transition: all 1000ms;
+  font-size: 1em;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #fff;
+  background-color: rgba(0, 0, 0, 0);
+}
+.login-btn button:hover {
+  color: #fff;
+  transform: scale(1.1);
+  outline: 2px solid rgb(235.9789473684, 110.1473684211, 107.2210526316);
+  box-shadow: 4px 5px 17px -4px rgb(195.6210526316, 29.0526315789, 25.1789473684);
+}
+.login-btn button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #e53935;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+.login-btn button:hover::before {
+  width: 250%;
+}
+
+main.home section.ADs div.boxAds div.ADimg {
+  height: 420px;
+}
+main.home section.ADs div.boxAds div.ADimg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+section.best-products {
+  font-size: 1rem;
+  margin: 40px 0px;
+}
+section.best-products h1 {
+  font-weight: bold;
+  color: #e53935;
+  margin-bottom: 45px;
+}
+section.best-products div.products-box {
+  position: relative;
+  font-size: 1em;
+  margin-bottom: 35px;
+  padding: 20px;
+  border-radius: 21px;
+  background: #efefef;
+  box-shadow: -5px 5px 10px #828282, 5px -5px 10px #ffffff;
+}
+section.best-products div.products-box div.string {
+  margin-top: 5px;
+}
+section.best-products div.products-box div.string span.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+}
+section.best-products div.products-box div.string p.description {
+  font-size: 1em;
+  color: #555;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+section.best-products div.products-box div.discount span.price {
+  text-decoration: line-through;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #aaaaaa;
+  font-size: 0.9em;
+}
+section.best-products div.products-box div.discount span.price::after {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.best-products div.products-box div.discount div.Percentage {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+}
+section.best-products div.products-box div.discount div.Percentage span {
+  color: #fff;
+  background-color: #e53935;
+  padding: 3px 5px;
+  border-radius: 13px;
+}
+section.best-products div.products-box div.discount-off {
+  visibility: hidden;
+}
+section.best-products div.products-box div.bottom span.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555555;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+section.best-products div.products-box div.bottom span.price::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.best-products div.products-box div.bottom a {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #ff3856;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+section.best-products div.products-box div.bottom a:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+section.best-products div.products-box div.bottom a:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+section.intro {
+  font-size: 1rem;
+}
+section.intro div.item {
+  position: relative;
+}
+section.intro div.item a {
+  display: contents;
+  width: 100vw;
+}
+section.intro div.item img {
+  position: relative;
+  left: 0%;
+  width: 100%;
+  transition: 1s ease-in-out;
+}
+section.intro div.item div.btn-LR {
+  position: absolute;
+  z-index: 1;
+}
+section.intro div.item div.btn-LR i {
+  margin: 0px 25px;
+  font-size: 3.5em;
+  color: #d8d8d8;
+  cursor: pointer;
+  transition: 0.5s;
+}
+section.intro div.item div.btn-LR i:hover {
+  color: #e53935;
+}
+section.intro div.btns-intro {
+  position: relative;
+  top: -65px;
+}
+section.intro div.btns-intro div.btn-intro {
+  border-radius: 9999px;
+  width: 18px;
+  height: 18px;
+  background-color: #d8d8d8;
+  margin: 0px 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+section.intro div.btns-intro .active-btn {
+  width: 36px !important;
+  background-color: #e53935 !important;
+}
+section.intro div.btns-intro div.btn-intro:hover {
+  background-color: #b8b8b8;
+}
+
 section.special_offer {
   font-size: 1rem;
   margin: 60px 0px;
 }
 section.special_offer div.box {
-  background-color: #E53935;
+  background-color: #e53935;
   border-radius: 30px;
   padding: 25px 30px;
 }
@@ -506,7 +566,7 @@ section.special_offer div.box div.information div.timer div.boxNumber {
   border-radius: 8px;
 }
 section.special_offer div.box div.information div.timer div.boxNumber span {
-  color: #E53935 !important;
+  color: #e53935 !important;
 }
 section.special_offer div.box div.information div.timer span {
   color: #fff;
@@ -548,7 +608,7 @@ section.special_offer div.box div.products div.card-box div.title {
   margin: 5px 0px;
 }
 section.special_offer div.box div.products div.card-box div.title span {
-  color: #555;
+  color: #444;
   font-size: 1em;
   font-weight: bold;
 }
@@ -559,18 +619,18 @@ section.special_offer div.box div.products div.card-box div.discount {
 }
 section.special_offer div.box div.products div.card-box div.discount span.discount {
   color: #fff;
-  background-color: #E53935;
+  background-color: #e53935;
   font-size: 0.8em;
   padding: 3px;
   border-radius: 5px;
 }
 section.special_offer div.box div.products div.card-box div.discount span.discountPrice {
-  font-size: 0.8em;
+  text-decoration: line-through;
   display: inline-flex;
   align-items: center;
-  text-decoration: line-through;
   gap: 2px;
-  color: #aaa;
+  color: #aaaaaa;
+  font-size: 0.8em;
 }
 section.special_offer div.box div.products div.card-box div.discount span.discountPrice::after {
   display: inline-block;
@@ -584,12 +644,12 @@ section.special_offer div.box div.products div.card-box div.discount-off {
   visibility: hidden;
 }
 section.special_offer div.box div.products div.card-box div.bottom span.price {
-  font-size: 1em;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  color: #555555;
+  font-size: 1em;
   font-weight: bold;
-  color: #555;
 }
 section.special_offer div.box div.products div.card-box div.bottom span.price::after {
   display: inline-block;
@@ -606,7 +666,7 @@ section.special_offer div.box div.products div.card-box div.bottom div.btn-view 
   transition: 0.5s;
 }
 section.special_offer div.box div.products div.card-box div.bottom div.btn-view a:hover {
-  color: #E53935;
+  color: #e53935;
 }
 section.special_offer div.box div.products::-webkit-scrollbar {
   display: none;
@@ -631,7 +691,6 @@ section.why_us div.box {
 }
 section.why_us div.box img {
   width: 60px;
-  fill: #ff0000;
 }
 section.why_us div.box div.string h3 {
   font-size: 1.5em;
@@ -642,65 +701,259 @@ section.why_us div.box div.string span {
   color: #666;
 }
 
-footer {
-  margin-top: 70px;
+section.breadcrumb {
   font-size: 1rem;
+  background-color: #cfcfcf;
 }
-footer div.up {
-  background-color: #343a40;
-  padding: 30px 0px;
+section.breadcrumb ol {
+  padding: 13px 0px;
+  margin: 0;
 }
-footer div.up img {
-  width: 100px;
+section.breadcrumb ol li,
+section.breadcrumb ol a {
+  font-size: 1.05em;
+  color: #444;
+  transition: 0.5s;
 }
-footer div.up img.brand {
-  width: 100px;
+section.breadcrumb ol a:hover {
+  color: #e53935;
 }
-footer div.up h4 {
-  color: #dadada;
-  font-size: 1.5em;
+section.breadcrumb ol li.active {
+  font-size: 1.05em;
+  color: #555;
+}
+
+section.product-box {
+  font-size: 1rem;
+  margin-top: 50px;
+}
+section.product-box div.img {
+  aspect-ratio: 1/1;
+  border-radius: 64px;
+  padding: 60px;
+  background: linear-gradient(225deg, #f0f0f0, #cacaca);
+  box-shadow: -7px 7px 37px #a1a1a1, 7px -7px 37px #ffffff;
+}
+section.product-box div.img img {
+  width: 100%;
+  filter: drop-shadow(-5px 7px 7px rgba(71, 71, 71, 0.658));
+}
+section.product-box div.information {
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+}
+section.product-box div.information h1 {
   font-weight: bold;
-  cursor: pointer;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #444;
 }
-footer div.up ul {
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-}
-footer div.up ul li,
-footer div.up ul a {
-  color: rgba(217, 217, 217, 0.5019607843);
-  transition: 0.5s ease-in-out;
-  font-size: 1em;
-}
-footer div.up ul .addres {
+section.product-box div.information p.description {
+  color: #555;
+  font-weight: bold;
   text-wrap: wrap;
+  text-align: justify;
+  font-size: 1.35em;
+  line-height: 2em;
 }
-footer div.up ul a:hover {
-  color: #E53935;
-}
-footer div.up ul li {
+section.product-box div.information div.features h2.title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #444;
+  display: inline-block;
   margin-bottom: 10px;
 }
-footer div.up div.brand h2 {
-  color: #dadada;
+section.product-box div.information div.features li {
+  color: #555;
+  margin-bottom: 4px;
+  font-size: 1.2em;
+}
+section.product-box div.information div.discount-box {
+  gap: 25px;
+}
+section.product-box div.information div.discount-box div.price-discount {
+  text-decoration: line-through;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #aaaaaa;
+  font-size: 1.2em;
+}
+section.product-box div.information div.discount-box div.price-discount::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.product-box div.information div.discount-box div.discount {
+  background-color: #e53935;
+  padding: 2px 11px;
+  border-radius: 9px;
   font-weight: bold;
+  font-size: 1.2em;
+}
+section.product-box div.information div.discount-box div.discount span {
+  color: #fff;
+  position: relative;
+  top: 2px;
+}
+section.product-box div.information div.bottom {
+  margin-top: 20px;
+}
+section.product-box div.information div.bottom div.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555555;
   font-size: 1.5em;
-  margin: 0;
+  font-weight: bold;
 }
-footer div.down {
-  background-color: #212529;
-  padding: 10px 0px;
-}
-footer div.down div.copyright_notice p {
-  color: #c0c0c0;
-  margin: 0;
-  font-size: 1em;
-}
-footer div.down div.social a {
-  margin-right: 13px;
-}
-footer div.down div.social a img {
+section.product-box div.information div.bottom div.price::after {
+  display: inline-block;
   width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.product-box div.information div.bottom a {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #ff3856;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+section.product-box div.information div.bottom a:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+section.product-box div.information div.bottom a:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+section.related_products {
+  font-size: 1rem;
+}
+section.related_products h2 {
+  color: #e53935;
+  font-size: 2.2em;
+  margin: 60px 0px 30px;
+  font-weight: bold;
+}
+section.related_products div.box div.box-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-shadow: 0px 0px 12px 0px #818181;
+  border-radius: 20px;
+}
+section.related_products div.box div.box-product img {
+  width: 100%;
+}
+section.related_products div.box div.box-product div.information span.title {
+  font-weight: bold;
+  color: #444;
+  font-size: 1.3em;
+  margin: 3px 0px;
+  display: block;
+}
+section.related_products div.box div.box-product div.information p.description {
+  font-weight: bold;
+  color: #555;
+  font-size: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+section.related_products div.box div.box-product div.discount-box span.price-discount {
+  text-decoration: line-through;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #aaaaaa;
+  font-size: 1.1em;
+}
+section.related_products div.box div.box-product div.discount-box span.price-discount::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman-t.svg);
+}
+section.related_products div.box div.box-product div.discount-box div.discount {
+  background-color: #e53935;
+  border-radius: 8px;
+  padding: 1px 7px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+section.related_products div.box div.box-product div.discount-box div.discount span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  top: 1px;
+}
+section.related_products div.box div.box-product div.discount-box.off {
+  visibility: hidden;
+}
+section.related_products div.box div.box-product div.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+section.related_products div.box div.box-product div.bottom span.price {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #555555;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+section.related_products div.box div.box-product div.bottom span.price::after {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  content: url(../img/icon/toman.svg);
+}
+section.related_products div.box div.box-product div.bottom a {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  background-color: #ff3856;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+}
+section.related_products div.box div.box-product div.bottom a:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+section.related_products div.box div.box-product div.bottom a:active {
+  background-color: rgb(255, 56, 86);
+  /*50, 168, 80*/
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
 }
 
 @media screen and (max-width: 1399px) {
@@ -712,6 +965,9 @@ footer div.down div.social a img {
   }
   main.home section.ADs div.boxAds div.ADimg {
     height: 360px;
+  }
+  section.product-box {
+    font-size: 0.85rem;
   }
 }
 @media screen and (max-width: 1199px) {
@@ -744,6 +1000,24 @@ footer div.down div.social a img {
   }
   footer div.up img.brand {
     width: 85px;
+  }
+  section.product-box {
+    font-size: 0.8rem;
+  }
+  section.product-box div.information {
+    padding-right: 9px;
+  }
+  section.product-box div.information h1 {
+    margin-bottom: 10px;
+  }
+  section.product-box div.information p.description {
+    line-height: 1.6em;
+  }
+  section.related_products {
+    font-size: 0.8rem;
+  }
+  section.related_products div.box div.box-product div.bottom a {
+    padding: 7px 20px;
   }
 }
 @media screen and (max-width: 991px) {
@@ -779,6 +1053,24 @@ footer div.down div.social a img {
   }
   section.why_us div.box {
     gap: 8px;
+  }
+  section.breadcrumb {
+    font-size: 0.85rem;
+  }
+  section.breadcrumb ol {
+    padding: 10px 0;
+  }
+  section.product-box div.img {
+    margin: 0px 65px 34px;
+  }
+  section.related_products {
+    font-size: 1rem;
+  }
+  section.related_products section.related_products div.box div.box-product div.bottom a {
+    padding: 7px 25px;
+  }
+  section.related_products div.box-product {
+    margin-bottom: 35px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -824,6 +1116,12 @@ footer div.down div.social a img {
   }
   footer div.down div.social a img {
     width: 25px;
+  }
+  section.product-box div.img {
+    margin: 0px 15px 34px;
+  }
+  section.related_products {
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 575px) {
@@ -890,6 +1188,36 @@ footer div.down div.social a img {
   footer div.down div.social a img {
     width: 20px;
   }
+  section.product-box {
+    margin-top: 30px;
+    font-size: 0.75rem;
+  }
+  section.product-box div.img {
+    margin: 0px 10px 34px;
+    padding: 30px;
+  }
+  section.product-box div.information div.bottom div.price::after {
+    width: 25px;
+    height: 25px;
+  }
+  section.related_products {
+    font-size: 0.75rem;
+  }
+  section.related_products div.box div.box-product {
+    padding: 10px;
+  }
+  section.related_products div.box div.box-product div.bottom a {
+    padding: 6px 16px;
+  }
+  section.related_products div.box div.box-product div.discount-box span.price-discount,
+  section.related_products div.box div.box-product div.bottom span.price {
+    gap: 2px;
+  }
+  section.related_products div.box div.box-product div.discount-box span.price-discount::after,
+  section.related_products div.box div.box-product div.bottom span.price::after {
+    width: 20px;
+    height: 20px;
+  }
 }
 @media screen and (max-width: 400px) {
   section.best-products {
@@ -937,5 +1265,37 @@ footer div.down div.social a img {
   }
   footer div.down div.copyright_notice p {
     font-size: 0.7em;
+  }
+  section.breadcrumb {
+    font-size: 0.75rem;
+  }
+  section.breadcrumb ol {
+    padding: 10px 0;
+  }
+  section.product-box {
+    font-size: 0.65rem;
+  }
+  section.product-box div.img {
+    padding: 15px;
+    border-radius: 40px;
+  }
+  section.product-box div.information div.bottom a {
+    padding: 10px 15px;
+  }
+  section.related_products {
+    font-size: 0.7rem;
+  }
+  section.related_products div.box div.box-product div.information p.description {
+    margin-bottom: 7px;
+  }
+  section.related_products div.box div.box-product div.discount-box {
+    display: flex;
+    justify-content: center;
+  }
+  section.related_products div.box div.box-product div.bottom {
+    flex-direction: column;
+  }
+  section.related_products div.box div.box-product div.bottom span.price {
+    margin-bottom: 7px;
   }
 }/*# sourceMappingURL=main.css.map */
