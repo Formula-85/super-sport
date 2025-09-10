@@ -15,6 +15,9 @@ import {
 // =========================
 // 1. VARIABLES
 // =========================
+// --- data ---
+let dataBestProducts
+let dataSpecialOffer
 
 // --- intro ---
 let sizeDataIntro;
@@ -49,6 +52,13 @@ let seconds = document.getElementById("seconds");
 // =========================
 // 2. FUNCTIONS
 // =========================
+
+// --- get data ---
+
+function productsData(data) {
+  dataBestProducts = data.product.filter(value => data.best_products.map(String).includes(value.id))
+  dataSpecialOffer = data.product.filter(value => data.Special_offer.map(String).includes(value.id))
+}
 
 // --- Intro ---
 
@@ -140,7 +150,7 @@ function createIntro(data) {
 
 // for create Best Products
 function createBestProducts(data) {
-  let dataBest_products = data.best_products;
+  let dataBest_products = data;
 
   dataBest_products.forEach((value) => {
     if (value.discount === "0") {
@@ -216,7 +226,7 @@ function createAD(data) {
 
 // Creating special offer products
 function createSpecialOffer(data) {
-  data.Special_offer.forEach((value) => {
+  data.forEach((value) => {
     if (value.discount === "0") {
       specialOfferProducts.innerHTML += `
   <div class="card-box">
@@ -346,24 +356,25 @@ function timer(value) {
 
 window.addEventListener("load", async function getData() {
   try {
-    const [intrData, homeData] = await Promise.all([
+    const [intrData, AllData] = await Promise.all([
       fetch("https://jsonkeeper.com/b/JOWOV").then((result) => result.json()),
-      fetch("https://jsonkeeper.com/b/QZEJL").then((result) => result.json()),
+      fetch("https://jsonkeeper.com/b/CFEDX").then((result) => result.json()),
     ]);
+    productsData(AllData)
     createIntro(intrData);
-    createBestProducts(homeData);
-    createAD(homeData);
-    createSpecialOffer(homeData);
-    timer(homeData);
+    createBestProducts(dataBestProducts);
+    createAD(AllData);
+    createSpecialOffer(dataSpecialOffer);
+    timer(AllData);
     setInterval(() => {
-      timer(homeData);
+      timer(AllData);
     }, 1000);
     drag("#special_offer_products");
     slowingLink();
 
     await waitForImagesToLoad();
     offLoading();
-  } catch(err){
+  } catch (err) {
     alertError(err);
   }
 });

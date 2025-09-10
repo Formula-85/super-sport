@@ -181,10 +181,10 @@ window.addEventListener("load", async function getData() {
       fetch("https://jsonkeeper.com/b/CFEDX").then((result) => result.json()),
     ]);
 
-    FindingProduct(productData);
+    FindingProduct(productData.product);
     createBreadcrumb(product);
     createProduct(product);
-    creatingRelatedProducts(productData, product);
+    creatingRelatedProducts(productData.product, product);
 
     await waitForImagesToLoad();
     offLoading();
