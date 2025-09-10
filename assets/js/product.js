@@ -92,7 +92,7 @@ function createProduct(value) {
             .join("")}
           </ul>
         </div>
-        <div class="discount-box d-flex offDiscount">
+        <div class="discount-box d-none">
           <div class="price-discount">0</div>
           <div class="discount"><span>%</span></div>
         </div>
@@ -127,7 +127,7 @@ function creatingRelatedProducts(allProducts, currentProduct) {
   related.forEach((value) => {
     if (value.discount !== "0") {
       relatedProducts.innerHTML += `
-    <div class="col-3 box">
+    <div class="col-lg-3 col-6 box">
     <div class="box-product">
       <img src="${value.img}" alt="${value.imgAlt}">
       <div class="information">
@@ -149,7 +149,7 @@ function creatingRelatedProducts(allProducts, currentProduct) {
   `;
     } else {
       relatedProducts.innerHTML += `
-    <div class="col-3 box">
+    <div class="col-lg-3 col-6 box">
     <div class="box-product">
       <img src="${value.img}" alt="${value.imgAlt}">
       <div class="information">

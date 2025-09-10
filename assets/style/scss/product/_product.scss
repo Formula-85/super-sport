@@ -14,6 +14,8 @@ section.product-box {
   }
   div.information {
     padding-right: 30px;
+    display: flex;
+    flex-direction: column;
     h1 {
       font-weight: bold;
       font-size: 2.5em;
@@ -30,15 +32,16 @@ section.product-box {
     }
     div.features {
       h2.title {
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: bold;
         color: $title;
         display: inline-block;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
       }
       li {
         color: $description;
         margin-bottom: 4px;
+        font-size: 1.2em;
       }
     }
     div.discount-box {
@@ -73,8 +76,5 @@ section.product-box {
 
       @include btn-view(10px 25px, 10px, 1em);
     }
-  }
-  .offDiscount {
-    visibility: hidden !important;
   }
 }

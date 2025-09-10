@@ -36,10 +36,10 @@ section.related_products {
       }
       div.discount-box {
         span.price-discount {
-          @include discount-price(5px,1.1rem)
+          @include discount-price(5px, 1.1em);
         }
         span.price-discount::after {
-          @include discount-price-after(25px)
+          @include discount-price-after(25px);
         }
         div.discount {
           background-color: $Primary-color;
@@ -58,22 +58,19 @@ section.related_products {
         }
       }
 
-      div.discount-box.off {
-        visibility: hidden;
-      }
       div.bottom {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 8px;
         span.price {
-          @include price(5px,1.1em)
+          @include price(5px, 1.1em);
         }
         span.price::after {
-          @include price-after(25px)
+          @include price-after(25px);
         }
 
-        @include btn-view(10px 25px,10px,1em)
+        @include btn-view(10px 25px, 10px, 1em);
       }
     }
   }
