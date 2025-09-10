@@ -14,6 +14,8 @@ section.product-box {
   }
   div.information {
     padding-right: 30px;
+    display: flex;
+    flex-direction: column;
     h1 {
       font-weight: bold;
       font-size: 2.5em;
@@ -29,30 +31,31 @@ section.product-box {
       line-height: 2em;
     }
     div.features {
-      span.title {
-        font-size: 1.2em;
+      h2.title {
+        font-size: 1.4em;
         font-weight: bold;
         color: $title;
         display: inline-block;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
       }
       li {
         color: $description;
         margin-bottom: 4px;
+        font-size: 1.2em;
       }
     }
     div.discount-box {
       gap: 25px;
       div.price-discount {
-        @include discount-price(5px, 1.1em);
+        @include discount-price(5px, 1.2em);
       }
       div.price-discount::after {
         @include discount-price-after(25px);
       }
       div.discount {
         background-color: $Primary-color;
-        padding: 4px 14px;
-        border-radius: 14px;
+        padding: 2px 11px;
+        border-radius: 9px;
         font-weight: bold;
         font-size: 1.2em;
         span {
@@ -63,22 +66,15 @@ section.product-box {
       }
     }
     div.bottom {
+      margin-top: 20px;
       div.price {
-        @include price(5px, 1.1em);
+        @include price(5px, 1.5em);
       }
       div.price::after {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        content: url(../img/icon/toman.svg);
+        @include price-after(30px);
       }
 
-        @include btn-view(10px 25px, 10px, 1em);
+      @include btn-view(10px 25px, 10px, 1em);
     }
-  }
-  .offDiscount {
-    visibility: hidden !important;
   }
 }
