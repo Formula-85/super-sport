@@ -908,6 +908,9 @@ section.related_products div.box div.box-product div.discount-box div.discount s
   position: relative;
   top: 1px;
 }
+section.related_products div.box div.box-product div.discount-box.off {
+  visibility: hidden;
+}
 section.related_products div.box div.box-product div.bottom {
   display: flex;
   justify-content: space-between;

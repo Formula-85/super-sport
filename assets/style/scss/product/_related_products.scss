@@ -57,7 +57,9 @@ section.related_products {
           }
         }
       }
-
+      div.discount-box.off {
+        visibility: hidden;
+      }
       div.bottom {
         display: flex;
         justify-content: space-between;
