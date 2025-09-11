@@ -7,7 +7,7 @@ import {
   waitForImagesToLoad,
   englishToPrsian,
   discountPrice,
-  alertError
+  alertError,
 } from "./main.js";
 
 // =========================
@@ -15,7 +15,7 @@ import {
 // =========================
 // --- url and id and item---
 const urlParams = new URLSearchParams(window.location.search);
-const itemID = urlParams.get("id");
+const itemId = urlParams.get("id");
 
 // --- breadcrumb ---
 let breadcrumbCategory = document.getElementById("breadcrumb-category");
@@ -33,9 +33,9 @@ let relatedProducts = document.getElementById("related_products-box");
 // =========================
 // --- Finding Product ---
 // Fetching specific product information
-function FindingProduct(data) {
+function findingProduct(data) {
   data.forEach((value) => {
-    if (value.id == itemID) {
+    if (value.id == itemId) {
       product = value;
     }
   });
@@ -74,7 +74,10 @@ function createProduct(value) {
           )}%</span></div>
         </div>
         <div class="bottom d-flex justify-content-between">
-          <div class="price">قیمت : ${discountPrice(value.price, value.discount)}</div>
+          <div class="price">قیمت : ${discountPrice(
+            value.price,
+            value.discount
+          )}</div>
           <a href="">افزودن به سبد خرید</a>
         </div>
     `;
@@ -97,7 +100,10 @@ function createProduct(value) {
           <div class="discount"><span>%</span></div>
         </div>
         <div class="bottom d-flex justify-content-between">
-          <div class="price">قیمت : ${discountPrice(value.price, value.discount)}</div>
+          <div class="price">قیمت : ${discountPrice(
+            value.price,
+            value.discount
+          )}</div>
           <a href="#">افزودن به سبد خرید</a>
         </div>
     `;
@@ -177,11 +183,11 @@ function creatingRelatedProducts(allProducts, currentProduct) {
 
 window.addEventListener("load", async function getData() {
   try {
-    const [productData] = await Promise.all([
-      fetch("https://jsonkeeper.com/b/CFEDX").then((result) => result.json()),
-    ]);
+    const productData = await fetch("https://jsonkeeper.com/b/CFEDX").then(
+      (result) => result.json()
+    );
 
-    FindingProduct(productData.product);
+    findingProduct(productData.product);
     createBreadcrumb(product);
     createProduct(product);
     creatingRelatedProducts(productData.product, product);
@@ -191,6 +197,6 @@ window.addEventListener("load", async function getData() {
 
     slowingLink();
   } catch (err) {
-    alertError(err)
+    alertError(err);
   }
 });
