@@ -1210,6 +1210,17 @@ section.comments div.comment.off h3 {
   section.related_products {
     font-size: 0.8rem;
   }
+  section.comments {
+    margin-top: 0px;
+  }
+  section.comments h2 {
+    margin-top: 30px;
+  }
+  section.comments div.comment {
+    padding: 15px 15px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
 }
 @media screen and (max-width: 575px) {
   header.home-header div.burger-box {
@@ -1305,6 +1316,16 @@ section.comments div.comment.off h3 {
     width: 20px;
     height: 20px;
   }
+  section.comments {
+    font-size: 0.8rem;
+  }
+  section.comments h2 {
+    margin-top: 0;
+  }
+  section.comments div.comment img {
+    width: 65px;
+    margin-left: 11px;
+  }
 }
 @media screen and (max-width: 400px) {
   section.best-products {
@@ -1384,5 +1405,27 @@ section.comments div.comment.off h3 {
   }
   section.related_products div.box div.box-product div.bottom span.price {
     margin-bottom: 7px;
+  }
+  section.comments {
+    font-size: 0.75rem;
+  }
+  section.comments div.comment {
+    border-radius: 15px;
+  }
+  section.comments div.comment img {
+    width: 57px;
+    margin-left: 6px;
+  }
+  section.comments div.comment div.information {
+    display: flex;
+    flex-direction: column;
+  }
+  section.comments div.comment div.information p.comment-text {
+    margin-bottom: 3px;
+    line-height: 20px;
+  }
+  section.comments div.comment div.information button {
+    margin-right: auto;
+    margin-bottom: 2px;
   }
 }/*# sourceMappingURL=main.css.map */
