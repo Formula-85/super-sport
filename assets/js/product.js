@@ -28,6 +28,9 @@ let informationProduct = document.getElementById("information-product");
 
 // --- related products ---
 let relatedProducts = document.getElementById("related_products-box");
+
+// --- comments ---
+const commentsBox = document.getElementById("commentsBox");
 // =========================
 // 2. FUNCTIONS
 // =========================
@@ -177,6 +180,67 @@ function creatingRelatedProducts(allProducts, currentProduct) {
   });
 }
 
+// --- comments ---
+function createCommenst(commentsData, usersData) {
+  if (commentsData) {
+    commentsData.forEach((value) => {
+      const user = usersData.find((user) => user.id == value.userId);
+      console.log(value);
+      commentsBox.innerHTML += `
+            <div class="comment">
+          <img src="${user.img}" alt="پروفایل">
+          <div class="information">
+            <div class="userInformation">
+              <h4>${user.userName}</h4>
+              <span class="date">${
+                englishToPrsian(value.date.year).replace(",", "") +
+                "/" +
+                englishToPrsian(value.date.month) +
+                "/" +
+                englishToPrsian(value.date.day)
+              }</span>
+            </div>
+            <p class="comment-text">${value.commentText}</p>
+              <button class="btn-text-veiw">مشاهده همه</button>
+              ${
+                value.consent === true
+                  ? `<span class="bid true">خرید این محصول رو پیشنهاد میکنم</span>`
+                  : `<span class="bid false">خرید این محصول رو پیشنهاد نمیکنم</span>`
+              }
+          </div>
+        </div>`;
+    });
+
+    const commentTexts = document.getElementsByClassName("comment-text");
+    const commentTextBtns = document.getElementsByClassName("btn-text-veiw");
+    let openComment = [];
+
+    for (let i = 0; i < commentTextBtns.length; i++) {
+      openComment.push(false);
+      commentTextBtns[i].addEventListener("click", () => {
+        if (!openComment[i]) {
+          commentTexts[i].classList.add("comment-text-open");
+          commentTextBtns[i].innerHTML = "دیدن کمتر";
+          openComment[i] = true;
+        } else {
+          commentTexts[i].classList.remove("comment-text-open");
+          commentTextBtns[i].innerHTML = "مشاهده همه";
+          openComment[i] = false;
+        }
+      });
+
+      if (commentTexts[i].scrollWidth <= commentTexts[i].clientWidth) {
+        commentTextBtns[i].classList.add("d-none");
+      }
+    }
+  } else {
+    commentsBox.innerHTML = `
+        <div class="comment off">
+          <h3>هنوز نظری وجود ندارد</h3>
+        </div>`;
+  }
+}
+
 // =========================
 // 3. EVENT LISTENERS
 // =========================
@@ -191,6 +255,7 @@ window.addEventListener("load", async function getData() {
     createBreadcrumb(product);
     createProduct(product);
     creatingRelatedProducts(productData.product, product);
+    createCommenst(product.comments, productData.user);
 
     await waitForImagesToLoad();
     offLoading();

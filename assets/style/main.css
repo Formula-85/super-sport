@@ -956,6 +956,93 @@ section.related_products div.box div.box-product div.bottom a:active {
   transition: 200ms;
 }
 
+section.comments {
+  font-size: 1rem;
+  margin-top: 45px;
+}
+section.comments h2 {
+  color: #e53935;
+  font-size: 2.2em;
+  margin: 60px 0px 30px;
+  font-weight: bold;
+}
+section.comments div.comment {
+  padding: 13px 0px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px #6e6e6e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+section.comments div.comment img {
+  width: 80px;
+  border-radius: 999px;
+  margin-left: 25px;
+}
+section.comments div.comment div.information {
+  width: 80%;
+}
+section.comments div.comment div.information div.userInformation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+section.comments div.comment div.information div.userInformation h4 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #444;
+}
+section.comments div.comment div.information div.userInformation span.date {
+  margin-right: 10px;
+  font-size: 1em;
+  color: #444;
+}
+section.comments div.comment div.information p.comment-text {
+  color: #555;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+  font-size: 1em;
+  transition: 1s;
+  height: auto;
+}
+section.comments div.comment div.information p.comment-text-open {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: wrap;
+  line-height: 27px;
+}
+section.comments div.comment div.information button {
+  float: left;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: #555;
+  opacity: 0.5;
+  transition: 0.25s;
+  padding: 0;
+}
+section.comments div.comment div.information button:hover {
+  opacity: 1;
+}
+section.comments div.comment div.information span.bid {
+  display: block;
+  font-weight: bold;
+}
+section.comments div.comment div.information .true {
+  color: #04a519;
+}
+section.comments div.comment div.information .false {
+  color: #e53935;
+}
+section.comments div.comment.off {
+  margin-bottom: 0;
+}
+section.comments div.comment.off h3 {
+  color: #444;
+}
+
 @media screen and (max-width: 1399px) {
   section.intro {
     font-size: 0.8rem;
