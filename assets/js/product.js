@@ -182,10 +182,11 @@ function creatingRelatedProducts(allProducts, currentProduct) {
 
 // --- comments ---
 function createCommenst(commentsData, usersData) {
+  // If a comment exists
   if (commentsData) {
     commentsData.forEach((value) => {
+      // Find user by ID
       const user = usersData.find((user) => user.id == value.userId);
-      console.log(value);
       commentsBox.innerHTML += `
             <div class="comment">
           <img src="${user.img}" alt="پروفایل">
@@ -211,10 +212,12 @@ function createCommenst(commentsData, usersData) {
         </div>`;
     });
 
+    // Get comment text box and view buttons
     const commentTexts = document.getElementsByClassName("comment-text");
     const commentTextBtns = document.getElementsByClassName("btn-text-veiw");
     let openComment = [];
 
+    // Add comment expand/collapse functionality
     for (let i = 0; i < commentTextBtns.length; i++) {
       openComment.push(false);
       commentTextBtns[i].addEventListener("click", () => {
@@ -228,7 +231,7 @@ function createCommenst(commentsData, usersData) {
           openComment[i] = false;
         }
       });
-
+      // If the text fits the box, remove the view button
       if (commentTexts[i].scrollWidth <= commentTexts[i].clientWidth) {
         commentTextBtns[i].classList.add("d-none");
       }
