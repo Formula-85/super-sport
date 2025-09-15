@@ -7,6 +7,8 @@
   color: black;
   margin: 0px;
   padding: 0px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 $Primary-color: #e53935;
@@ -31,6 +33,8 @@ $why-us-text: #666;
 $breadcrumb-color: #cfcfcf;
 
 $product-background: linear-gradient(225deg, #f0f0f0, #cacaca);
+
+$true-comment-color : #04a519;
 @mixin price($gap, $font-size) {
   display: inline-flex;
   align-items: center;
@@ -116,5 +120,6 @@ ul {
 @import "./scss/product/breadcrumb";
 @import "./scss/product/product";
 @import "./scss/product/related_products";
+@import "./scss/product/comments";
 
 @import "./scss/main/media-query";

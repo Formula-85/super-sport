@@ -74,7 +74,6 @@ section.special_offer {
       gap: 10px;
       overflow-x: scroll;
       scrollbar-width: none;
-      user-select: none;
 
       div.card-box {
         display: flex;
@@ -82,7 +81,6 @@ section.special_offer {
         flex-direction: column;
         background-color: $light-text;
         padding: 10px 15px;
-        -webkit-user-drag: none;
 
         div.img {
           img {

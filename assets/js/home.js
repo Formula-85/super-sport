@@ -16,8 +16,8 @@ import {
 // 1. VARIABLES
 // =========================
 // --- data ---
-let dataBestProducts
-let dataSpecialOffer
+let dataBestProducts;
+let dataSpecialOffer;
 
 // --- intro ---
 let sizeDataIntro;
@@ -36,7 +36,7 @@ let leftBtnIntro;
 let boxBestProducts = document.getElementById("boxBestProducts");
 
 // --- ADs ---
-let ADimg = document.getElementsByClassName("ADimg");
+let adImg = document.getElementsByClassName("ADimg");
 
 // --- special offer ---
 
@@ -56,8 +56,12 @@ let seconds = document.getElementById("seconds");
 // --- get data ---
 
 function productsData(data) {
-  dataBestProducts = data.product.filter(value => data.best_products.map(String).includes(value.id))
-  dataSpecialOffer = data.product.filter(value => data.Special_offer.map(String).includes(value.id))
+  dataBestProducts = data.product.filter((value) =>
+    data.best_products.map(String).includes(value.id)
+  );
+  dataSpecialOffer = data.product.filter((value) =>
+    data.Special_offer.map(String).includes(value.id)
+  );
 }
 
 // --- Intro ---
@@ -150,9 +154,7 @@ function createIntro(data) {
 
 // for create Best Products
 function createBestProducts(data) {
-  let dataBest_products = data;
-
-  dataBest_products.forEach((value) => {
+  dataBestProducts.forEach((value) => {
     if (value.discount === "0") {
       boxBestProducts.innerHTML += `
   <div class=" col-xl-3 col-sm-6 col-12">
@@ -214,9 +216,9 @@ function createBestProducts(data) {
 
 // --- ADs ---
 // for creare ADs
-function createAD(data) {
+function createAd(data) {
   data.ads.forEach((value) => {
-    ADimg[
+    adImg[
       value.positon
     ].innerHTML = `<a href="${value.href}"><img src="${value.img}" alt="${value.imgAlt}"></a>`;
   });
@@ -356,18 +358,17 @@ function timer(value) {
 
 window.addEventListener("load", async function getData() {
   try {
-    const [intrData, AllData] = await Promise.all([
-      fetch("https://jsonkeeper.com/b/JOWOV").then((result) => result.json()),
-      fetch("https://jsonkeeper.com/b/CFEDX").then((result) => result.json()),
-    ]);
-    productsData(AllData)
-    createIntro(intrData);
-    createBestProducts(dataBestProducts);
-    createAD(AllData);
+    const fullData = await fetch("https://jsonkeeper.com/b/CFEDX").then(
+      (result) => result.json()
+    );
+    productsData(fullData);
+    createIntro(fullData.introHome);
+    createBestProducts();
+    createAd(fullData);
     createSpecialOffer(dataSpecialOffer);
-    timer(AllData);
+    timer(fullData);
     setInterval(() => {
-      timer(AllData);
+      timer(fullData);
     }, 1000);
     drag("#special_offer_products");
     slowingLink();
