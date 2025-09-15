@@ -118,7 +118,7 @@ header.home-header {
         z-index: 9;
         top: 0;
         right: -50%;
-        position: absolute;
+        position: fixed;
         background-color: darken($color: $header-color, $amount: 4);
         width: 50vw;
         height: 100vh;

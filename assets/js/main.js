@@ -67,7 +67,7 @@ export function offLoading() {
   loading.classList.add("aiLoading");
   setTimeout(() => {
     loading.classList.add("offLoading");
-    body.removeAttribute("class");
+    body.classList.remove("overflow-hidden");
   }, 250);
 }
 
@@ -145,9 +145,11 @@ export function alertError(value) {
 // open burger menu
 burger.addEventListener("click", () => {
   if (openBurgerBox) {
+    body.classList.remove("overflow-hidden");
     openBurgerBox = false;
     burgerBox.style = "";
   } else {
+    body.classList.add("overflow-hidden");
     openBurgerBox = true;
     burgerBox.style.right = "0%";
   }

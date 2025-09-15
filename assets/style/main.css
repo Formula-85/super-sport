@@ -287,7 +287,7 @@ header.home-header div.burger-box {
   z-index: 9;
   top: 0;
   right: -50%;
-  position: absolute;
+  position: fixed;
   background-color: rgb(22.8, 22.8, 22.8);
   width: 50vw;
   height: 100vh;
