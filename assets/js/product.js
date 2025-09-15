@@ -8,6 +8,8 @@ import {
   englishToPrsian,
   discountPrice,
   alertError,
+  burgerMenu,
+  footer,
 } from "./main.js";
 
 // =========================
@@ -253,7 +255,8 @@ window.addEventListener("load", async function getData() {
     const productData = await fetch("https://jsonkeeper.com/b/CFEDX").then(
       (result) => result.json()
     );
-
+    burgerMenu();
+    footer();
     findingProduct(productData.product);
     createBreadcrumb(product);
     createProduct(product);

@@ -10,6 +10,8 @@ import {
   slowingLink,
   drag,
   alertError,
+  burgerMenu,
+  footer
 } from "./main.js";
 
 // =========================
@@ -361,6 +363,8 @@ window.addEventListener("load", async function getData() {
     const fullData = await fetch("https://jsonkeeper.com/b/CFEDX").then(
       (result) => result.json()
     );
+    burgerMenu()
+    footer()
     productsData(fullData);
     createIntro(fullData.introHome);
     createBestProducts();

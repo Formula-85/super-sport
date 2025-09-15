@@ -24,6 +24,52 @@ const footerTitle = document.querySelectorAll(".footer-title");
 // 2. FUNCTIONS
 // =========================
 
+// --- burger menu ---
+
+export function burgerMenu() {
+  // open burger menu
+  burger.addEventListener("click", () => {
+    if (openBurgerBox) {
+      body.classList.remove("overflow-hidden");
+      openBurgerBox = false;
+      burgerBox.style = "";
+    } else {
+      body.classList.add("overflow-hidden");
+      openBurgerBox = true;
+      burgerBox.style.right = "0%";
+    }
+  });
+
+  // open Dropdown in burger menu
+  burgerDropdown.addEventListener("click", () => {
+    if (openBurgerDropdown) {
+      openBurgerDropdown = false;
+      burgerDropdownBox.style.height = "";
+    } else {
+      openBurgerDropdown = true;
+      burgerDropdownBox.style.height = burgerDropdownBox.scrollHeight + "px";
+    }
+  });
+}
+
+// --- footer ---
+export function footer(params) {
+  // Opening and closing footer lists
+  footerTitle.forEach((title) => {
+    const list = title.nextElementSibling;
+    list.style.height = list.scrollHeight + "px";
+    let open = true;
+    title.addEventListener("click", () => {
+      if (open) {
+        list.style.height = " 0px";
+        open = false;
+      } else {
+        list.style.height = list.scrollHeight + "px";
+        open = true;
+      }
+    });
+  });
+}
 // --- Convertet ---
 
 // Convert Persian Numbers to English and Separate Numbers by Thousands
@@ -139,46 +185,3 @@ export function alertError(value) {
 // =========================
 // 3. EVENT LISTENERS
 // =========================
-
-// --- burger menu ---
-
-// open burger menu
-burger.addEventListener("click", () => {
-  if (openBurgerBox) {
-    body.classList.remove("overflow-hidden");
-    openBurgerBox = false;
-    burgerBox.style = "";
-  } else {
-    body.classList.add("overflow-hidden");
-    openBurgerBox = true;
-    burgerBox.style.right = "0%";
-  }
-});
-
-// open Dropdown in burger menu
-burgerDropdown.addEventListener("click", () => {
-  if (openBurgerDropdown) {
-    openBurgerDropdown = false;
-    burgerDropdownBox.style.height = "";
-  } else {
-    openBurgerDropdown = true;
-    burgerDropdownBox.style.height = burgerDropdownBox.scrollHeight + "px";
-  }
-});
-
-// --- footer ---
-// Opening and closing footer lists
-footerTitle.forEach((title) => {
-  const list = title.nextElementSibling;
-  list.style.height = list.scrollHeight + "px";
-  let open = true;
-  title.addEventListener("click", () => {
-    if (open) {
-      list.style.height = " 0px";
-      open = false;
-    } else {
-      list.style.height = list.scrollHeight + "px";
-      open = true;
-    }
-  });
-});
