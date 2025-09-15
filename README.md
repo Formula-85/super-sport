@@ -35,8 +35,7 @@ This project is made solely for **frontend skill improvement** and has no commer
 ## 📂 Project Resources
 - 📸 Image Repository: [img-super-sport (GitHub)](https://github.com/Formula-85/img-super-sport.git)  
 - 🗂️ JSON Data:  
-  - [JSON 1](https://jsonkeeper.com/b/JOWOV)  
-  - [JSON 2](https://jsonkeeper.com/b/QZEJL)  
+  - [DB](https://jsonkeeper.com/b/CFEDX)  
 
 
 ---
